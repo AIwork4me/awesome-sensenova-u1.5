@@ -1,0 +1,17 @@
+{
+  "case_id": 22,
+  "title": "插画艺术风格创作",
+  "category": "Illustration & Art",
+  "source_url": "https://x.com/Tanemomi_Ver2",
+  "upstream_image": "/images/case22.jpg",
+  "styles": [
+    "Illustration",
+    "Character"
+  ],
+  "scenes": [
+    "Tech",
+    "Commerce",
+    "Story"
+  ],
+  "selected_at": "2026-08-27T04:06:41Z"
+}

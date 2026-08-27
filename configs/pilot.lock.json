@@ -1,0 +1,187 @@
+{
+  "upstream_commit": "9a7b2e9c39f816d6c699c2a133e11b6d8bfdc464",
+  "cases_sha256": "bfb8a8e71a66beb33bd50590c79d5f22d43ae7c4350bcabb1a1dcd616b39d962",
+  "size": 30,
+  "cases": [
+    {
+      "id": 1,
+      "title": "信息图可视化设计",
+      "category": "UI & Interfaces",
+      "prompt_len": 576
+    },
+    {
+      "id": 2,
+      "title": "社媒界面截图",
+      "category": "UI & Interfaces",
+      "prompt_len": 401
+    },
+    {
+      "id": 3,
+      "title": "足球主题电影海报",
+      "category": "Posters & Typography",
+      "prompt_len": 219
+    },
+    {
+      "id": 4,
+      "title": "老干妈风味",
+      "category": "UI & Interfaces",
+      "prompt_len": 66
+    },
+    {
+      "id": 5,
+      "title": "主题海报版式设计",
+      "category": "Posters & Typography",
+      "prompt_len": 392
+    },
+    {
+      "id": 6,
+      "title": "插画艺术创作图",
+      "category": "Illustration & Art",
+      "prompt_len": 449
+    },
+    {
+      "id": 7,
+      "title": "应用界面样机图",
+      "category": "UI & Interfaces",
+      "prompt_len": 364
+    },
+    {
+      "id": 8,
+      "title": "科普百科图",
+      "category": "Charts & Infographics",
+      "prompt_len": 480
+    },
+    {
+      "id": 9,
+      "title": "主题海报版式设计",
+      "category": "Posters & Typography",
+      "prompt_len": 226
+    },
+    {
+      "id": 10,
+      "title": "主题海报版式设计",
+      "category": "Posters & Typography",
+      "prompt_len": 90
+    },
+    {
+      "id": 11,
+      "title": "一张手绘风格的城市美食地图，以台州为主题",
+      "category": "Architecture & Spaces",
+      "prompt_len": 719
+    },
+    {
+      "id": 13,
+      "title": "信息图可视化设计",
+      "category": "Documents & Publishing",
+      "prompt_len": 494
+    },
+    {
+      "id": 14,
+      "title": "信息图可视化设计",
+      "category": "Charts & Infographics",
+      "prompt_len": 758
+    },
+    {
+      "id": 15,
+      "title": "主题海报版式设计",
+      "category": "Posters & Typography",
+      "prompt_len": 72
+    },
+    {
+      "id": 16,
+      "title": "主题海报版式设计",
+      "category": "Posters & Typography",
+      "prompt_len": 166
+    },
+    {
+      "id": 17,
+      "title": "界面交互设计图",
+      "category": "Products & E-commerce",
+      "prompt_len": 1463
+    },
+    {
+      "id": 22,
+      "title": "插画艺术风格创作",
+      "category": "Illustration & Art",
+      "prompt_len": 1108
+    },
+    {
+      "id": 25,
+      "title": "综合应用场景图",
+      "category": "Characters & People",
+      "prompt_len": 81
+    },
+    {
+      "id": 26,
+      "title": "建筑空间场景图",
+      "category": "Photography & Realism",
+      "prompt_len": 804
+    },
+    {
+      "id": 28,
+      "title": "写实摄影风格创作",
+      "category": "Photography & Realism",
+      "prompt_len": 1327
+    },
+    {
+      "id": 30,
+      "title": "写实摄影风格图",
+      "category": "Illustration & Art",
+      "prompt_len": 2045
+    },
+    {
+      "id": 31,
+      "title": "人像写实摄影图",
+      "category": "Photography & Realism",
+      "prompt_len": 937
+    },
+    {
+      "id": 33,
+      "title": "电商商品展示设计",
+      "category": "Products & E-commerce",
+      "prompt_len": 512
+    },
+    {
+      "id": 35,
+      "title": "人像写实摄影图",
+      "category": "Photography & Realism",
+      "prompt_len": 749
+    },
+    {
+      "id": 78,
+      "title": "图像生成案例图",
+      "category": "Other Use Cases",
+      "prompt_len": 2818
+    },
+    {
+      "id": 130,
+      "title": "界面交互设计图",
+      "category": "Brand & Logos",
+      "prompt_len": 2045
+    },
+    {
+      "id": 167,
+      "title": "大唐玄武门之变的朋友圈",
+      "category": "History & Classical Themes",
+      "prompt_len": 68
+    },
+    {
+      "id": 174,
+      "title": "唐朝贵妇遛粉色马甲异形工笔画",
+      "category": "History & Classical Themes",
+      "prompt_len": 736
+    },
+    {
+      "id": 182,
+      "title": "千禧年日系校园喜剧场景",
+      "category": "Scenes & Storytelling",
+      "prompt_len": 104
+    },
+    {
+      "id": 208,
+      "title": "樱花树下害羞双马尾少女",
+      "category": "Scenes & Storytelling",
+      "prompt_len": 1144
+    }
+  ]
+}
