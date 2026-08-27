@@ -31,3 +31,5 @@
 {"ts": "2026-08-27T04:04:44Z", "type": "case_selected", "idem": "sel-208", "payload": {"case_id": 208}}
 {"ts": "2026-08-27T04:06:08Z", "type": "case_selected", "idem": "sel-31", "payload": {"case_id": 31}}
 {"ts": "2026-08-27T04:06:08Z", "type": "case_selected", "idem": "sel-35", "payload": {"case_id": 35}}
+{"ts": "2026-08-27T04:52:26Z", "type": "generated", "idem": "case208-r1-s1721098344", "payload": {"tag": "case208-r1-s1721098344", "file": "runs/genimages/round-1/0002_case208-r1-s1721098344_2048x2048.png", "sha256": "2cf04e84927bb03545078f31952337baf57dbba352ce08682eb165ff9aacceea"}}
+{"ts": "2026-08-27T04:52:26Z", "type": "generated", "idem": "case208-r1-s509311921", "payload": {"tag": "case208-r1-s509311921", "file": "runs/genimages/round-1/0001_case208-r1-s509311921_2048x2048.png", "sha256": "a6c12cb6ad629715e0745236e0e5d21c555e5d7f3ee811df4edc39d38dd1ec44"}}
