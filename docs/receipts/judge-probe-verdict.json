@@ -1,0 +1,16 @@
+{
+  "candidate_1": {
+    "scores": {"quality": 7, "aesthetics": 8, "alignment": 7, "real_world_fidelity": 7, "creative_generation": 8},
+    "score_reasons": {"quality": "整体写实合成完成度较高：皮肤与织物质感、体育场泛光灯与人群散景、火球与水墨笔触融合自然，主标题金色 3D 字渲染锐利；但底部职员表为成片乱码伪汉字，上指手势的手部结构略僵硬（食指过长），远景人群有轻微复制贴图感，属于可见的 AI 伪影。", "aesthetics": "低角度仰拍配合对角线动势，金色 3D 主标题斜贯画面，绯红/金/深海军蓝配色高度统一，光影氛围热血有冲击力；但人物表情凶悍严肃，提示词要求的幽默基调基本缺席。", "alignment": "竖幅 2:3、无 logo 红金球衣（确实未见任何文字商标）、飞踢姿态、夜场灯光与人群散景、火焰能量弧、水墨龙元素、斜排金色主标题、英文副标题、底部职员表块与档期行均执行到位；打折项：职员表文字为乱码，'subtle'（低调）的龙元素实际相当显眼，'humorous' 幽默基调偏弱，脚与球为即将触击的悬空瞬间而非实接触。", "real_world_fidelity": "符合华语动作喜剧电影海报版式惯例（主标题/副标题/职员表/档期语），'燃动上映'用语地道，按提示要求规避了一切品牌标识；扣分点在职员表伪汉字——中文读者一眼可辨为假字，损害真实海报的可信度。", "creative_generation": "功夫×足球题材融合完整，火球尾焰、水墨飞溅与龙形轨迹的镜头语言统一，信息层级（主标题>副标题>职员表>档期）清晰，是成熟的商业海报创意执行。"},
+    "unfulfilled_requirements": ["底部电影职员表小字为成片乱码伪汉字（约 80-110 字符），无法作为真实职员表阅读", "提示词要求 'humorous'（幽默）基调，实际画面以严肃凶悍的热血风为主", "提示词要求 'subtle ink-splash motifs of a dragon'（低调的水墨龙），实际右下角大红龙相当显眼", " 'to strike a football' 的触球瞬间呈现为脚与球悬空临近，非实际接触（轻微）"],
+    "transcribed_text": ["功夫女足（主标题金色 3D 大字，斜排，逐字正确）", "KUNG FU GIRLS（英文副标题，逐字正确）", "2026 燃动上映（底部档期行，逐字正确）", "GARBLED：底部演职员表 4 行小字，为伪汉字/乱码夹杂丨、·等分隔符，估算约 80-110 个乱码字符，无法转写成有意义的文案"],
+    "hard_flags": {"display_text_correct": true, "small_text_quality": "garbled", "text_miss_count": 0}
+  },
+  "candidate_2": {
+    "scores": {"quality": 9, "aesthetics": 9, "alignment": 9, "real_world_fidelity": 10, "creative_generation": 9},
+    "score_reasons": {"quality": "矢量插面干净锐利，边缘轮廓与留白达到印刷级；字母内部场景与字形嵌合自然，缆车吊索、船只、长椅、路灯柱等元素有合理接地与轻微投影；仅场景内阴影极简、纹理带细微噪点，几乎无物理或渲染瑕疵。", "aesthetics": "居中对称构图均衡，藏青/奶油/哑红/灰蓝四色调色板严格执行，字母叠景与负空间节奏舒适，企鹅与坐标页脚点缀优雅克制，是成熟的编辑设计审美。", "alignment": "城市名大写无衬线字母横贯画面且完全可读、地标嵌入字母内外、扁平矢量风格、四色限定、装饰小元素（云/飞鸟/长椅/电车/渡船/棕榈/企鹅）、大量负空间、居中构图、下方标语均达成；唯一字面未达标项是 '8K resolution'（实际约 1024x1536）。", "real_world_fidelity": "地标全部经得起核对：桌山平顶、红白条纹 Green Point 灯塔、桌山红色缆车、V&A Waterfront 摩天轮与帆船、碗状开普敦体育场、开普荷兰式山形墙彩屋、帝王花（南非国花）、Boulders Beach 企鹅、Camps Bay 电车与路牌目的地均真实存在；'The Mother City' 昵称正确，坐标 33.9249°S 18.4241°E 与开普敦实际坐标完全一致，精确度罕见，无文化失实或违规内容。", "creative_generation": "字母即构图的概念执行出色：缆车横越 C、桌山填入 A、摩天轮嵌入 O、体育场装进 W，路牌与电车成为叙事道具，信息层级（城市名>标语>坐标）分明，镜头语言与城市气质高度吻合。"},
+    "unfulfilled_requirements": ["提示词风格串中的 '8K resolution' 未以字面分辨率交付（图像约 1024x1536），但矢量锐度与版式要求均已达成"],
+    "transcribed_text": ["CAPE TOWN（两行巨型展示字母，逐字正确）", "V&A WATERFRONT / Camps Bay / BOULDERS BEACH / CAPE POINT →（路牌四行，全部正确）", "CAMPS BAY（电车终点站牌，正确）", "7（电车编号，车侧与车头各一处）", "Obz（右上深色高楼小圆牌，Observatory 社区缩写，可读正确）", "THE MOTHER CITY（标语，逐字正确）", "33.9249° S, 18.4241° E（坐标页脚，与开普敦实际坐标一致）"],
+    "hard_flags": {"display_text_correct": true, "small_text_quality": "correct", "text_miss_count": 0}
+  }
+}
