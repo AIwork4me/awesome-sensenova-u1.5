@@ -17,7 +17,7 @@ def append_event(path, etype, payload, idem=None):
                 old = json.loads(line)
             except json.JSONDecodeError:
                 continue
-            if old.get("idem") == idem:
+            if old.get("idem") == idem and old.get("type") == etype and idem is not None:
                 return old
     ev = {"ts": _now(), "type": etype, "idem": idem, "payload": payload}
     with p.open("a", encoding="utf-8") as f:
