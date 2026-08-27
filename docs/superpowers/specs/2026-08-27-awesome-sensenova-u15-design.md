@@ -145,7 +145,7 @@ REWRITE 按 COMPARE 的失败归因选择策略，规则式优先以保证确定
 
 ## 10. 错误处理与幂等
 
-- GPU 生成失败（OOM/驱动抖动）：单图换种子重试 2 次，仍失败记 `failed` 跳过本轮，账本留痕，下轮自动补跑。
+- GPU 生成失败（OOM/驱动抖动）：整批最多复跑 2 次（种子不变，适配瞬时故障；确定性种子是复现性的根基，不因失败换种），仍失败的图记 `gen_failed` 跳出本轮，账本留痕，下轮自动补跑；确认是特定触发词导致算子缺陷时按案例手工调整种子参数并在 provenance 记录。
 - 判官输出不合法：schema 校验拒绝后重派一次，再失败进人工处理队列。
 - 上游漂移：fetch 锁 commit + manifest sha256 校验；升级 lockfile 属显式操作，需重跑受影响对比。
 - 断点续跑：账本是唯一事实来源，任何脚本崩溃重跑均从最后事件续传；所有事件操作以幂等键去重。
@@ -207,4 +207,6 @@ REWRITE 按 COMPARE 的失败归因选择策略，规则式优先以保证确定
 }
 ```
 
-采集器校验通过后补全 `case_ref`、`round`、`seed`、`latency`、`tokens` 字段落盘 `results/judge/{entry_id}.json`；台账追加 `judged` 事件。禁止判官输出中出现模型身份推断；一旦发现由采集器判废。
+采集器校验通过后组装完整信封落盘 `results/judge/{entry_id}.json`，字段为：schema_version / entry_id / backend / judged_at / source / case_id / round / seed / verdict；latency 与 tokens 属尽力而为字段（glm_api 后端记录响应耗时与用量，agent 后端记录派发耗时），缺失不阻塞校验；参考图条目同时写入 `_baseline/` 目录供各轮比较复用。台账追加 `judged` 事件。禁止判官输出中出现模型身份推断；一旦发现由采集器判废。
+
+本设计已获批并转入实施：实现计划见 `docs/superpowers/plans/2026-08-27-awesome-sensenova-u15.md`（任务级步骤与其对应）。
