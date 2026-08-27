@@ -1,6 +1,19 @@
 #!/usr/bin/env python3
 """Bilingual gallery + conclusions renderer (task 16, publish finalization).
 
+PRESENTATION CONVENTION (binding since 2026-08-27, see spec §12.1 and the
+workspace AGENTS.md 图像对比画廊呈现规范): the published gallery MUST use the
+side-by-side comparison layout proven in results/gallery/wip-round1 —
+per-case two-column table (left = GPT-Image-2 reference image + original
+prompt, right = SenseNova reproduction image + executed prompt), exactly ONE
+reproduction image per case (deterministic k=0 seed), BOTH images normalized
+to the reference's canvas aspect ratio (long edge 1200, letterbox background
+sampled from the reference's corners) and rendered with the same width
+attribute, prompts as separate <details> blocks per column, per-case source
+attribution + directory NOTICE.md, and a top-of-page scoring-status banner.
+The current single-column winner rendering below predates this convention and
+must be upgraded to the comparison layout as part of M4 publish work.
+
 Turns the frozen comparison outcome (latest runs/comparisons/round-*/report.json
 by round number; --round filters to one) into:
 
