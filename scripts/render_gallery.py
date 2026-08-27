@@ -15,6 +15,8 @@ Rulings honoured here:
   - report.json rows are authoritative for status; the ledger is not parsed.
     fail rows are published as "capped" so the conclusions table carries only
     parity/win/capped strings, with their negative gap shown honestly;
+    undocumented/unknown statuses are never silently relabelled — they render
+    verbatim in badge and table plus one stderr warning;
   - deferred case ids go to a note line under the table, never table rows;
   - a row whose winner_file is null or missing on disk is skipped from both
     galleries with a stderr warning and listed in the end-of-run skipped
@@ -27,6 +29,7 @@ Never touches git push or anything under third_party/, runs/, .venv-test/.
 """
 import argparse
 import json
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -49,6 +52,9 @@ _LABELS = {
            "ours", "upstream link",
            "upstream case #{cid} (no source link)"),
 }
+
+# ChangeLog idempotence anchor: a heading at line start, not any substring.
+_UNRELEASED_RE = re.compile(r"^## Unreleased\b", re.MULTILINE)
 
 
 def _warn(msg):
@@ -103,7 +109,9 @@ def collect_entries(report, root: Path):
         prov = provenance(root, cid)
         entries.append({
             "cid": cid,
-            "status": _STATUS_MAP.get(row["status"], "capped"),
+            # No silent relabel: unknown/missing status keeps its RAW string
+            # (main() warns once per case); only documented fail->capped maps.
+            "status": _STATUS_MAP.get(row.get("status"), row.get("status")),
             "category": prov.get("category") or "-",
             "url": prov.get("source_url") or "",
             "src": src,
@@ -119,6 +127,11 @@ def copy_images(entries, root: Path):
         shutil.copyfile(e["src"], dest)
 
 
+def _esc(text):
+    """Markdown-table cell safety: escape pipes so prose cannot split a row."""
+    return str(text).replace("|", "\\|")
+
+
 def render_gallery(entries, lang):
     """| case-id 类别 | 我方图 <img…> | 上游回链 […] | table; zh/en twins."""
     head, ours_lbl, link_lbl, ours_word, link_word, nolink = _LABELS[lang]
@@ -126,10 +139,10 @@ def render_gallery(entries, lang):
     for e in entries:
         img = f"<img src=\"{e['dest'].as_posix()}\" width=\"420\"/>"
         if e["url"]:
-            link_cell = f"{link_word} [case {e['cid']}]({e['url']})"
+            link_cell = f"{link_word} [case {e['cid']}]({_esc(e['url'])})"
         else:               # T5 forward-note: no dead markdown links, ever
             link_cell = nolink.format(cid=e["cid"])
-        lines.append(f"| case-{e['cid']} {e['category']} `{e['status']}` "
+        lines.append(f"| case-{e['cid']} {_esc(e['category'])} `{e['status']}` "
                      f"| {ours_word} {img} | {link_cell} |")
     return "\n".join(lines)
 
@@ -141,7 +154,10 @@ def render_table(report):
              "| case | 状态 | 我方均分 | 参考均分 | 差值 |",
              "|---|---|---|---|---|"]
     for r in sorted(report["per_case"], key=lambda x: x["case_id"]):
-        lines.append(f"| case-{r['case_id']} | {_STATUS_MAP.get(r['status'], 'capped')} "
+        # Raw passthrough for undocumented statuses — honest reporting beats a
+        # tidy enum; the relabel warning itself is emitted once from main().
+        st = _STATUS_MAP.get(r.get("status"), r.get("status"))
+        lines.append(f"| case-{r['case_id']} | {_esc(st)} "
                      f"| {r['candidate_mean']:.2f} | {r['reference_mean']:.2f} "
                      f"| {r['gap']:+.2f} |")
     if report.get("deferred"):
@@ -175,9 +191,13 @@ def insert_en_marker(text):
 
 
 def update_changelog(path: Path) -> bool:
-    """Append an Unreleased stub once; idempotent via the Unreleased marker."""
+    """Append an Unreleased stub once; idempotent via the Unreleased marker.
+
+    The marker is anchored to line start (multiline regex) so a prose mention
+    like "- see ## Unreleased notes" cannot suppress the real stub.
+    """
     txt = path.read_text(encoding="utf-8") if path.exists() else "# Changelog\n"
-    if "## Unreleased" in txt:
+    if _UNRELEASED_RE.search(txt):
         return False
     nl = txt.index("\n", txt.index("# "))       # insert below the top heading
     new = txt[:nl] + "\n\n## Unreleased\n\n" + CHANGELOG_STUB + "\n\n" \
@@ -206,6 +226,11 @@ def main(argv=None) -> int:
         entries, skipped = [], []
         en_body = zh_body = tbl_body = ""
     else:
+        # Honest-reporting guard: flag undocumented statuses once, up front.
+        for r in report["per_case"]:
+            if r.get("status") not in _STATUS_MAP:
+                print(f"[render] unknown status '{r.get('status')}' "
+                      f"for case {r.get('case_id')}", file=sys.stderr)
         entries, skipped = collect_entries(report, root)
         en_body = render_gallery(entries, "en")
         zh_body = render_gallery(entries, "zh")

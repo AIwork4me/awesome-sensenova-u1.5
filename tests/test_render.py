@@ -209,3 +209,45 @@ def test_empty_state_is_graceful(tmp_path, monkeypatch, capsys):
     md = (tmp_path / "README.md").read_text(encoding="utf-8")
     # R8 still satisfied: renderer ensures all three markers exist
     assert md.index("GALLERY_EN") < md.index("GALLERY_ZH") < md.index("RESULTS_TABLE")
+
+
+# --- review fixes (t-new): honest statuses + cell escaping --------------------
+
+
+def test_unknown_status_kept_raw_and_warned(tmp_path, monkeypatch, capsys):
+    """t-new-1: an undocumented status must never be relabelled 'capped'; it
+    shows verbatim in gallery badge and table cell, with a stderr warning."""
+    monkeypatch.chdir(tmp_path)
+    _seed_repo(tmp_path)
+    wpng = _img(tmp_path, "runs/genimages/round-3/odd.png")
+    _prov(tmp_path, 777, "https://example.com/u777")
+    _report(tmp_path, 3, [_row(777, "weird", 7.0, 7.0, wpng)])
+    assert rg.main([]) == 0
+    err = capsys.readouterr().err
+    assert "unknown status 'weird' for case 777" in err
+    md = (tmp_path / "README.md").read_text(encoding="utf-8")
+    assert "`weird`" in md                                    # raw gallery badge
+    tbl = md.split("<!-- RESULTS_TABLE -->")[1]
+    assert "| case-777 | weird | 7.00 | 7.00 | +0.00 |" in tbl  # raw table cell
+    assert "capped" not in md                                  # no silent relabel
+
+
+def test_pipe_in_category_cannot_break_table_row(tmp_path, monkeypatch):
+    """t-new-2: '|' inside category/url prose is escaped, keeping one intact
+    markdown row per case."""
+    monkeypatch.chdir(tmp_path)
+    _seed_repo(tmp_path)
+    wpng = _img(tmp_path, "runs/genimages/round-1/p.png")
+    _prov(tmp_path, 511, "https://example.com/a|b", category="Posters | Typography")
+    _report(tmp_path, 1, [_row(511, "parity", 8.0, 8.0, wpng)])
+    assert rg.main([]) == 0
+    md = (tmp_path / "README.md").read_text(encoding="utf-8")
+    zh = md.split("<!-- GALLERY_ZH -->")[1].split("## 对比结论")[0]
+    en = md.split("<!-- GALLERY_EN -->")[1].split("<!-- GALLERY_ZH -->")[0]
+    for section in (zh, en):
+        rows = [l for l in section.splitlines() if l.startswith("| case-511")]
+        assert len(rows) == 1                    # exactly one intact row
+        unescaped = rows[0].replace("\\|", "")
+        assert unescaped.count("|") == 4         # 3-col row has only 4 real pipes
+        assert "\\|" in rows[0]                  # category pipe was escaped
+    assert "Posters \\| Typography" in md
