@@ -7,7 +7,9 @@ strings (pick_strategy), and that strategy's directive is appended to the
 case's latest prompt text as adapted-v{n+1}.md. All application converges on
 the pure function apply_strategy(), so swapping in an LLM rewriter later only
 replaces that body, not the pipeline. Rewrites stop after MAX_REWRITE_ROUNDS
-per case; further failures record a status_capped ledger event instead.
+per case; further failures record a status_capped ledger event instead. When
+main() runs with --round, cases already carrying a rewritten event for that
+round are skipped, so operator reruns cannot stack duplicate directives.
 """
 import argparse
 import json
@@ -55,12 +57,13 @@ STRATEGIES = {
         "sets_small_text_exempt": False,
     },
 }
-KEYWORD_RULES = [("count|quantity|number of", "S3_explicit_constraints"),
-                 ("hand|finger|limb|face|anatom", "S5_avoid_anatomy"),
-                 ("color|layout|position|background", "S3_explicit_constraints")]
+KEYWORD_RULES = [(r"\bcount\b|\bquantity\b|number of", "S3_explicit_constraints"),
+                 (r"\bhand\b|\bfinger\b|\blimb\b|\bface\b|\banatom", "S5_avoid_anatomy"),
+                 (r"\bcolor\b|\blayout\b|\bposition\b|\bbackground\b",
+                  "S3_explicit_constraints")]
 
 
-def pick_strategy(failed_checks) -> str:
+def pick_strategy(failed_checks: list[str]) -> str:
     """Classify a report row's failed_checks strings into one S1..S5 id."""
     joined = " ".join(failed_checks).lower()
     if any("c_small_text" in c for c in failed_checks):
@@ -68,11 +71,14 @@ def pick_strategy(failed_checks) -> str:
     if any("b_display_text" in c or "d_miss_zero" in c for c in failed_checks):
         return "S2_simplify_display_text"
     if any("a_score_gap" in c for c in failed_checks):
-        if re.search(r"hand|finger|limb|face|anatom", joined):
-            return "S5_avoid_anatomy"
+        hit = None
         for pat, sid in KEYWORD_RULES:
             if re.search(pat, joined):
-                return sid
+                if sid == "S5_avoid_anatomy":
+                    return sid          # anatomy outranks composition keywords
+                hit = hit or sid
+        if hit:
+            return hit
     if any("e_no_visual_defects" in c for c in failed_checks):
         return "S5_avoid_anatomy"
     return "S4_style_anchor"
@@ -97,11 +103,14 @@ def _next_version(case_dir: Path) -> int:
     return (max(nums) if nums else 1) + 1
 
 
-def rewrite_one(case_id, failed_checks, root=Path("."), ledger="ledger/append.jsonl") -> str:
+def rewrite_one(case_id, failed_checks, root=Path("."), ledger="ledger/append.jsonl",
+                round=None) -> str:
     """Rewrite one failing case's prompt once, respecting MAX_REWRITE_ROUNDS.
 
-    Returns "rewritten" or "capped"; on the capped path only a status_capped
-    ledger event is appended (idem=cap-{case}) and no prompt file is touched.
+    `round`, when given, is stored in the rewritten ledger event so main() can
+    skip rows already rewritten in that round on rerun. Returns "rewritten" or
+    "capped"; on the capped path only a status_capped ledger event is appended
+    (idem=cap-{case}) and no prompt file is touched.
     """
     lpath = root / ledger
     prior = [ev for ev in load_events(lpath)
@@ -127,27 +136,42 @@ def rewrite_one(case_id, failed_checks, root=Path("."), ledger="ledger/append.js
     prov_p.write_text(json.dumps(prov, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     append_event(lpath, "rewritten",
                  {"case_id": case_id, "version": ver, "strategy": s,
-                  "failed_checks": list(failed_checks)}, idem=f"rw-{case_id}-{ver}")
+                  "failed_checks": list(failed_checks), "round": round},
+                 idem=f"rw-{case_id}-{ver}")
     return "rewritten"
+
+
+def _rewritten_this_round(events, case_id, rnd) -> bool:
+    return any(ev.get("type") == "rewritten"
+               and ev.get("payload", {}).get("case_id") == case_id
+               and ev.get("payload", {}).get("round") == rnd
+               for ev in events)
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Attribution-driven prompt rewriting.")
-    ap.add_argument("--round", type=int, required=True)
+    ap.add_argument("--round", type=int, default=None,
+                    help="rewrite round; enables the same-round rerun guard")
     ap.add_argument("--ledger", default="ledger/append.jsonl")
     args = ap.parse_args(argv)
     root = Path(".")
     report_p = root / f"runs/comparisons/round-{args.round}/report.json"
     report = json.loads(report_p.read_text(encoding="utf-8"))
-    rewrote = capped = 0
+    events = load_events(root / args.ledger)
+    rewrote = capped = skipped = 0
     for row in report["per_case"]:
         if row.get("status") != "fail":
             continue
-        outcome = rewrite_one(row["case_id"], row.get("failed_checks", []),
-                              root=root, ledger=args.ledger)
+        cid = row["case_id"]
+        if args.round is not None and _rewritten_this_round(events, cid, args.round):
+            print(f"[rewrite] case {cid} already rewritten this round; skipped")
+            skipped += 1
+            continue
+        outcome = rewrite_one(cid, row.get("failed_checks", []), root=root,
+                              ledger=args.ledger, round=args.round)
         rewrote += outcome == "rewritten"
         capped += outcome == "capped"
-    print(f"[rewrite] round={args.round} rewrote={rewrote} capped={capped}")
+    print(f"[rewrite] round={args.round} rewrote={rewrote} capped={capped} skipped={skipped}")
     return 0
 
 

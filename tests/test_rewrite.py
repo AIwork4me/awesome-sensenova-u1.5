@@ -58,11 +58,34 @@ def test_rewrite_caps_after_max_rounds(tmp_path, monkeypatch):
         (d / f"adapted-v{ver}.md").write_text(f"round {ver}\n")
         append_event(led, "rewritten", {"case_id": 42, "version": ver,
                                         "strategy": "S4_style_anchor"}, idem=f"rw-42-{ver}")
+    prov_before = (d / "provenance.json").read_bytes()
     outcome = rp.rewrite_one(42, failed_checks=[GAP_CHECK])
     assert outcome == "capped"
     assert not (d / "adapted-v5.md").exists()
+    # capped path must not touch the case's prompt or provenance at all
+    assert (d / "provenance.json").read_bytes() == prov_before
     events = load_events(led)
     assert sum(e["type"] == "rewritten" for e in events) == 3
     caps = [e for e in events if e["type"] == "status_capped"]
     assert len(caps) == 1 and caps[0]["idem"] == "cap-42"
     assert caps[0]["payload"]["capped_at_round"] == 3
+
+
+def test_main_same_round_rerun_guard(tmp_path, monkeypatch, capsys):
+    monkeypatch.chdir(tmp_path)
+    _mk_case(tmp_path, 77)
+    rep = tmp_path / "runs/comparisons/round-1/report.json"
+    rep.parent.mkdir(parents=True)
+    rep.write_text(json.dumps(
+        {"per_case": [{"case_id": 77, "status": "fail",
+                       "failed_checks": ["c_small_text: garbled small text"]}],
+         "deferred": []}))
+    rp.main(["--round", "1"])
+    rp.main(["--round", "1"])            # rerun must not stack directives
+    d = tmp_path / "cases/pilot/case-77"
+    assert sorted(p.name for p in d.glob("adapted-v*.md")) == ["adapted-v2.md"]
+    assert len(json.loads((d / "provenance.json").read_text())["history"]) == 1
+    rw = [e for e in load_events(tmp_path / "ledger/append.jsonl") if e["type"] == "rewritten"]
+    assert len(rw) == 1 and rw[0]["payload"]["round"] == 1
+    out = capsys.readouterr().out
+    assert "case 77 already rewritten this round; skipped" in out
