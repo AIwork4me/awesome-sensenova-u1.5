@@ -64,6 +64,7 @@ def test_api_backend_normalizes(monkeypatch, tmp_path):
     entry = _entry(tmp_path)
     rc = rja.run_one(entry)
     srv.shutdown()
+    srv.server_close()
     assert rc == 0
     assert cap["auth"] == "Bearer k-123"
     vp = tmp_path / "v.json"
@@ -97,6 +98,7 @@ def test_model_and_env_read_at_call_time(monkeypatch, tmp_path):
     entry = _entry(tmp_path)
     rc = rja.run_one(entry)
     srv.shutdown()
+    srv.server_close()
     assert rc == 0 and cap["body"]["model"] == "my-vlm-x"
 
 
@@ -107,6 +109,7 @@ def test_http_401_diagnosed(monkeypatch, tmp_path, capsys):
     entry = _entry(tmp_path)
     rc = rja.run_one(entry)
     srv.shutdown()
+    srv.server_close()
     err = capsys.readouterr().err
     assert rc == 3 and not (tmp_path / "v.json").exists()
     assert "401" in err and "GLM_API_KEY" in err
@@ -121,6 +124,7 @@ def test_http_404_diagnosed(monkeypatch, tmp_path, capsys):
     entry = _entry(tmp_path)
     rc = rja.run_one(entry)
     srv.shutdown()
+    srv.server_close()
     err = capsys.readouterr().err
     assert rc == 3 and not (tmp_path / "v.json").exists()
     assert "404" in err and "GLM_API_BASE" in err
@@ -152,6 +156,32 @@ def test_timeout_diagnosed(monkeypatch, tmp_path, capsys):
     assert rc == 3 and "timeout" in err.lower()
 
 
+def test_http_200_non_json_body_diagnosed(monkeypatch, tmp_path, capsys):
+    srv, url, _cap = _spawn_mock_server(raw=b"<html>502 Bad Gateway</html>")
+    monkeypatch.setenv("GLM_API_BASE", url)
+    monkeypatch.setenv("GLM_API_KEY", "k-123")
+    entry = _entry(tmp_path)
+    rc = rja.run_one(entry)
+    srv.shutdown()
+    srv.server_close()
+    srv.server_close()
+    err = capsys.readouterr().err
+    assert rc == 3 and not (tmp_path / "v.json").exists()
+    assert "non-JSON" in err
+
+
+def test_null_content_rc4_no_crash(monkeypatch, tmp_path, capsys):
+    srv, url, _cap = _spawn_mock_server(content=None)  # choices[0].message.content: null
+    monkeypatch.setenv("GLM_API_BASE", url)
+    monkeypatch.setenv("GLM_API_KEY", "k-123")
+    entry = _entry(tmp_path)
+    rc = rja.run_one(entry)
+    srv.shutdown()
+    srv.server_close()
+    srv.server_close()
+    assert rc == 4 and not (tmp_path / "v.json").exists()
+
+
 @pytest.mark.parametrize("content", [
     "```json\n{\"scores\": {}}\n```",   # fenced JSON that fails the schema
     "sorry, I cannot judge this image",  # no JSON object at all
@@ -163,6 +193,8 @@ def test_invalid_or_missing_json_rc4_no_file(monkeypatch, tmp_path, capsys, cont
     entry = _entry(tmp_path)
     rc = rja.run_one(entry)
     srv.shutdown()
+    srv.server_close()
+    srv.server_close()
     err = capsys.readouterr().err
     assert rc == 4 and not (tmp_path / "v.json").exists()
     assert "scores.quality" in err or "JSON" in err
