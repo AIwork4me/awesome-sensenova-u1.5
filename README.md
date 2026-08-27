@@ -4,6 +4,8 @@
 
 ## 画廊
 
+<!-- GALLERY_EN -->
+
 <!-- GALLERY_ZH -->
 
 ## 对比结论
