@@ -1,0 +1,16 @@
+{
+  "case_id": 26,
+  "title": "建筑空间场景图",
+  "category": "Photography & Realism",
+  "source_url": "https://x.com/ecooai",
+  "upstream_image": "/images/case26.jpg",
+  "styles": [
+    "Realistic"
+  ],
+  "scenes": [
+    "Tech",
+    "Fashion",
+    "Story"
+  ],
+  "selected_at": "2026-08-27T04:06:41Z"
+}

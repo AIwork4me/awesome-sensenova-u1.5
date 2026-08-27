@@ -1,0 +1,18 @@
+{
+  "case_id": 30,
+  "title": "写实摄影风格图",
+  "category": "Illustration & Art",
+  "source_url": "https://x.com/opc_8838",
+  "upstream_image": "/images/case30.jpg",
+  "styles": [
+    "UI",
+    "Realistic",
+    "Illustration"
+  ],
+  "scenes": [
+    "Tech",
+    "Commerce",
+    "Social"
+  ],
+  "selected_at": "2026-08-27T04:06:41Z"
+}

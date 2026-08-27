@@ -1,0 +1,18 @@
+{
+  "case_id": 7,
+  "title": "应用界面样机图",
+  "category": "UI & Interfaces",
+  "source_url": "",
+  "upstream_image": "/images/case7.jpg",
+  "styles": [
+    "UI",
+    "Realistic",
+    "Character"
+  ],
+  "scenes": [
+    "Fashion",
+    "Food",
+    "Story"
+  ],
+  "selected_at": "2026-08-27T04:06:41Z"
+}

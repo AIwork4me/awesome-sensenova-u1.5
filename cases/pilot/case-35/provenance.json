@@ -1,0 +1,16 @@
+{
+  "case_id": 35,
+  "title": "人像写实摄影图",
+  "category": "Photography & Realism",
+  "source_url": "https://x.com/kazmaendo",
+  "upstream_image": "/images/case35.jpg",
+  "styles": [
+    "Realistic"
+  ],
+  "scenes": [
+    "Tech",
+    "Fashion",
+    "Travel"
+  ],
+  "selected_at": "2026-08-27T04:06:41Z"
+}

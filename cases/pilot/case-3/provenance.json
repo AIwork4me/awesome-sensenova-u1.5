@@ -1,0 +1,16 @@
+{
+  "case_id": 3,
+  "title": "足球主题电影海报",
+  "category": "Posters & Typography",
+  "source_url": "",
+  "upstream_image": "/images/case3.jpg",
+  "styles": [
+    "Poster",
+    "Realistic",
+    "Character"
+  ],
+  "scenes": [
+    "Fashion"
+  ],
+  "selected_at": "2026-08-27T04:06:41Z"
+}

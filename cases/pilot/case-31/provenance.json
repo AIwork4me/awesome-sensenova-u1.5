@@ -1,0 +1,16 @@
+{
+  "case_id": 31,
+  "title": "人像写实摄影图",
+  "category": "Photography & Realism",
+  "source_url": "https://x.com/jun_kongo",
+  "upstream_image": "/images/case31.jpg",
+  "styles": [
+    "Realistic"
+  ],
+  "scenes": [
+    "Tech",
+    "Commerce",
+    "Fashion"
+  ],
+  "selected_at": "2026-08-27T04:06:41Z"
+}

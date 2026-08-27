@@ -1,0 +1,18 @@
+{
+  "case_id": 8,
+  "title": "科普百科图",
+  "category": "Charts & Infographics",
+  "source_url": "",
+  "upstream_image": "/images/case8.jpg",
+  "styles": [
+    "Infographic",
+    "Poster",
+    "Illustration"
+  ],
+  "scenes": [
+    "Commerce",
+    "Education",
+    "Story"
+  ],
+  "selected_at": "2026-08-27T04:06:41Z"
+}
