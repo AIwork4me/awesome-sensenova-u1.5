@@ -10,39 +10,38 @@
 2. `.venv-test/bin/python scripts/build_judge_tasks.py --round ROUND` —— 组装本轮盲评队列到 `runs/judge-queue/round-N/`（entries/prompts/verdicts 三目录加 manifest.json 与 tasks.jsonl），参考图首轮后经 `_baseline` 缓存不再重复入队。
 3. 判官批阅 —— 按 §2 的派发模板把 tasks.jsonl 分批交给子代理，直至每个 verdict_path 都已落盘。
 4. `.venv-test/bin/python scripts/collect_verdicts.py --round ROUND` —— schema 校验 + 身份泄漏扫描，合格 verdict 加信封写入 `results/judge/{entry_id}.json`，非法文件移入 `verdicts-invalid/` 并记 `judge_failed` 台账事件。
-5. `.venv-test/bin/python scripts/compare_parity.py --round ROUND` —— 对照参考基线做打平判定，产出 `runs/comparisons/round-N/report.json` 与 `compared` / `status_parity` / `status_capped` 台账事件。
-6. 若 report 存在 fail 案例且 ROUND < MAX_REWRITE_ROUNDS(=3)：`.venv-test/bin/python scripts/rewrite_prompts.py --report runs/comparisons/round-N/report.json` 应用改写策略生成 `adapted-v{ver}.md`，然后回到第 1 步——下一轮的 generate 只会为失败案例产生 pending 批单行，已达标的案例自动出局。
+5. `.venv-test/bin/python scripts/compare_parity.py --round ROUND` —— 对照参考基线做打平判定，产出 `runs/comparisons/round-N/report.json` 与 `compared` / `status_parity` / `status_capped` 台账事件（脚本由 T13 交付）。
+6. 若 report 存在 fail 案例且 ROUND < MAX_REWRITE_ROUNDS(=3)：`.venv-test/bin/python scripts/rewrite_prompts.py --report runs/comparisons/round-N/report.json` 应用改写策略生成 `adapted-v{ver}.md`（脚本由 T14 交付），然后回到第 1 步——下一轮的 generate 只会为失败案例产生 pending 批单行，已达标的案例自动出局。
 
-无人值守执行块（每轮开始前把 R 改成当前轮号，逐段原样投喂）：
+无人值守执行块（每轮开始前把 JROUND 的 `<当前轮>` 占位替换为实际轮号，逐段原样投喂；本手册所有片段统一只用这一个轮次变量）：
 
 ```bash
-R=<当前轮号>
-bash scripts/generate.sh "$R"
-.venv-test/bin/python scripts/build_judge_tasks.py --round "$R"
+JROUND="<当前轮>"
+bash scripts/generate.sh "$JROUND"
+.venv-test/bin/python scripts/build_judge_tasks.py --round "$JROUND"
 # → 执行 §2 判官派发，直到该队列无缺失 verdict → 执行 §3 抽检 → 然后才继续：
-.venv-test/bin/python scripts/collect_verdicts.py --round "$R"
-.venv-test/bin/python scripts/compare_parity.py --round "$R" || true   # (T13 提供)
+.venv-test/bin/python scripts/collect_verdicts.py --round "$JROUND"
+if [ -f scripts/compare_parity.py ]; then .venv-test/bin/python scripts/compare_parity.py --round "$JROUND"; else echo "[skip] compare_parity 尚未交付(T13)，本轮不判定"; fi
 ```
 
 第 6 步的条件分支独立成块，仅当 report 中有 fail 且未达轮次上限时执行：
 
 ```bash
-# 仅当 runs/comparisons/round-$R/report.json 含 fail 且 R < 3 时执行：
-.venv-test/bin/python scripts/rewrite_prompts.py --report "runs/comparisons/round-$R/report.json"   # (T14 提供)
-# → 回到 bash scripts/generate.sh "$((R+1))"
+# 仅当 runs/comparisons/round-$JROUND/report.json 含 fail 且 $JROUND < 3 时执行：
+.venv-test/bin/python scripts/rewrite_prompts.py --report "runs/comparisons/round-$JROUND/report.json"   # (脚本由 T14 交付)
+# → 回到 bash scripts/generate.sh "$((JROUND+1))"
 ```
 
 ## 2. 判官派发模板
 
-主代理（或定时会话里的代理）读取 `runs/judge-queue/round-N/tasks.jsonl`，每批 ≤6 个 entry，构造派发消息 = `scripts/judge-prompt.md` 全文原样粘贴 + 本批清单（逐条列出 image_path / prompt_path / verdict_path 三个绝对路径），经控制器代理的子代理工具发出。tasks.jsonl 里记录的是相对仓库根的路径，派发前必须解析成绝对路径再写进任务书——judge-prompt.md 明确要求子代理严格按任务书路径落盘。分批清单可这样生成：
+主代理（或定时会话里的代理）读取 `runs/judge-queue/round-N/tasks.jsonl`，每批 ≤6 个 entry，构造派发消息 = `scripts/judge-prompt.md` 全文原样粘贴 + 本批清单（逐条列出 image_path / prompt_path / verdict_path 三个绝对路径），经控制器代理的子代理工具发出。tasks.jsonl 里记录的是相对仓库根的路径，派发前必须解析成绝对路径再写进任务书——judge-prompt.md 明确要求子代理严格按任务书路径落盘。分批清单可这样生成（自本节起，文档内所有队列清点/抽检/收采片段统一使用轮次变量 JROUND——把 `<当前轮>` 替换为实际轮号即可原样投喂，后续各节不再重复说明）：
 
 ```bash
-R=1
-PYTHONPATH=scripts .venv-test/bin/python - <<'PY'
-import json, os
-rnd = os.environ.get("JROUND", "1")
+JROUND="<当前轮>"
+PYTHONPATH=scripts .venv-test/bin/python - "$JROUND" <<'PY'
+import json, os, sys
 root = os.path.abspath(".")
-rows = [json.loads(l) for l in open(f"runs/judge-queue/round-{rnd}/tasks.jsonl") if l.strip()]
+rows = [json.loads(l) for l in open(f"runs/judge-queue/round-{sys.argv[1]}/tasks.jsonl") if l.strip()]
 for r in rows:
     print(r["entry_id"], *(root + "/" + r[k] for k in ("image_path", "prompt_path", "verdict_path")))
 PY
@@ -62,10 +61,10 @@ PY
 子代理回复后必须核对每一个 verdict_path 已真实落盘（不信任口头确认）；缺失者用同一模板补派一次，补派仍缺失即视为该 entry 进入 §4 非法输出协议处理。核对命令：
 
 ```bash
-JROUND=1 PYTHONPATH=scripts .venv-test/bin/python - <<'PY'
-import json, pathlib, os
-rnd = os.environ["JROUND"]
-rows = [json.loads(l) for l in open(f"runs/judge-queue/round-{rnd}/tasks.jsonl") if l.strip()]
+JROUND="<当前轮>"
+PYTHONPATH=scripts .venv-test/bin/python - "$JROUND" <<'PY'
+import json, pathlib, sys
+rows = [json.loads(l) for l in open(f"runs/judge-queue/round-{sys.argv[1]}/tasks.jsonl") if l.strip()]
 missing = [r["entry_id"] for r in rows if not pathlib.Path(r["verdict_path"]).exists()]
 print("dispatch complete" if not missing else f"re-dispatch once: {missing}")
 PY
@@ -76,10 +75,11 @@ PY
 collect 之前（或之后立刻、且在 compare 之前均可，但必须在 compare 使用数据前完成裁决回写）：随机抽取 ceil(entries×0.1) 个已判 entry 作为盲样重走一次 §2 派发，第二次评审判定写成新文件放到同一队列目录的 `verdicts-resample/` 下（其余两个路径不变，样本选择与批次划分都不得让判官知道是复评）。抽取数量计算：
 
 ```bash
-PYTHONPATH=scripts .venv-test/bin/python - <<'PY'
-import json, math
+JROUND="<当前轮>"
+PYTHONPATH=scripts .venv-test/bin/python - "$JROUND" <<'PY'
+import json, math, sys
 from lib.constants import ARBITER_MEAN_DIFF, RESAMPLE_RATE   # 2.0 / 0.1
-m = json.load(open("runs/judge-queue/round-1/manifest.json"))   # round 目录按当前轮号替换
+m = json.load(open(f"runs/judge-queue/round-{sys.argv[1]}/manifest.json"))
 print("entries =", len(m), "-> resample_n =", math.ceil(len(m) * RESAMPLE_RATE))
 PY
 ```
@@ -91,7 +91,8 @@ PY
 collect 报 invalid 后，非法文件已在 `runs/judge-queue/round-N/verdicts-invalid/` 且台账已有对应 `judge_failed`（payload 含前 3 条校验错误），读出 invalid 文件定位问题。属可修复格式类（markdown fence 包裹、尾随逗号等纯语法瑕疵）时，由评审代理修正内容并重交：把修好的 JSON 写回该 entry 的正式 `verdicts/{entry_id}.json` 路径后重跑一次第 1 节第 4 步的 collect——collect 对已存在信封的 entry 会跳过（幂等），因此只会补收这批修复件。修正+重交只允许一次；第二次仍然校验失败就把该 entry 标记跳过（不再派发），并在当轮 report 中如实记入 caveat 条目，不得静默丢弃。
 
 ```bash
-ls runs/judge-queue/round-1/verdicts-invalid/ 2>/dev/null; echo "(空目录 = 本轮无非法输出)"
+JROUND="<当前轮>"
+ls "runs/judge-queue/round-$JROUND/verdicts-invalid/" 2>/dev/null; echo "(空目录 = 本轮无非法输出)"
 ```
 
 ## 5. 终止条件与发布边界
@@ -115,7 +116,7 @@ print(dups if dups else "no duplicate judged events")
 PY
 ```
 
-GPU 侧事实基准：2048² balanced 档单张约 330–355 秒；一轮 60 张全量生成约 5.3 小时——永远安排过夜时段运行，无人值守期间以 ≥90 秒间隔轮询 `runs/genlogs/` 下的日志，禁止更高频率的探询循环。
+GPU 侧事实基准：2048² balanced 档单张约 320–355 秒（口径见台账 ops 实测记录）；一轮 60 张全量生成约 5.3 小时——永远安排过夜时段运行，无人值守期间以 ≥90 秒间隔轮询 `runs/genlogs/` 下的日志，禁止更高频率的探询循环。
 
 ## 7. 金标准回归门槛
 
