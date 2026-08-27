@@ -9,9 +9,9 @@
 1. `bash scripts/generate.sh ROUND` —— 唯一 GPU 触点；内部先跑 `env-check.sh`，再按台账增量组装批单、调基础仓库 run-task 生成、对账落账本，整轮最多 3 次 attempt，无 pending 时短路退出。
 2. `.venv-test/bin/python scripts/build_judge_tasks.py --round ROUND` —— 组装本轮盲评队列到 `runs/judge-queue/round-N/`（entries/prompts/verdicts 三目录加 manifest.json 与 tasks.jsonl），参考图首轮后经 `_baseline` 缓存不再重复入队。
 3. 判官批阅 —— 按 §2 的派发模板把 tasks.jsonl 分批交给子代理，直至每个 verdict_path 都已落盘。
-4. `.venv-test/bin/python scripts/collect_verdicts.py --round ROUND` —— schema 校验 + 身份泄漏扫描，合格 verdict 加信封写入 `results/judge/{entry_id}.json`，非法文件移入 `verdicts-invalid/` 并记 `judge_failed` 台账事件。
-5. `.venv-test/bin/python scripts/compare_parity.py --round ROUND` —— 对照参考基线做打平判定，产出 `runs/comparisons/round-N/report.json` 与 `compared` / `status_parity` / `status_capped` 台账事件（脚本由 T13 交付）。
-6. 若 report 存在 fail 案例且 ROUND < MAX_REWRITE_ROUNDS(=3)：`.venv-test/bin/python scripts/rewrite_prompts.py --report runs/comparisons/round-N/report.json` 应用改写策略生成 `adapted-v{ver}.md`（脚本由 T14 交付），然后回到第 1 步——下一轮的 generate 只会为失败案例产生 pending 批单行，已达标的案例自动出局。
+4. `.venv-test/bin/python scripts/collect_verdicts.py --round ROUND` —— schema 校验 + 身份泄漏扫描，合格 verdict 加信封写入 `results/judge/{entry_id}.json`，非法文件移入 `verdicts-invalid/` 并记 `judge_failed` 台账事件（走 run_judge_api 判定的批次须按 §3 传 `--backend glm_api`）。
+5. `.venv-test/bin/python scripts/compare_parity.py --round ROUND` —— 对照参考基线做打平判定，产出 `runs/comparisons/round-N/report.json` 与 `compared` / `status_parity` 台账事件（T13 交付；`status_capped` 由第 6 步的 rewrite_prompts 封顶时落账，compare 本身不写）。每份 report 都是累计视图：上轮已判而本轮没有新决策的案例（通常是已被冻结、不再产生批单）会以 `carried_from_round` 字段结转进 per_case 并计入 milestone 分母。
+6. 若 report 存在 fail 案例且 ROUND < MAX_REWRITE_ROUNDS(=3)：`.venv-test/bin/python scripts/rewrite_prompts.py --round ROUND` 应用改写策略生成 `adapted-v{ver}.md`（T14 交付），然后回到第 1 步——下一轮的 generate 只会为失败案例产生 pending 批单行，已达标的案例自动出局。注意 rewrite_prompts 的接口只有 `--round`（int）与可选 `--ledger`，并没有 `--report` 参数：报告路径固定由轮次推导为 `runs/comparisons/round-{ROUND}/report.json`，且 `--round` 必须显式给出——缺省 None 会去读不存在的 round-None 路径直接报错；同一轮的重跑防重守卫同样靠这个显式 `--round` 生效。
 
 无人值守执行块（每轮开始前把 JROUND 的 `<当前轮>` 占位替换为实际轮号，逐段原样投喂；本手册所有片段统一只用这一个轮次变量）：
 
@@ -28,7 +28,7 @@ if [ -f scripts/compare_parity.py ]; then .venv-test/bin/python scripts/compare_
 
 ```bash
 # 仅当 runs/comparisons/round-$JROUND/report.json 含 fail 且 $JROUND < 3 时执行：
-.venv-test/bin/python scripts/rewrite_prompts.py --report "runs/comparisons/round-$JROUND/report.json"   # (脚本由 T14 交付)
+.venv-test/bin/python scripts/rewrite_prompts.py --round "$JROUND"
 # → 回到 bash scripts/generate.sh "$((JROUND+1))"
 ```
 
@@ -84,7 +84,7 @@ print("entries =", len(m), "-> resample_n =", math.ceil(len(m) * RESAMPLE_RATE))
 PY
 ```
 
-比对两次 verdict 的五维分逐维求均差；任一维度差值 > `ARBITER_MEAN_DIFF`（=2.0，取自 `scripts/lib/constants.py`，勿手抄数字）就追加第三次仲裁评审，然后三个结果逐维取中位数作为最终分数，以编辑文件的方式直接修正正式 verdict（保持 JSON 结构与文件路径不变），并在台账追加一条注释事件说明校正原因与本组三份原始分。这一仲裁步骤无脚本承载，属代理手工操作；三次评分的分歧本身记入 `judge_failed` 类注释事件（idem 用 `{entry_id}#resample-arbiter` 形式，避免与 collect 的同名键去重冲突）。resample 文件永不进入 `results/judge/` 正式集合。
+比对两次 verdict 的五维分逐维求均差；任一维度差值 > `ARBITER_MEAN_DIFF`（=2.0，取自 `scripts/lib/constants.py`，勿手抄数字）就追加第三次仲裁评审，然后三个结果逐维取中位数作为最终分数，以编辑文件的方式直接修正正式 verdict（保持 JSON 结构与文件路径不变），并在台账追加一条注释事件说明校正原因与本组三份原始分。这一仲裁步骤无脚本承载，属代理手工操作；三次评分的分歧本身记入 `judge_failed` 类注释事件（idem 用 `{entry_id}#resample-arbiter` 形式，避免与 collect 的同名键去重冲突）。resample 文件永不进入 `results/judge/` 正式集合。走 run_judge_api 判定的批次收采时必须传 `--backend glm_api`：`.venv-test/bin/python scripts/collect_verdicts.py --round "$JROUND" --backend glm_api`（或事先导出 `JUDGE_BACKEND=glm_api`；缺省记 agent），否则信封会把云端判定误标成代理判官，污染后续审计。
 
 ## 4. 非法输出协议
 
@@ -97,7 +97,7 @@ ls "runs/judge-queue/round-$JROUND/verdicts-invalid/" 2>/dev/null; echo "(空目
 
 ## 5. 终止条件与发布边界
 
-整个循环的终止条件二选一：(a) 最新 report 中没有任何 fail 案例；(b) 所有未达标案例都已达到 MAX_REWRITE_ROUNDS=3 轮上限（上限值同样从 `scripts/lib/constants.py` 读取）。达标部分进入 PUBLISH：由 Task 16 的渲染脚本 `scripts/render_gallery.py` (T16 提供) 把获胜图复制进画廊、替换 README 占位符、生成双语结论表与 CHANGELOG 发行小节；跑满上限仍未达标的案例保留最佳版本，结论表如实标注 gap——诚实报告优先于好看的数据。渲染脚本永远不会触碰远端：发布收口的最后一步 `git push` 是纯人类动作，任何会话、任何定时器、任何"顺手"都不得执行。
+整个循环的终止条件二选一：(a) 最新 report 中没有任何 fail 案例，**且**最新 report 的 milestone.total > 0（即 per_case 非空——首轮尚未产出任何判定、或整体全 deferred 的轮次不构成可发布终止态，不允许拿空报告收口发布）；(b) 所有未达标案例都已达到 MAX_REWRITE_ROUNDS=3 轮上限（上限值同样从 `scripts/lib/constants.py` 读取）。达标部分进入 PUBLISH：由 Task 16 的渲染脚本 `scripts/render_gallery.py` (T16 提供) 把获胜图复制进画廊、替换 README 占位符、生成双语结论表与 CHANGELOG 发行小节；跑满上限仍未达标的案例保留最佳版本，结论表如实标注 gap——诚实报告优先于好看的数据。渲染脚本永远不会触碰远端：发布收口的最后一步 `git push` 是纯人类动作，任何会话、任何定时器、任何"顺手"都不得执行。
 
 ## 6. 成本护栏与 GPU 节奏
 
@@ -140,7 +140,8 @@ test -f /workspace/SenseNova-U1.5-ROCm/examples/posters-2026-08.jsonl && test -f
 | ref_fetched | commit 前 12 位 hex | 锁定上游 commit |
 | judged / judge_failed | entry_id | 采集与一致性抽检共用前缀约束见 §3 |
 | rewritten | rw-{case}-{ver} | T14 提供的事件面 |
-| compared / status_parity / status_capped | cmp-{R}-{case} | T13 提供的事件面 |
+| compared / status_parity | cmp-{R}-{case} | 唯一写入方是 compare_parity.py（T13 事件面） |
+| status_capped | cap-{case} | 唯一写入方是 rewrite_prompts.py 的封顶路径（达 MAX_REWRITE_ROUNDS 后再遇 fail 时追加，幂等去重保证只记一条） |
 
 ## 附录 B. 锁文件演练安全规则
 
