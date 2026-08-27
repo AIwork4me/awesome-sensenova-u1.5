@@ -1,17 +1,10 @@
-from schemas import SCORE_KEYS, extract_json, model_identity_leak, validate_verdict
+import json
 
-GOOD = {
-    "scores": {k: 8 for k in SCORE_KEYS},
-    "score_reasons": {k: "ok" for k in SCORE_KEYS},
-    "unfulfilled_requirements": [],
-    "transcribed_text": ["TITLE"],
-    "hard_flags": {
-        "display_text_correct": True,
-        "small_text_quality": "correct",
-        "text_miss_count": 0,
-        "visual_defects": False,
-    },
-}
+from fixtures import GOOD_VERDICT
+from schemas import extract_json, model_identity_leak, validate_verdict
+
+# Deep-copied so suite mutations never touch the shared fixture instance.
+GOOD = json.loads(json.dumps(GOOD_VERDICT))
 
 
 def test_good_passes():
@@ -32,6 +25,12 @@ def test_identity_leak_scan():
     leaky = {**GOOD, "score_reasons": {**GOOD["score_reasons"], "quality": "typical gpt-image output"}}
     assert model_identity_leak(leaky)
     assert model_identity_leak(GOOD) == []
+
+
+def test_unhashable_small_text_quality_returns_error():
+    bad = {**GOOD, "hard_flags": {**GOOD["hard_flags"], "small_text_quality": []}}
+    errs = validate_verdict(bad)
+    assert any("small_text_quality" in e for e in errs)
 
 
 def test_extract_json_from_fenced():

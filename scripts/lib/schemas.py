@@ -28,7 +28,8 @@ def validate_verdict(v):
         return errs
     if not isinstance(hf.get("display_text_correct"), bool):
         errs.append("hard_flags.display_text_correct: must be bool")
-    if hf.get("small_text_quality") not in _SMALL_TEXT:
+    stq = hf.get("small_text_quality")
+    if not isinstance(stq, str) or stq not in _SMALL_TEXT:
         errs.append("hard_flags.small_text_quality: enum correct|mildly_deformed|garbled")
     miss = hf.get("text_miss_count")
     if not isinstance(miss, int) or isinstance(miss, bool) or miss < 0:
