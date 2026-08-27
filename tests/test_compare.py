@@ -139,3 +139,42 @@ def test_main_partial_round_defers_and_exempts_via_provenance(tmp_path, monkeypa
     assert m["parity_ratio"] == 1.0
     idems = {json.loads(l)["idem"] for l in Path("ledger/append.jsonl").read_text().splitlines()}
     assert idems == {"cmp-1-11", "cmp-1-33"}             # no events for deferred case
+
+
+def test_round2_report_carries_frozen_rows_idempotent(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    _lock(tmp_path, [11, 22])
+    flags = GOOD_VERDICT["hard_flags"]
+    # Round 1: case 11 decided (win); case 22 deferred (baseline present,
+    # candidate never judged).
+    _layout(tmp_path,
+            _env("e-b11", "reference", 11, None, 8, flags),
+            _env("e-c11", "sensenova", 11, 1, 9, flags, seed="111"))
+    (tmp_path / "results/judge/_baseline/22.json").write_text(
+        json.dumps(_env("e-b22", "reference", 22, None, 8, flags)))
+    assert cp.main(["--round", "1"]) == 0
+    rep1 = json.loads((tmp_path / "runs/comparisons/round-1/report.json").read_text())
+    assert [r["case_id"] for r in rep1["per_case"]] == [11] and rep1["deferred"] == [22]
+    # Round 2: only case 22 is decided; frozen case 11 generates nothing and
+    # must reappear via carried_from_round so the report stays cumulative.
+    (tmp_path / "results/judge/e-c22r2.json").write_text(
+        json.dumps(_env("e-c22r2", "sensenova", 22, 2, 8, flags)))
+    assert cp.main(["--round", "2"]) == 0
+    rep2 = json.loads((tmp_path / "runs/comparisons/round-2/report.json").read_text())
+    by_id = {r["case_id"]: r for r in rep2["per_case"]}
+    assert set(by_id) == {11, 22}
+    assert by_id[11]["carried_from_round"] == 1          # frozen row stays visible
+    assert by_id[11]["status"] == "win"
+    assert "carried_from_round" not in by_id[22]         # fresh rows stay fresh
+    assert by_id[22]["status"] == "parity"
+    m = rep2["milestone"]
+    assert m["total"] == 2 and (m["win_count"], m["parity_count"]) == (1, 1)
+    assert m["parity_ratio"] == 1.0                      # carried counts like fresh
+    assert rep2["deferred"] == []
+    # Idempotent rerun of round 2: no duplicate carried rows, no new ledger events.
+    n_events = len(Path("ledger/append.jsonl").read_text().splitlines())
+    assert cp.main(["--round", "2"]) == 0
+    rep2b = json.loads((tmp_path / "runs/comparisons/round-2/report.json").read_text())
+    assert len(rep2b["per_case"]) == 2
+    assert sum(1 for r in rep2b["per_case"] if r.get("carried_from_round") == 1) == 1
+    assert len(Path("ledger/append.jsonl").read_text().splitlines()) == n_events

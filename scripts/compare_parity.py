@@ -11,6 +11,13 @@ Partial rounds are expected: a case whose baseline reference has not been
 judged yet (or that has no candidate verdict this round) is reported as
 "deferred" instead of crashing, is excluded from the milestone denominator,
 and gets no ledger event.
+
+Cumulative reports: when building round R's report, every case decided in an
+earlier round but absent from this round's decisions (typically because it is
+frozen and no longer generates) is pre-seeded into per_case with its previous
+row plus `carried_from_round`, so the latest report stays a complete cumulative
+view for render_gallery/PUBLISH. Milestone counts treat carried rows the same
+as fresh ones — they were decided.
 """
 import argparse
 import json
@@ -105,6 +112,40 @@ def generated_files(ledger_path) -> dict:
             for ev in load_events(ledger_path) if ev.get("type") == "generated"}
 
 
+def latest_prior_report(root: Path, rnd: int):
+    """(round, report dict) of the highest-r < rnd comparison report, or (None, None)."""
+    comps = root / "runs/comparisons"
+    if not comps.is_dir():
+        return None, None
+    best = None
+    for d in comps.glob("round-*"):
+        try:
+            r = int(d.name.split("-", 1)[1])
+        except ValueError:
+            continue
+        if 0 <= r < rnd and (d / "report.json").exists() and (best is None or r > best):
+            best = r
+    if best is None:
+        return None, None
+    rep = _load_json(comps / f"round-{best}" / "report.json")
+    if not isinstance(rep, dict):
+        return None, None
+    return best, rep
+
+
+def carried_rows(prior_report: dict, from_round: int, decided_ids: set) -> list:
+    """Prior per_case rows for cases with no decision this round, tagged
+    carried_from_round; already-decided cases are never duplicated."""
+    out = []
+    for row in prior_report.get("per_case", []):
+        if row.get("case_id") in decided_ids:
+            continue
+        crow = dict(row)
+        crow["carried_from_round"] = from_round
+        out.append(crow)
+    return out
+
+
 def _print_table(report):
     print(f"[compare] round={report['round']} decided={len(report['per_case'])} "
           f"deferred={len(report['deferred'])}")
@@ -156,6 +197,21 @@ def main(argv=None) -> int:
         if row["status"] in ("parity", "win"):
             append_event(root / a.ledger, "status_parity",
                          {"case_id": cid, "round": a.round, "status": row["status"]}, idem=idem)
+
+    # Cumulative view: pre-seed decided-in-an-earlier-round cases that produced
+    # no decision this round so the newest report stays complete for PUBLISH.
+    carry_round, prior = latest_prior_report(root, a.round)
+    if prior:
+        decided = {row["case_id"] for row in per_case}
+        carried = carried_rows(prior, carry_round, decided)
+        for crow in carried:
+            print(f"[compare] carried case={crow['case_id']} from_round={carry_round}")
+            per_case.append(crow)
+        # A carried case is no longer "undecided": render_gallery lists every
+        # deferred id on a "not listed above" note line, so keep both views
+        # consistent by dropping carried ids from the deferred list.
+        carried_ids = {crow["case_id"] for crow in carried}
+        deferred = [cid for cid in deferred if cid not in carried_ids]
 
     wins = sum(1 for r in per_case if r["status"] == "win")
     pars = sum(1 for r in per_case if r["status"] == "parity")
