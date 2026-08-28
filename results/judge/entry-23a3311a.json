@@ -1,0 +1,41 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-23a3311a",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 208,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "高清日系渲染，线稿清晰与厚涂光影层次结合自然，皮肤、发丝、织物细节丰富；双手背在身后规避了手部崩坏，四肢与身体比例正确；画面左缘有一组半透明水印状伪字符（乱码装饰），属轻微画面杂质。",
+   "aesthetics": "樱花粉主色调统一明快，前景飘瓣-人物-远景校舍的 16:9 横构图层次分明，逆光通透、景深虚化高级；微笑带羞的表情自然，情绪传达准确。",
+   "alignment": "双马尾樱粉发梢带紫渐变、紫色大眼、JK 白衬衫、深蓝百褶裙、红色领结、白色过膝袜、棕色皮鞋、头上粉蝴蝶结、樱花树下落瓣、远景教学楼、前倾站姿双手背后、16:9 画幅全部符合；仅格纹裙的格纹不明显（近纯色）与瞳孔星星高光不可辨两处细节弱化。",
+   "real_world_fidelity": "JK 制服体系（衬衫、领结、百褶裙、过膝袜、乐福鞋）、校舍与樱花场景符合日本校园常识，无文化性错误，公平合规。",
+   "creative_generation": "壁纸级完成度，光影与色彩控制成熟，但属常见校园樱花题材与居中人物构图，创意中规中矩。"
+  },
+  "unfulfilled_requirements": [
+   "深蓝色格子裙呈近纯色深蓝，格纹图案不明显",
+   "紫色瞳孔中的星星高光不清晰，仅见常规圆形高光"
+  ],
+  "transcribed_text": [
+   "画面内无可读内容文字",
+   "左缘纵向水印状伪字符：GARBLED，约8个不可辨认字符（装饰性水印痕迹）",
+   "胸前校徽为微缩图案，无法辨认（非文字）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

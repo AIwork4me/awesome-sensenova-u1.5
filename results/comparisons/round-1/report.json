@@ -1,0 +1,600 @@
+{
+ "round": 1,
+ "per_case": [
+  {
+   "candidate_mean": 7.4,
+   "reference_mean": 9.0,
+   "gap": -1.6,
+   "checks": {
+    "a_score_gap": false,
+    "b_display_text": true,
+    "c_small_text": false,
+    "d_miss_zero": false,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance",
+    "c_small_text: garbled small text",
+    "d_miss_zero: text missing elements"
+   ],
+   "case_id": 1,
+   "winner_entry_id": "entry-82a71d8d",
+   "winner_seed": "1169129995",
+   "winner_file": "runs/genimages/round-1/0001_case1-r1-s1169129995_1664x2496.png"
+  },
+  {
+   "candidate_mean": 7.6,
+   "reference_mean": 8.8,
+   "gap": -1.2,
+   "checks": {
+    "a_score_gap": false,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance"
+   ],
+   "case_id": 2,
+   "winner_entry_id": "entry-72bb5dad",
+   "winner_seed": "22012691",
+   "winner_file": "runs/genimages/round-1/0004_case2-r1-s22012691_2048x2048.png"
+  },
+  {
+   "candidate_mean": 7.4,
+   "reference_mean": 8.6,
+   "gap": -1.2,
+   "checks": {
+    "a_score_gap": false,
+    "b_display_text": false,
+    "c_small_text": false,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance",
+    "b_display_text: display text incorrect",
+    "c_small_text: garbled small text"
+   ],
+   "case_id": 3,
+   "winner_entry_id": "entry-66e6b76b",
+   "winner_seed": "1800648846",
+   "winner_file": "runs/genimages/round-1/0005_case3-r1-s1800648846_2048x2048.png"
+  },
+  {
+   "candidate_mean": 7.6,
+   "reference_mean": 8.0,
+   "gap": -0.4,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": false,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "c_small_text: garbled small text"
+   ],
+   "case_id": 4,
+   "winner_entry_id": "entry-20ec4e47",
+   "winner_seed": "1749694076",
+   "winner_file": "runs/genimages/round-1/0008_case4-r1-s1749694076_2048x2048.png"
+  },
+  {
+   "candidate_mean": 9.0,
+   "reference_mean": 9.6,
+   "gap": -0.6,
+   "checks": {
+    "a_score_gap": false,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance"
+   ],
+   "case_id": 5,
+   "winner_entry_id": "entry-8b4a3534",
+   "winner_seed": "960477020",
+   "winner_file": "runs/genimages/round-1/0010_case5-r1-s960477020_2048x2048.png"
+  },
+  {
+   "candidate_mean": 8.8,
+   "reference_mean": 8.6,
+   "gap": 0.2,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "win",
+   "failed_checks": [],
+   "case_id": 6,
+   "winner_entry_id": "entry-ae2a62cc",
+   "winner_seed": "1402873242",
+   "winner_file": "runs/genimages/round-1/0011_case6-r1-s1402873242_2048x2048.png"
+  },
+  {
+   "candidate_mean": 7.0,
+   "reference_mean": 9.0,
+   "gap": -2.0,
+   "checks": {
+    "a_score_gap": false,
+    "b_display_text": false,
+    "c_small_text": false,
+    "d_miss_zero": false,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance",
+    "b_display_text: display text incorrect",
+    "c_small_text: garbled small text",
+    "d_miss_zero: text missing elements"
+   ],
+   "case_id": 7,
+   "winner_entry_id": "entry-484bab25",
+   "winner_seed": "1047425705",
+   "winner_file": "runs/genimages/round-1/0014_case7-r1-s1047425705_2048x2048.png"
+  },
+  {
+   "candidate_mean": 6.6,
+   "reference_mean": 9.2,
+   "gap": -2.6,
+   "checks": {
+    "a_score_gap": false,
+    "b_display_text": false,
+    "c_small_text": false,
+    "d_miss_zero": false,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance",
+    "b_display_text: display text incorrect",
+    "c_small_text: garbled small text",
+    "d_miss_zero: text missing elements"
+   ],
+   "case_id": 8,
+   "winner_entry_id": "entry-78736215",
+   "winner_seed": "1624950392",
+   "winner_file": "runs/genimages/round-1/0015_case8-r1-s1624950392_2048x2048.png"
+  },
+  {
+   "candidate_mean": 7.4,
+   "reference_mean": 7.8,
+   "gap": -0.4,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": false,
+    "c_small_text": true,
+    "d_miss_zero": false,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "b_display_text: display text incorrect",
+    "d_miss_zero: text missing elements"
+   ],
+   "case_id": 9,
+   "winner_entry_id": "entry-dfaf7cd4",
+   "winner_seed": "893015056",
+   "winner_file": "runs/genimages/round-1/0018_case9-r1-s893015056_2048x2048.png"
+  },
+  {
+   "candidate_mean": 8.8,
+   "reference_mean": 8.4,
+   "gap": 0.4,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "win",
+   "failed_checks": [],
+   "case_id": 10,
+   "winner_entry_id": "entry-a3ab55d5",
+   "winner_seed": "2036245119",
+   "winner_file": "runs/genimages/round-1/0020_case10-r1-s2036245119_2048x2048.png"
+  },
+  {
+   "candidate_mean": 8.8,
+   "reference_mean": 9.4,
+   "gap": -0.6,
+   "checks": {
+    "a_score_gap": false,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": false,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance",
+    "d_miss_zero: text missing elements"
+   ],
+   "case_id": 11,
+   "winner_entry_id": "entry-cf4c011c",
+   "winner_seed": "1284180838",
+   "winner_file": "runs/genimages/round-1/0021_case11-r1-s1284180838_2048x2048.png"
+  },
+  {
+   "candidate_mean": 6.0,
+   "reference_mean": 8.4,
+   "gap": -2.4,
+   "checks": {
+    "a_score_gap": false,
+    "b_display_text": true,
+    "c_small_text": false,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance",
+    "c_small_text: garbled small text"
+   ],
+   "case_id": 13,
+   "winner_entry_id": "entry-79833bf4",
+   "winner_seed": "1240501913",
+   "winner_file": "runs/genimages/round-1/0024_case13-r1-s1240501913_2048x2048.png"
+  },
+  {
+   "candidate_mean": 8.8,
+   "reference_mean": 9.0,
+   "gap": -0.2,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": false,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "d_miss_zero: text missing elements"
+   ],
+   "case_id": 14,
+   "winner_entry_id": "entry-c8568093",
+   "winner_seed": "153023315",
+   "winner_file": "runs/genimages/round-1/0026_case14-r1-s153023315_2048x2048.png"
+  },
+  {
+   "candidate_mean": 9.2,
+   "reference_mean": 9.0,
+   "gap": 0.2,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "win",
+   "failed_checks": [],
+   "case_id": 15,
+   "winner_entry_id": "entry-d5881126",
+   "winner_seed": "595220695",
+   "winner_file": "runs/genimages/round-1/0028_case15-r1-s595220695_2048x2048.png"
+  },
+  {
+   "candidate_mean": 9.0,
+   "reference_mean": 8.8,
+   "gap": 0.2,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "win",
+   "failed_checks": [],
+   "case_id": 16,
+   "winner_entry_id": "entry-f79234f6",
+   "winner_seed": "1241735233",
+   "winner_file": "runs/genimages/round-1/0030_case16-r1-s1241735233_2048x2048.png"
+  },
+  {
+   "candidate_mean": 8.8,
+   "reference_mean": 9.2,
+   "gap": -0.4,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": false,
+    "c_small_text": true,
+    "d_miss_zero": false,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "b_display_text: display text incorrect",
+    "d_miss_zero: text missing elements"
+   ],
+   "case_id": 17,
+   "winner_entry_id": "entry-362b02e2",
+   "winner_seed": "2141560272",
+   "winner_file": "runs/genimages/round-1/0031_case17-r1-s2141560272_1664x2496.png"
+  },
+  {
+   "candidate_mean": 9.2,
+   "reference_mean": 8.6,
+   "gap": 0.6,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "win",
+   "failed_checks": [],
+   "case_id": 22,
+   "winner_entry_id": "entry-52152ae0",
+   "winner_seed": "1620506884",
+   "winner_file": "runs/genimages/round-1/0033_case22-r1-s1620506884_2048x2048.png"
+  },
+  {
+   "candidate_mean": 7.4,
+   "reference_mean": 9.0,
+   "gap": -1.6,
+   "checks": {
+    "a_score_gap": false,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance"
+   ],
+   "case_id": 25,
+   "winner_entry_id": "entry-b894c251",
+   "winner_seed": "1886652843",
+   "winner_file": "runs/genimages/round-1/0035_case25-r1-s1886652843_2048x2048.png"
+  },
+  {
+   "candidate_mean": 8.8,
+   "reference_mean": 8.8,
+   "gap": 0.0,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "parity",
+   "failed_checks": [],
+   "case_id": 26,
+   "winner_entry_id": "entry-194ccd5b",
+   "winner_seed": "765700029",
+   "winner_file": "runs/genimages/round-1/0037_case26-r1-s765700029_2048x2048.png"
+  },
+  {
+   "candidate_mean": 8.6,
+   "reference_mean": 8.8,
+   "gap": -0.2,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "parity",
+   "failed_checks": [],
+   "case_id": 28,
+   "winner_entry_id": "entry-906ed6ea",
+   "winner_seed": "896924953",
+   "winner_file": "runs/genimages/round-1/0039_case28-r1-s896924953_1664x2496.png"
+  },
+  {
+   "candidate_mean": 9.0,
+   "reference_mean": 9.2,
+   "gap": -0.2,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "parity",
+   "failed_checks": [],
+   "case_id": 30,
+   "winner_entry_id": "entry-2b11ae48",
+   "winner_seed": "1519636871",
+   "winner_file": "runs/genimages/round-1/0041_case30-r1-s1519636871_2048x2048.png"
+  },
+  {
+   "candidate_mean": 8.8,
+   "reference_mean": 8.8,
+   "gap": 0.0,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "parity",
+   "failed_checks": [],
+   "case_id": 31,
+   "winner_entry_id": "entry-47e415c3",
+   "winner_seed": "1662821900",
+   "winner_file": "runs/genimages/round-1/0043_case31-r1-s1662821900_1664x2496.png"
+  },
+  {
+   "candidate_mean": 9.2,
+   "reference_mean": 9.0,
+   "gap": 0.2,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "win",
+   "failed_checks": [],
+   "case_id": 33,
+   "winner_entry_id": "entry-b63b07d6",
+   "winner_seed": "728616493",
+   "winner_file": "runs/genimages/round-1/0045_case33-r1-s728616493_2048x2048.png"
+  },
+  {
+   "candidate_mean": 9.4,
+   "reference_mean": 8.8,
+   "gap": 0.6,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "win",
+   "failed_checks": [],
+   "case_id": 35,
+   "winner_entry_id": "entry-14043798",
+   "winner_seed": "581949131",
+   "winner_file": "runs/genimages/round-1/0048_case35-r1-s581949131_1664x2496.png"
+  },
+  {
+   "candidate_mean": 8.0,
+   "reference_mean": 5.4,
+   "gap": 2.6,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "win",
+   "failed_checks": [],
+   "case_id": 78,
+   "winner_entry_id": "entry-6ad14abf",
+   "winner_seed": "1840940388",
+   "winner_file": "runs/genimages/round-1/0049_case78-r1-s1840940388_2048x2048.png"
+  },
+  {
+   "candidate_mean": 8.6,
+   "reference_mean": 8.6,
+   "gap": 0.0,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": false,
+    "d_miss_zero": false,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "c_small_text: garbled small text",
+    "d_miss_zero: text missing elements"
+   ],
+   "case_id": 130,
+   "winner_entry_id": "entry-61d82351",
+   "winner_seed": "526527313",
+   "winner_file": "runs/genimages/round-1/0051_case130-r1-s526527313_1664x2496.png"
+  },
+  {
+   "candidate_mean": 6.2,
+   "reference_mean": 9.2,
+   "gap": -3.0,
+   "checks": {
+    "a_score_gap": false,
+    "b_display_text": true,
+    "c_small_text": false,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "fail",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance",
+    "c_small_text: garbled small text"
+   ],
+   "case_id": 167,
+   "winner_entry_id": "entry-0d46d227",
+   "winner_seed": "405240617",
+   "winner_file": "runs/genimages/round-1/0053_case167-r1-s405240617_2048x2048.png"
+  },
+  {
+   "candidate_mean": 9.2,
+   "reference_mean": 9.2,
+   "gap": 0.0,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "parity",
+   "failed_checks": [],
+   "case_id": 174,
+   "winner_entry_id": "entry-1174f616",
+   "winner_seed": "720697912",
+   "winner_file": "runs/genimages/round-1/0056_case174-r1-s720697912_1664x2496.png"
+  },
+  {
+   "candidate_mean": 9.0,
+   "reference_mean": 8.8,
+   "gap": 0.2,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "win",
+   "failed_checks": [],
+   "case_id": 182,
+   "winner_entry_id": "entry-63132bd8",
+   "winner_seed": "802059477",
+   "winner_file": "runs/genimages/round-1/0058_case182-r1-s802059477_2048x2048.png"
+  },
+  {
+   "candidate_mean": 8.4,
+   "reference_mean": 8.8,
+   "gap": -0.4,
+   "checks": {
+    "a_score_gap": true,
+    "b_display_text": true,
+    "c_small_text": true,
+    "d_miss_zero": true,
+    "e_no_visual_defects": true
+   },
+   "status": "parity",
+   "failed_checks": [],
+   "case_id": 208,
+   "winner_entry_id": "entry-2cf04e84",
+   "winner_seed": "1721098344",
+   "winner_file": "runs/genimages/round-1/0002_case208-r1-s1721098344_2048x2048.png"
+  }
+ ],
+ "deferred": [],
+ "milestone": {
+  "parity_count": 6,
+  "win_count": 9,
+  "target": 24,
+  "total": 30,
+  "parity_ratio": 0.5,
+  "overall_gap": -0.46
+ }
+}

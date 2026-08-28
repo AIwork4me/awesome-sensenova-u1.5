@@ -1,0 +1,38 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-6b1125cc",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 78,
+ "round": 1,
+ "seed": "909458360",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 7,
+   "alignment": 7,
+   "real_world_fidelity": 7,
+   "creative_generation": 6
+  },
+  "score_reasons": {
+   "quality": "白线草图在纯黑底上干净利落，球关节结构清楚，但整体偏'精致涂装'而非要求的rough草稿感，手脚线条含糊，骨盆处绿色光晕形似发光内裤、装饰性大于分析性。",
+   "aesthetics": "黑底白线绿光的对比强烈、剪影可读性高，但构图仅为居中站立的单人像，缺少标注层带来的分析表版式张力。",
+   "alignment": "达成核心转换：简单人偶头无五官、白色轮廓线与内部结构线、纯黑背景无道具、绿色光标示受光区（头顶、胸面、骨盆缘、脚底反弹光）且有强度变化；但提示词建议的光源标签+箭头（Main Light等）完全缺席，颈部、大腿面、膝盖接触点未见绿色覆盖，绿色分布部分偏离'光照分析'目的。",
+   "real_world_fidelity": "光推断自洽（头顶/胸前主光+地面反弹的想象合理），人偶比例成立；但原始输入图不可见，姿态与机位的锚定忠实度无从核对，只能按图内合理性评分。",
+   "creative_generation": "作为'姿态与光分析表'信息设计过于单薄：无任何标注、无强度图例，仅是一张发光人偶图，分析与叙事层次不足。"
+  },
+  "unfulfilled_requirements": [
+   "未标注光源标签与箭头（Main Light/Rim Light等，虽为'仅在适当时'的可选项，但作为分析表其缺席削弱任务完成度）",
+   "颈部、大腿面、膝盖接触点未按清单覆盖绿色受光示意",
+   "线条完成度偏插图感，与'rough/未完成'要求有出入"
+  ],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

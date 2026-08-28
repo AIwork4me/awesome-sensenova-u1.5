@@ -1,0 +1,41 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-9968f5a5",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 182,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "真实剧照般的摄影质感，制服布料、木质课桌、文具细节可信，人物表情生动；背景人物手臂与手指小范围略含糊，画面整体偏软（符合年代录像质感），未见肢体崩坏等结构性畸变。",
+   "aesthetics": "教室群像反应式构图，喜剧张力集中在鼻梁架笔的男生身上，四名同学的视线形成引导，2000年代日剧的色调与镜头语言还原准确，人物解剖与表情自然。",
+   "alignment": "完全呈现面向中学生的2000年代日剧喜剧场景：教室、校服、集体夸张反应的喜剧桥段均到位，年代氛围与目标受众契合，无未达标项。",
+   "real_world_fidelity": "『整理 整頓』『今月の目標』等日本教室常见标语正确，目标清单内容大体可读，制服与教室陈设符合日本校园现实，文化细节可信。",
+   "creative_generation": "用『笔架人中』的小动作制造喜剧焦点，群像反应放大笑点，前后景层次与视线引导成熟，叙事一目了然。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "整理 整頓（墙上标语，正确）",
+   "今月の目標（粉色告示标题，正确）",
+   "・時間を守る ・人の話を聞く ・教室をきれいに（清单前三条，基本正确）",
+   "清单第四条起 GARBLED（约5-10字符疑似变形）",
+   "黑板粉笔手写字 GARBLED（约10-15字符）",
+   "针织背心胸口小字（约1-2字，模糊难辨）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

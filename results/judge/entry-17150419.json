@@ -1,0 +1,53 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-17150419",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 4,
+ "round": 2,
+ "seed": "908752495",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 7,
+   "alignment": 8,
+   "real_world_fidelity": 4,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "人物 likeness 渲染到位，面部光影自然，辣椒酱瓶体质感与内容物细节可信；但瓶身侧面小字、底部横幅、左上平台logo等大量文字乱码，握瓶手指略僵硬。",
+   "aesthetics": "直播画面构图完整，蓝色科技背景与红色领带、黄色大字形成高饱和撞色，弹幕叠层营造真实直播氛围，视觉冲击力强。",
+   "alignment": "核心要素全部命中：政治人物形象、直播带货场景、手持「老干妈风味」新品（瓶身老干妈+风味逐字正确）、SpaceX风格火箭与HUD科技背景、左下弹幕「特斯拉车主：求上链接」逐字正确且出现两次；扣分点：背景大字误拼为SPACX、平台logo乱码、底部横幅与关注按钮等额外文字乱码。",
+   "real_world_fidelity": "老干妈瓶型与红黄标签风格可识别，直播UI形似真实产品；但拼错的SPACX与乱码UI经不起现实核对，且以逼真手法虚构真实政治人物为商品带货，存在深度伪造与误导性背书的合规与公平性隐患。",
+   "creative_generation": "政治人物×中文直播带货×辣椒酱×航天背景的多元素混搭执行完整，弹幕、点赞、观众数等平台元素融合无缝，梗图信息层级清晰，戏谑效果到位。"
+  },
+  "unfulfilled_requirements": [
+   "背景品牌大字为SPACX而非SPACEX拼写",
+   "左上平台标识未正确显示抖音字样（乱码）",
+   "底部横幅特題跗塑：14日/2月7日与关注按钮文字乱码",
+   "老干妈瓶身侧面小字乱码",
+   "画面附加横幅文字超出排版约束允许的标题/日期范围"
+  ],
+  "transcribed_text": [
+   "老干妈（瓶身正面，逐字正确）",
+   "风味（瓶身正面，逐字正确）",
+   "老干妈风味（底部黄色大字，逐字正确）",
+   "特斯拉车主：求上链接（弹幕两条，均逐字正确）",
+   "SPACX（背景大字，拼写错误，应为SPACEX）",
+   "1.3（观众数胶囊，正确）",
+   "抖音logo处：GARBLED伪字符，约5字符",
+   "老尧积冻普（弹幕，GARBLED）",
+   "钱币奶·…（弹幕，GARBLED）",
+   "特題跗塑：14日/2月7日（横幅，前四字GARBLED，数字部分可读）",
+   "关绾（按钮，GARBLED，约2字符）",
+   "SPACX下方小字与瓶身侧面小字：GARBLED，约30字符"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 1,
+   "visual_defects": false
+  }
+ }
+}

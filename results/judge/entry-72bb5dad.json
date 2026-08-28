@@ -1,0 +1,51 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-72bb5dad",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:33:10Z",
+ "source": "sensenova",
+ "case_id": 2,
+ "round": 1,
+ "seed": "22012691",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 8,
+   "alignment": 6,
+   "real_world_fidelity": 8,
+   "creative_generation": 7
+  },
+  "score_reasons": {
+   "quality": "Very clean UI mock with crisp, artifact-free text rendering including dense Chinese characters; the embedded poster has a subtle hacker-style dark texture with faint terminal-like glyphs and a light streak. No rendering defects visible.",
+   "aesthetics": "Well-organized hierarchy: header, body copy, poster, and stat bar are cleanly separated with consistent spacing and typography; the dark poster contrasts nicely against the light card. Slightly plain and punctuation spacing is a bit loose.",
+   "alignment": "Body copy (all 6 lines), poster headline 'Ailln AI', subtitle, and all five stats with exact figures are present and correct, and the canvas is a 3:4 post-only crop. However the explicitly required dark mode is missing (the whole screenshot is light mode), the '收藏 34K' icon is shown as an unlit outline despite the requirement that it be lit (点赞 is correctly lit blue), and the avatar is the X logo rather than an OpenAI avatar.",
+   "real_world_fidelity": "Convincing X post anatomy (handle, blue verification badge, overflow menu, action bar with localized Chinese labels 评论/转发/点赞/收藏/浏览); @OpenAI with blue check matches reality. Minor unrealistic touches: display name duplicates the @handle, and Chinese localized stat labels arranged in a single flat row is slightly simplified versus the real app.",
+   "creative_generation": "Competent, faithful information design and a reasonably stylish promo poster, but composition is conventional with little imaginative flair beyond the brief."
+  },
+  "unfulfilled_requirements": [
+   "Dark mode not applied — screenshot rendered in light/white mode",
+   "收藏 34K icon not lit/highlighted as required (only 点赞 is lit)"
+  ],
+  "transcribed_text": [
+   "@OpenAI",
+   "@OpenAI",
+   "今天想推荐一位很棒的 AI Builder：Ailln AI。",
+   "他持续在小红书分享 AI 工具、Agent 工作流、自动化实践和真实项目经验，把复杂的 AI 能力讲得清楚、实用、可落地。",
+   "如果你正在关注 AI 产品、效率工具、个人自动化、内容创作 和未来工作方式，Ailln AI 是一个非常值得关注的创作者。",
+   "在小红书搜索：Ailln AI",
+   "Ailln AI",
+   "A brilliant AI Builder worth following",
+   "评论 8.9K",
+   "转发 42K",
+   "点赞 298K",
+   "收藏 34K",
+   "浏览 32.4M"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

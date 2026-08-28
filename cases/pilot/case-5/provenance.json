@@ -1,16 +1,39 @@
 {
-  "case_id": 5,
-  "title": "主题海报版式设计",
-  "category": "Posters & Typography",
-  "source_url": "",
-  "upstream_image": "/images/case5.jpg",
-  "styles": [
-    "Poster",
-    "Illustration",
-    "Brand"
-  ],
-  "scenes": [
-    "Story"
-  ],
-  "selected_at": "2026-08-27T04:06:41Z"
+ "case_id": 5,
+ "title": "主题海报版式设计",
+ "category": "Posters & Typography",
+ "source_url": "",
+ "upstream_image": "/images/case5.jpg",
+ "styles": [
+  "Poster",
+  "Illustration",
+  "Brand"
+ ],
+ "scenes": [
+  "Story"
+ ],
+ "selected_at": "2026-08-27T04:06:41Z",
+ "history": [
+  {
+   "version": 2,
+   "strategy": "S4_style_anchor",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance"
+   ],
+   "applied_directive": "Style anchoring: identify the medium (flat vector poster / photographic print / ink painting), name the palette explicitly, and reference the era and genre in the first sentence of the prompt.",
+   "small_text_exempt": false,
+   "ts": "2026-08-28T00:36:39Z"
+  },
+  {
+   "version": 3,
+   "strategy": "S4_style_anchor",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance"
+   ],
+   "applied_directive": "Style anchoring: identify the medium (flat vector poster / photographic print / ink painting), name the palette explicitly, and reference the era and genre in the first sentence of the prompt.",
+   "small_text_exempt": false,
+   "repeat": true,
+   "ts": "2026-08-28T14:34:29Z"
+  }
+ ]
 }

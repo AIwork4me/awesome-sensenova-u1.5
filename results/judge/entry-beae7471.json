@@ -1,0 +1,45 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-beae7471",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 5,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 10,
+   "alignment": 10,
+   "real_world_fidelity": 9,
+   "creative_generation": 10
+  },
+  "score_reasons": {
+   "quality": "Masterful watercolor execution: soft ink washes, genuine paper grain, splattered blossom-fall edges and fly-white brush breaks as requested. The main profile is anatomically elegant (closed eye with fine lashes, correct nose/lip line), inner vignettes (pavilion, arched garden bridge, ladies at a writing table, moon gate, candle, open book) are painted consistently at their small scales without anatomical breaks. Only the pseudo-calligraphy on the book pages and stylized seal marks are invented squiggles, which is acceptable in-world but not true text.",
+   "aesthetics": "Near-perfect poster composition: restrained sepia-grey-blush palette with red accents, generous negative space on the left column, vertical calligraphic title, and a quiet, nostalgic, sacred-poetic mood exactly matching the brief. The silhouette-to-scene transitions use misty aerial perspective seamlessly — no collage feel.",
+   "alignment": "Every requirement is met: a large elegant profile silhouette filled with a thematically bound worldview (garden architecture, character groupings, symbolic blossoms, props like book/candle/seal), double-exposure-style fusion in a cinematic-poster-plus-watercolor register, mist transitions, paper grain, edge brushwork, large whitespace, restrained high-end layout. The theme (Dream of the Red Chamber) is instantly identifiable via title, opening poem and scenes. The专属签名 'WHY' is placed bottom-left, small, refined, with a matching mini seal — integrated like an author's chop, not disruptive.",
+   "real_world_fidelity": "Cultural elements withstand scrutiny: title 红楼梦 is correct; the visible poem lines 满纸荒唐言 / 一把辛酸泪 / 都云作者痴 verbatim match the famous opening of the novel; Qing-style costumes, garden pavilion, moon gate and seal stamps fit the work's aesthetic. Deductions: the poem appears truncated (the fourth line 谁解其中味 is not visible), seal and book-page characters are pseudo-script.",
+   "creative_generation": "Outstanding realization of a demanding synthesis brief: multiple narrative vignettes grow organically inside the contour, information hierarchy (title → poem → scenes → signature) is flawless, and the design reads as a collectible edition poster rather than a template collage."
+  },
+  "unfulfilled_requirements": [
+   "Self-added poem truncated to three of four lines (fourth line not visible)"
+  ],
+  "transcribed_text": [
+   "红楼梦 (vertical title, calligraphy, correct)",
+   "满纸荒唐言，(poem line 1, correct)",
+   "一把辛酸泪，(poem line 2, correct)",
+   "都云作者痴，(poem line 3, correct)",
+   "WHY (signature, bottom-left, correct, with small red seal)",
+   "Red seal under title — GARBLED (pseudo seal-script, ~4 characters)",
+   "Mini seal beside WHY — GARBLED (pseudo seal-script, ~4 characters)",
+   "Book-page handwriting in bottom vignette — GARBLED (pseudo calligraphy, roughly 40+ tiny characters)"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-d5881126",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 15,
+ "round": 1,
+ "seed": "595220695",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 10,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "人物面部、发丝、玻璃杯泡沫与冷凝水珠、小龙虾甲壳纹理均刻画细腻，边缘清晰，几乎无AI塑料感；夜景散景自然，前景餐盘金属反光合理。背景灯笼上的小字笔画略有瑕疵，但不影响主体。",
+   "aesthetics": "对角线构图将人物与黄色标题错落排布，暖色夜市灯光与红色小龙虾形成鲜明色彩对比，人物开怀表情情绪感染力强，虚化背景突出主体，商业海报氛围到位。",
+   "alignment": "19岁左右中国少女、黑色直长发、开心表情、夜宵摊场景、喝啤酒、手持并面前摆放小龙虾均齐备；芥末黄色艺术字'趁年轻，激爽才够味！'逐字正确且为毛笔风格。未见缺失项。",
+   "real_world_fidelity": "夜市大排档、小龙虾配啤酒的场景高度符合中国夜宵文化，灯笼、雨棚、摊位陈设可信；小龙虾形态基本符合真实，个别背景招牌文字在景深外无法核验，存在轻微不确定性。",
+   "creative_generation": "标题书法字与市井烟火气的画面融合自然，信息层级（大字标题-人物-食物前景）清晰，浅景深镜头语言专业，整体具有成熟商业海报的想象力与完成度。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "趁年轻，",
+   "激爽才够味！",
+   "背景灯笼竖排文字近似'美食''佳味'等字样，部分笔画略有变形",
+   "远处招牌文字因景深虚化不可辨认"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

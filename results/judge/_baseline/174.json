@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-2a3906d0",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 174,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 10,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "工笔线描细腻均匀，绢本做旧色调统一，贵女装束与异形的生物机械质感刻画均扎实，异形四足结构与骨骼细节自洽，无肢体崩坏；仅仕女执链的手指略微含糊、异形前爪关节稍有密度堆叠。",
+   "aesthetics": "构图疏密有致（人物居左、异形居右、牡丹环抱），色彩以粉/赭/金统一雅致，人物神态优雅平静符合要求，把惊悚异形驯化为温顺宠物产生的反差幽默极具观赏性，整体气韵古典。",
+   "alignment": "3:4比例精确（675x900）；工笔画风、唐朝贵族女子、御花园（牡丹、蝴蝶、宫阙背景）、金色牵引链、链条尽头的异形怪物、粉色丝绸马甲、如训练有素的狗般的温顺姿态、右下角竖排红色'吴先生'印章（水印式）全部到位，无未遵循项。",
+   "real_world_fidelity": "唐代高腰襦裙、披帛、繁复头饰与工笔传统经得起现实核对，牡丹形态真实；异形为虚构IP生物，塑造忠实原设定且无不当文化挪用或合规问题。",
+   "creative_generation": "恐怖IP与中国古典工笔的跨界融合无缝且叙事完整——牵引链的受力走向、异形低头贴地的狗式步态、马甲与金项圈细节都服务于'遛怪物'的戏剧情境，信息层级与镜头语言成熟，想象力与完成度兼备。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "右下角竖排红印：吴先生（三字自上而下，拼写正确）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

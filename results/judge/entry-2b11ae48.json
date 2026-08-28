@@ -1,0 +1,39 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-2b11ae48",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 30,
+ "round": 1,
+ "seed": "1519636871",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "墨线粗细变化自如、干笔灰色块保留飞白与笔触，边缘干脆无 AI 塑料感，留白干净无纸纹；线稿节奏感强。机器人面部屏幕内仅有笑眼，而一个八字胡状的大笑形出现在胸口位置，嘴部与脸部错位属轻微构图怪趣，在涂鸦语境下可读作风格化夸张，不构成硬伤。",
+   "aesthetics": "构图疏密有致、主体居中、四周辅助符号呼应，黑白灰节奏明快，趣味与即兴感充分传达 sketchbook 气质，情绪轻松有感染力。",
+   "alignment": "快速涂鸦速写风、干笔块面、大量留白、箭头/圆圈/星号/@/王冠等辅助符号、手写标注齐备且不拥挤；签名 BlanPlan 位于左下、精致克制；以'强大 AI 建造者'自动演绎为带灯泡(灵感)、AI 标注的机器人，推导合理；'powerful'的气场被可爱化略微削弱，属演绎自由度内。",
+   "real_world_fidelity": "无真实地标或现实实体需核对；符号语义（灯泡=创意、AI 文字、箭头指引）符合通用认知，无文化失实或合规问题。",
+   "creative_generation": "用复古方块机器人+灯泡+AI 涂鸦标注演绎抽象主体，元素融合自然，视觉层级清晰（主体-辅助符号-签名），签名像艺术家落款，整体如设计手记页，创意执行成熟。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "AI（右上，带下划线，拼写正确）",
+   "@（符号）",
+   "BlanPlan（左下签名，拼写正确）",
+   "右上及右下两处涂鸦笔迹团：GARBLED，为装饰性伪手写潦草块，各约4-8个伪字符，非有效文字"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

@@ -1,14 +1,37 @@
 {
-  "case_id": 25,
-  "title": "综合应用场景图",
-  "category": "Characters & People",
-  "source_url": "https://x.com/nicdunz",
-  "upstream_image": "/images/case25.jpg",
-  "styles": [
-    "Characters"
-  ],
-  "scenes": [
-    "Story"
-  ],
-  "selected_at": "2026-08-27T04:06:41Z"
+ "case_id": 25,
+ "title": "综合应用场景图",
+ "category": "Characters & People",
+ "source_url": "https://x.com/nicdunz",
+ "upstream_image": "/images/case25.jpg",
+ "styles": [
+  "Characters"
+ ],
+ "scenes": [
+  "Story"
+ ],
+ "selected_at": "2026-08-27T04:06:41Z",
+ "history": [
+  {
+   "version": 2,
+   "strategy": "S4_style_anchor",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance"
+   ],
+   "applied_directive": "Style anchoring: identify the medium (flat vector poster / photographic print / ink painting), name the palette explicitly, and reference the era and genre in the first sentence of the prompt.",
+   "small_text_exempt": false,
+   "ts": "2026-08-28T00:36:39Z"
+  },
+  {
+   "version": 3,
+   "strategy": "S4_style_anchor",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance"
+   ],
+   "applied_directive": "Style anchoring: identify the medium (flat vector poster / photographic print / ink painting), name the palette explicitly, and reference the era and genre in the first sentence of the prompt.",
+   "small_text_exempt": false,
+   "repeat": true,
+   "ts": "2026-08-28T14:34:29Z"
+  }
+ ]
 }

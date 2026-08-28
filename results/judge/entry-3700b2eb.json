@@ -1,0 +1,45 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-3700b2eb",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 9,
+ "round": 2,
+ "seed": "371308855",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 7,
+   "real_world_fidelity": 8,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "High-detail guochao collage with crisp edges, rich fabric and architectural textures, clean typography; the invented glass walkway over the lake is structurally ambiguous and a few tiny scene signboards are only partially legible.",
+   "aesthetics": "Excellent: bright white textured negative space, a sweeping red-silk S-curve unifying the layout, balanced title block on the left and the dancing figure anchoring the right; colorful yet harmonious, strong poster hierarchy.",
+   "alignment": "Most required content is present and readable: SPRING 2026, vertical Beijing, 北京 seal, 【北京】 title, red silk S-composition from lower right to upper left, woman in Beijing-flavored embroidered red dress waving silk, Temple of Heaven, Great Wall, Bird's Nest, and a xiangsheng folk trio. However the canvas is square, not vertical 9:16; the primeval forest park appears only as generic trees with no recognizability; and Shichahai is rendered as a lake with a non-existent glass structure rather than its real identity.",
+   "real_world_fidelity": "Temple of Heaven, Great Wall and Bird's Nest are instantly recognizable and reasonably accurate; costume and street-folk elements fit Beijing culture; the invented lakeside structure and unidentifiable greenery slightly weaken the city-identity requirement.",
+   "creative_generation": "The silk-transforms-into-city-scroll device is elegant and suggests strong series consistency without duplication; information layers (title block, collage, figure) are well ordered and camera-like focus guides the eye."
+  },
+  "unfulfilled_requirements": [
+   "Vertical 9:16 format not met (canvas is square)",
+   "喇叭沟门原始森林公园 represented only as generic trees, not identifiable",
+   "什刹海 rendered with an invented glass walkway structure, weak real-world recognizability"
+  ],
+  "transcribed_text": [
+   "SPRING 2026",
+   "【北京】",
+   "Beijing (vertical lettering on left)",
+   "北京 (red seal stamp)",
+   "京味相声 (small banner near folk trio)",
+   "small scene signboards (teahouse/street signs, tiny characters only partially legible)"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

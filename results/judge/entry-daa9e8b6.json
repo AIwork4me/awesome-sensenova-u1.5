@@ -1,0 +1,48 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-daa9e8b6",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 130,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 8,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "整体渲染干净，人物面部、包装盒、糖果的材质细腻，颗粒噪点均匀；但右下商品区个别徽章与挂件边缘略糊，包装上的部分小字存在轻微伪影，整体质量良好。",
+   "aesthetics": "粉白樱花配色的品牌设计板构图饱满、六宫格层次清晰，角色形象前后统一可爱，情绪甜美治愈，日系可爱风格的还原度高。",
+   "alignment": "六个板块（头部横幅、糖果包装、宣传海报、网页横幅、社媒主页样机、周边合集）均按指定位置呈现，主Logo『癒音ちー』、副Logo『ゆおんちー』、『4.26 NEW OPEN』『@yuonchii』均正确；心形开窗糖果盒、2颗独立糖纸、散落心形糖果齐全；但周边合集要求4枚圆形徽章仅能明确辨认约3枚，数量细节存在缺失或遮挡。",
+   "real_world_fidelity": "Twitter界面样机、糖果包装、徽章等物件符合现实商品逻辑，社媒handle与日期文字正确，无文化失真；使用Twitter品牌标识属样机常见做法，无合规硬伤。",
+   "creative_generation": "将角色IP、包装、海报、社媒样机与周边整合为统一的品牌设计板，信息层级清楚，樱花与心形母题贯穿全图，融合度高、完成度专业。"
+  },
+  "unfulfilled_requirements": [
+   "周边合集要求4枚圆形徽章，图中仅能明确辨认约3枚，第4枚缺失或被遮挡",
+   "社媒样机要求mock bio text，图中为伪日文乱码而非可读文本"
+  ],
+  "transcribed_text": [
+   "癒音ちー（多处主Logo，拼写正确）",
+   "ゆおんちー（副Logo，拼写正确）",
+   "Yuon Chii（海报与主页头图，拼写正确）",
+   "4.26 NEW OPEN（海报，拼写正确）",
+   "@yuonchii（海报与主页handle，拼写正确）",
+   "Twitter（主页左上角，正确）",
+   "癒しの呼び声をお届けします（海报日文文案，基本正确）",
+   "糖纸小字疑似『の癒おちー』（字符轻微变形）",
+   "主页bio小字 GARBLED（伪日文约30-50字符）",
+   "海报底部两行免责小字 GARBLED（约20-40字符）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

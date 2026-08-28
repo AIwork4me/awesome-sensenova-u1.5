@@ -1,0 +1,39 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-63132bd8",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 182,
+ "round": 1,
+ "seed": "802059477",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "胶片质感的照片级画面，皮肤、针织开衫、木桌与旧书的材质真实，窗光自然，人物手部结构正确；仅背景海报与杯身小字为伪字符，无结构性缺陷。",
+   "aesthetics": "怀旧暖色调与柔和窗光营造2000年代日剧氛围，两人对视的构图生动，笑容自然有感染力，解剖学正确，情绪表达到位。",
+   "alignment": "准确呈现面向中学生的2000年代日剧喜剧场景：校服学生、书架、CRT电视、漫画海报等年代元素齐备，喜剧氛围通过表情与互动传达；提示词无文字类硬性要求，场景类型与年代感完全吻合。",
+   "real_world_fidelity": "2000年代日本社团教室/图书室的陈设（CRT电视、漫画杂志、书架、课桌）符合现实，制服款式合理；杯身与海报文字为伪字，略微削弱真实感但无文化错误。",
+   "creative_generation": "用书架、海报、旧书等道具堆叠出年代叙事，前景静物与两人对视笑容形成生活流叙事，镜头语言像真实剧集剧照，构图有纵深层次。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "马克杯蓝色小字 GARBLED（伪日文约3-5字符）",
+   "背景漫画封面与海报文字 GARBLED（约15-30字符）",
+   "笔记本手写文字 GARBLED（约10-20字符）",
+   "书脊文字部分 GARBLED（局部可辨单个汉字）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

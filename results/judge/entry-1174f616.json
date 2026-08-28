@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-1174f616",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 174,
+ "round": 1,
+ "seed": "720697912",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 10,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "工笔线描精细匀净，衣纹、发髻、金饰、牡丹与蝶均见传统勾线与分染功力，异形的黑色生物机械质感高光处理细腻，金色锁链结构连贯无断裂；仕女手指与链子的交接略含糊但整体无结构硬伤、无分辨率伪影。",
+   "aesthetics": "暖米底色与朱红长裙、粉色牡丹构成雅致和谐的传统设色，牵引链形成对角线动势，仕女低眉静雅与异形温驯如犬形成幽默反差，情绪表达从容，画面气质统一。",
+   "alignment": "全部要求逐项落实：唐代贵族女子御花园漫步、优雅平静、金色牵引绳、绳端异形（《异形》造型：长头、无眼、利齿、分节尾）、粉色丝绸马甲、如训练有素的狗的随行姿态、背景牡丹与蝴蝶、右下角红色竖排'吴先生'印章呈水印感、3:4竖幅，无一缺漏。",
+   "real_world_fidelity": "齐胸高腰襦裙、披帛与繁复金头饰符合唐代贵族女装特征，工笔风格地道；异形造型忠实于电影原设定；印章文字'吴先生'逐字正确、布局为传统竖排；无文化失实或合规问题。",
+   "creative_generation": "把科幻恐怖符号嫁接进工笔仕女图的创意新颖且执行无缝，马甲与牵引细节让荒诞设定落在可信的绘画逻辑里，幽默而不廉价，信息层级与镜头语言（近景仕女-中景异形-远景园林）成熟。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "吴先生（右下角红色竖排印章，逐字正确，水印风格）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

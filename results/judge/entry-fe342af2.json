@@ -1,0 +1,42 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-fe342af2",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 9,
+ "round": 2,
+ "seed": "881016515",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 7,
+   "real_world_fidelity": 8,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "High production value: the red silk has convincing sheen, translucency and fold physics; the woman's face and embroidered costume are sharply detailed; clean edges throughout. Minor deductions for the slightly muddy, crowded small structures along the bottom edge and some softness in the distant miniature buildings.",
+   "aesthetics": "Excellent composition: the S-shaped silk ribbon drives the eye from bottom-right to upper-left, balancing the vertical typography on the left; restrained red/white palette with teal-blue costume accents; bright, airy guochao mood; the figure's pose is graceful and anatomically sound.",
+   "alignment": "Most requirements are met: white textured background, S-curve red silk from lower-right to upper-left, woman in Beijing-flavored traditional costume waving silk, silk morphing into a city scroll with recognizable Temple of Heaven, Great Wall, Bird's Nest lattice structure and red autumn forest; SPRING 2026, vertical Beijing, and the red seal 北京 are all present and clean. Misses: canvas is 1:1 rather than the required 9:16 vertical; 什刹海 is not clearly identifiable; 京味相声 (crosstalk) element is not visible anywhere.",
+   "real_world_fidelity": "Landmarks hold up to reality checks: Temple of Heaven's triple-eaved circular form, the Great Wall's winding ridge with towers, and the Bird's Nest steel lattice are all credible; costume and headdress plausibly evoke Beijing opera/court styling; text is accurate; no offensive or non-compliant content.",
+   "creative_generation": "The silk-to-cityscape morph is executed seamlessly, with buildings dissolving into fabric folds; strong information hierarchy (title block, seal, figure, scroll); good lens language with the diagonal ribbon creating depth. Slight deduction because the lower-strip collage feels less integrated than the upper scroll."
+  },
+  "unfulfilled_requirements": [
+   "Aspect ratio is 1:1, not the required 9:16 vertical",
+   "什刹海 (Shichahai) scene not clearly identifiable in the city scroll",
+   "京味相声 (Beijing crosstalk) cultural element not depicted"
+  ],
+  "transcribed_text": [
+   "SPRING 2026 (serif, top-left, spelled correctly)",
+   "Beijing (vertical stacked sans-serif letters on left edge, spelled correctly)",
+   "北京 (white characters in small red seal stamp below Beijing, correct)"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

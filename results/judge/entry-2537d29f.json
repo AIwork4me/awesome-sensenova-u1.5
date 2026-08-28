@@ -1,0 +1,39 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-2537d29f",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 5,
+ "round": 2,
+ "seed": "1143519173",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "水彩/水墨渲染干净，边缘飞白与刷痕是有意为之且执行到位，人物剪影解剖准确，内部建筑与持剑角色刻画精细，无明显AI塑料感或分辨率伪影；右下古籍道具纹理略密集发闷。",
+   "aesthetics": "靛蓝墨色与暖金光的克制配色极其和谐，大面积留白与轻雾空气透视营造安静、宏大、神圣、怀旧的传说氛围，构图视线从剪影顶部拱门到底部英雄形成纵深叙事。",
+   "alignment": "优雅侧脸剪影外轮廓、内部完整世界观（尖塔城堡、行人石桥、发光之门、远山、英雄、古籍道具）双重曝光式合成、水彩+电影海报融合风格、纸张颗粒、留白均符合；签名WHY位于左下角，拼写逐字正确、低调清晰且与版式统一；仅角色关系表达较弱、生物元素仅有飞鸟。",
+   "real_world_fidelity": "奇幻传说题材自洽，无失实文化元素，人物解剖与比例经得起核对，无公平性或合规问题。",
+   "creative_generation": "剪影内世界生长的融合无缝，信息层级（拱门—桥—门—英雄—道具）编排成熟，镜头语言与诗意叙事出色，签名落款设计化处理自然。"
+  },
+  "unfulfilled_requirements": [
+   "角色关系仅以远景桥上人影暗示，未明确展开",
+   "生物元素仅飞鸟，偏少（轻微）"
+  ],
+  "transcribed_text": [
+   "WHY（左下角签名，逐字正确）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

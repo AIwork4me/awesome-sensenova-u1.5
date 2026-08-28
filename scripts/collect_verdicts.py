@@ -35,7 +35,12 @@ def _collect_round(rnd: int, ledger: str, root: Path = Path("."),
         except json.JSONDecodeError:
             verdict = None
         errs = validate_verdict(verdict) if isinstance(verdict, dict) else ["not a json object"]
-        leaks = model_identity_leak(verdict) if isinstance(verdict, dict) else ["n/a"]
+        # R17 prompt-context exemption: banned terms quoted from the entry's own
+        # prompt are fidelity wording, so the leak scan skips them.
+        pp = q / "prompts" / f"{eid}.txt"
+        prompt_text = pp.read_text() if pp.exists() else ""
+        leaks = (model_identity_leak(verdict, allowed_text=prompt_text)
+                 if isinstance(verdict, dict) else ["n/a"])
         if errs or leaks:
             inv.mkdir(parents=True, exist_ok=True)
             shutil.move(str(vp), str(inv / f"{eid}.json"))

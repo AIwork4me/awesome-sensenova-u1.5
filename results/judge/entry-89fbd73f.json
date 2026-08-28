@@ -1,0 +1,42 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-89fbd73f",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 167,
+ "round": 2,
+ "seed": "1370651952",
+ "verdict": {
+  "scores": {
+   "quality": 3,
+   "aesthetics": 3,
+   "alignment": 3,
+   "real_world_fidelity": 4,
+   "creative_generation": 3
+  },
+  "score_reasons": {
+   "quality": "The poster is roughly two-thirds pure black; the only pictorial content is a small, extremely underexposed fragment at top where stone walls and vague shapes are barely discernible, so material, edge and detail quality cannot hold up — a picture-level hard defect. The text block itself is cleanly typeset.",
+   "aesthetics": "Composition collapses into a black void with floating white text; the murky top fragment neither reads as a scene nor creates mood. Title/subtitle/date stacking is orderly, but there is almost no visual interest, light or atmosphere to evaluate positively.",
+   "alignment": "Title, subtitle and a short date line are present and the no-micro-print constraint is respected, but the core premise — a WeChat Moments interface of the Xuanwu Gate Incident — is entirely absent (no UI, feed, avatars, likes), and the background scene is too dark to depict any recognizable event content. The date line reads as nonsense ('20周年 6/12').",
+   "real_world_fidelity": "Almost nothing is verifiable due to the darkness; the vague ruins are generic, and the invented '20周年 6/12' line has no relation to the 626 CE historical event, weakening cultural fidelity. No visible anachronisms, but also no substantive period content.",
+   "creative_generation": "Minimal creative execution: a near-black canvas with overlaid text and an illegible fragment; the mashup concept was not attempted, and there is no imaginative world-building or layered storytelling to credit."
+  },
+  "unfulfilled_requirements": [
+   "WeChat Moments interface / social-feed concept completely missing",
+   "Scene content nearly invisible (severe underexposure), no recognizable Xuanwu Gate narrative imagery",
+   "Date line '20周 年6/12' is semantically meaningless and oddly kerned"
+  ],
+  "transcribed_text": [
+   "玄武门之变的朋友圈",
+   "WeChat Moments of the Xuanwu Gate Incident",
+   "20周 年6/12 (real glyphs, abnormal spacing, unclear meaning)"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 1,
+   "visual_defects": true
+  }
+ }
+}

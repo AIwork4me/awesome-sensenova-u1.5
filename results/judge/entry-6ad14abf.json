@@ -1,0 +1,44 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-6ad14abf",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 78,
+ "round": 1,
+ "seed": "1840940388",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 8,
+   "alignment": 7,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "白色草图线条边缘干净、粗细有致，关节圆与中轴/结构线清晰，绿光光晕渐变自然、强度分级（头部最强→胸口中等→大腿柔光→地面光斑）可读，纯黑背景无杂讯与伪影。扣分：躯干多处刻意的手绘抖动线条在髋部与膝部交叉略显杂乱，个别轮廓线重复描画形成重影。",
+   "aesthetics": "黑底白线+荧光绿标注形成高对比诊断图版式，标签-箭头-被指区域对应关系一目了然，视觉层级（头→肩→髋→脚的绿光动线）清晰；作为分析图功能性与氛围兼得。扣分：人台为时装画式的夸张比例（长腿细腰），与'rough mannequin'的中性感略有出入，画面左右留白不甚均衡。",
+   "alignment": "核心要求达成：单个人台、白轮廓线+内部结构线、简式无脸头部、纯黑背景无场景、绿色光照分析（仅用绿光，含强度分级）、四个标签箭头（Main Light/Rim Light/Fill Light/Floor Bounce）拼写与指向均正确且推断合理、姿态结构与重心可读。未遵循项：躯干保留了明确的胸衣式罩杯线与三角裤式底边线、双脚为高跟鞋造型，违反负面清单中的'no clothing rendering / no accessories'；人台身材时装化，也部分触碰负面项'beautiful anatomy'。",
+   "real_world_fidelity": "标注术语（主光、轮廓光、补光、地面反弹）均为真实摄影布光概念，使用与指向合乎布光逻辑（顶光主光、肩部轮廓光、髋部弱补光、脚底地面反弹），推断克制未乱造光源；图中无真实地标或文化元素需核对，无合规问题。",
+   "creative_generation": "将原始图像转译为姿势+光照诊断单的概念执行完整：绿光强度三级变化承载了受光面信息，箭头标签系统清晰，结构线（中轴、骨盆方向、膝盖关节圆）保留了教学图解的镜头语言；扣分在于未能彻底剥离服装元素，削弱了'纯结构分析'的想象力纯度与信息层级干净度。"
+  },
+  "unfulfilled_requirements": [
+   "负面要求'no clothing rendering'未完全遵守：胸部出现胸衣/罩杯式线条、骨盆处出现三角裤式底边线",
+   "负面要求'no accessories'未完全遵守：双脚保留高跟鞋造型",
+   "负面要求'beautiful anatomy'部分违反：人台为时装化的夸张女性比例（长腿、细腰、隆胸曲线），而非中性粗糙人台"
+  ],
+  "transcribed_text": [
+   "Main Light（白色文字，绿色箭头指向头顶受光部）",
+   "Rim Light（绿色文字，绿色箭头指向人物左肩轮廓光）",
+   "Fill Light（白色文字，绿色箭头指向髋部补光区域）",
+   "Floor Bounce（白色文字，绿色箭头指向右脚下方地面反光光斑）",
+   "（以上为全部可辨认文字，拼写逐字正确，无乱码区块）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

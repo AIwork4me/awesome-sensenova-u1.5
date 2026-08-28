@@ -1,0 +1,37 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-a6c12cb6",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 208,
+ "round": 1,
+ "seed": "509311921",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 8,
+   "real_world_fidelity": 9,
+   "creative_generation": 7
+  },
+  "score_reasons": {
+   "quality": "日系动画风格执行干净利落：线条清晰，粉发渐变紫的发梢过渡自然，格子裙纹理精细，樱花树枝干质感与景深虚化层次丰富，花瓣飘落有前后层次，无肢体崩坏（双手藏于身后规避了手部风险）、无明显AI伪影；仅背景教学楼窗户略显重复、袜口边缘有轻微波动。",
+   "aesthetics": "构图以人物居中、樱花拱顶收拢视线，粉樱+蓝天+藏青裙的色彩鲜艳和谐，柔光与光斑层次感强，害羞微笑+腮红的情绪表达到位，整体明亮治愈，符合高对比、光影柔和有层次的要求。",
+   "alignment": "符合项：双马尾樱花粉+发梢渐变紫、紫色大眼带星光高光、白衬衫、深蓝格子裙、红色领结、白色过膝袜、棕色小皮鞋、樱花树下花瓣飘落、远处教学楼、微笑害羞、站立双手背后身体微前倾，全部到位。未满足项：画幅为1:1方形而非要求的16:9；头饰要求'头上戴一个粉色蝴蝶结'，图中为双马尾根部左右各一个大蝴蝶结（两个且位于发结处而非头顶）。",
+   "real_world_fidelity": "文化元素可信：JK制服搭配、日式教学楼外观、樱花树与飘落花瓣均符合日本校园现实场景，无失真、无刻板印象或合规问题。",
+   "creative_generation": "完成度高但创意常规：标准的二次元美少女立绘范式，镜头语言（浅景深、逆光花瓣、中心构图）娴熟，多元素融合无缝；缺少独特的叙事构思或构图记忆点，想象力中等。"
+  },
+  "unfulfilled_requirements": [
+   "画幅为1:1方形，不符合16:9（手机壁纸）规格",
+   "头饰数量与位置偏差：要求头上一个粉色蝴蝶结，实际为双马尾根部两个大蝴蝶结"
+  ],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

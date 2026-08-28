@@ -1,0 +1,39 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-5ad649b0",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 30,
+ "round": 1,
+ "seed": "1406801910",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "线条粗细变化自如、节奏感强，干笔块面涂黑保留飞白与不均匀笔触，正是要求的快速速写质感；边缘清晰无分辨率伪影，机器人结构自洽，无肢体崩坏。",
+   "aesthetics": "黑白灰三色层次分明，主体居中略带动感姿态，四周涂鸦元素呈放射状环绕形成良好的视觉韵律，留白充分、松快而不拥挤，趣味性与自发性俱佳。",
+   "alignment": "主题'a powerful AI builder'被自动演绎为挥手的机器人建造者，配以AI标签、齿轮、火箭、摄像头涂鸦等关联符号，符合提示词的自动推导要求；速写/涂鸦风格、无水彩晕染、无纸纹、白色背景均已满足；签名'BlanPlan'拼写正确、位于左下、克制精致不破坏构图。仅在'避免过度拥挤'上略有涂抹密度偏高的倾向。",
+   "real_world_fidelity": "虚构涂鸦题材无现实地标或文化元素需要核对，无公平性或合规问题；符号语义（AI、齿轮、火箭指代技术构建）通顺合理。",
+   "creative_generation": "将抽象人物概念转译为机器人+创意符号群落的方案想象力出色，元素融合无缝，信息层级清晰（主体-符号-签名），涂鸦语言统一，手写体签名如艺术家题款自然融入。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "椭圆标签内手写：AI（拼写正确）",
+   "左下角签名：BlanPlan（拼写正确，手写体）",
+   "左下涂鸦符号：Me（装饰性手写涂鸦）",
+   "右侧中部散乱涂鸦笔迹（装饰性伪手写，非失败文字）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

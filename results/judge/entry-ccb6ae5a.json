@@ -1,0 +1,41 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-ccb6ae5a",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 7,
+ "round": 2,
+ "seed": "239982993",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 8,
+   "alignment": 6,
+   "real_world_fidelity": 8,
+   "creative_generation": 7
+  },
+  "score_reasons": {
+   "quality": "真人写真部分质量很高：皮肤质感细腻、发丝细节丰富、背景玻璃器皿与暖色灯具有自然景深虚化，光影物理合理；UI 元素（状态栏、对话框、操作栏）边缘干净无伪影；主要扣分在对话框内两行台词为伪汉字乱码，属于明显的文本生成缺陷。",
+   "aesthetics": "暖调咖啡厅氛围统一，主体居中偏上构图舒适，眼神朝镜头情绪温柔，二次元头像与真人形象呼应自然，色彩和谐；美学完成度较高，无明显解剖问题。",
+   "alignment": "状态栏（时间16:21、信号、WiFi、电量）、吧台场景、左侧动漫头像、大字号角色名、下方 galgame 操作栏、无微缩印刷块等要求均落实；但两处未达标：画面比例近似方形而非接近 9:16 竖版；对话框要求的温柔治愈风简体中文台词实际为不通顺的伪汉字乱码，台词要求实质未达成。上传参考角色相似度因无参考图无法核验，不作扣分依据。",
+   "real_world_fidelity": "咖啡厅/吧台环境道具（咖啡杯、杯架、酒瓶、吊灯）符合现实逻辑，手机状态栏图标样式可信，无真实地标或文化元素错误，人物呈现自然无合规问题。",
+   "creative_generation": "真人写真与 galgame UI 的融合思路完整，头像与主角形象对应、对话框半透明质感与操作栏细节到位，镜头语言（浅景深自拍视角）合理；但台词文本执行失败削弱了整体信息传达，创意落地打折。"
+  },
+  "unfulfilled_requirements": [
+   "画面整体比例未接近 9:16 竖版，实际接近方形",
+   "对话框一到两行温柔治愈风简体中文台词未实现，内容为乱码伪汉字"
+  ],
+  "transcribed_text": [
+   "16:21",
+   "龙里仑（角色名行，字形清晰可读）",
+   "GARBLED 约24字（两行台词为伪汉字：『秇设人具治就是哙的心柔，』『着色𰵞的不耍孚 温㟽的𰰦白人。』，单字看似汉字但语句不通、含生造字形）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 1,
+   "visual_defects": false
+  }
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-a3ab55d5",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:33:10Z",
+ "source": "sensenova",
+ "case_id": 10,
+ "round": 1,
+ "seed": "2036245119",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 8,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "Convincing retro print aesthetic with halftone-style shading, clean bold linework, aged paper texture, and crisp flat color separation; no anatomical breakage (bust composition avoids hands), edges sharp throughout.",
+   "aesthetics": "Excellent propaganda-poster composition: central figure emphasized, symmetric radiating sunburst, decorative corner frame, red banner with yellow stars anchoring the bottom; harmonious red/gold/navy palette and joyful heroic mood.",
+   "alignment": "All requirements met: the slogan appears verbatim as '热烈庆祝GPT-Image-2' + '全量开放' with correct characters and Latin spelling, three male figures matching Sam Altman (left, glasses, light hair), Dario Amodei (center, curly hair, beard, glasses) and Elon Musk (right) are present, and the central Dario figure wears the red Young Pioneers-style neckerchief.",
+   "real_world_fidelity": "Authentic Chinese propaganda iconography (red scarf, five-pointed stars, radiating rays, bold slogan typography) holds up to real-world reference; likenesses of the three public figures are stylized but recognizable, with the center and right figures strongest and the left figure somewhat generic; depiction is celebratory and non-defamatory.",
+   "creative_generation": "Imaginative and humorous fusion of contemporary AI figures into vintage socialist-poster visual language, executed seamlessly with strong information hierarchy and period-appropriate print language."
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "热烈庆祝GPT-Image-2",
+   "全量开放"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

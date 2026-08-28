@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-c0a47b7a",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 31,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "半写实动漫渲染精度极高：针织开衫的绒感、格纹裙布纹、皮肤次表面质感与发丝层次都经得起放大；蹲姿体块关系正确，搭在膝上的手指结构自然，无肢体崩坏或边缘瑕疵；肤色略显过度平滑的塑料感是唯一小瑕疵。",
+   "aesthetics": "低角度仰拍构图有电影感，蓝天大面积留白衬托人物，浅景深与自然日光层次舒服；人物气质安静克制，情绪传达细腻。",
+   "alignment": "蹲姿低头看镜头、低机位、灰金长发随风飘动、白皙皮肤、浅灰开衫+白衬衫+深色格纹领结+深色格纹百褶裙+深色过膝袜+黑色乐福鞋、双手搭膝、晴朗蓝天白云、底部虚化的铁丝网与绿树（校园暗示）全部逐项命中；仅'large, expressive eyes'的眼睛比例偏写实、不如典型动漫大眼夸张。",
+   "real_world_fidelity": "校服各单品的剪裁与搭配、铁丝网围栏、操场环境、乐福鞋样式均符合真实校园语境，光影物理合理，无文化或事实错误。",
+   "creative_generation": "镜头语言（低机位、浅景深、逆光发丝）与材质表现执行力出色；但题材为常见的校园人像配方，想象力加分有限。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "图中无文字；背景虚化处无任何可读标识"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-90583821",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 3,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 8,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "Face rendering is strong with realistic skin sheen, sweat and stubble; the flag fabric shows convincing satin sheen, folds and grime; lighting is coherent stadium floodlight. Deductions: the right-hand fingers gripping the flag at frame right look slightly mushy/merged at close inspection, and some background crowd banner text is pseudo-typographic; can only partially verify the five-finger requirement because both hands are partially occluded.",
+   "aesthetics": "Excellent poster composition: low-angle heroic framing, layered depth (player, crowd, smoke, roof structure), high-contrast cinematic grade in Inter blue-black with gold accents, strong visual hierarchy from title to slogan to subject. Facial anatomy is correct and the expression reads passionate and confident.",
+   "alignment": "Mostly fulfilled: football-movie-poster style, player draped in the Bosnia and Herzegovina flag held wide, packed stands, blue-black smoke, spotlights, flying confetti, half-to-three-quarter body framing, detailed face and jersey. Partially unfulfilled: the prompt asks for both hands raised high (双手高举), but the arms are spread horizontally at shoulder height rather than lifted overhead. The added title/slogan text was not requested but fits the requested poster genre.",
+   "real_world_fidelity": "The Bosnia and Herzegovina flag is accurate (blue field, yellow triangle, white stars along the hypotenuse); Bosnian slogans are grammatically plausible ('PONOS. IDENTITET. SRCE.', 'JEDNA ZEMLJA JEDAN SAN JEDNO SRCE', 'NAŠA POBJEDA!'); the shirt number 95 matches the depicted player's real number and the tattoo sleeve is consistent; 'SAN SIRO MILANO' signage present. Minor issues: the Italian tagline's first glyph ('è casa nostra') is ambiguous/deformed, and one background banner shows garbled pseudo-letters.",
+   "creative_generation": "Strong movie-poster art direction: brush-script title treatment, bilingual slogan layering, signature graphic with number 95, crest badge at bottom, and a well-executed blue/gold complementary scheme; multi-element fusion (smoke, confetti, crowd, floodlights) is seamless and dramatic."
+  },
+  "unfulfilled_requirements": [
+   "双手高举：图中双臂在肩部水平展开持旗，而非高举过头顶",
+   "右手指部细节略糊，五根手指要求无法完全确认"
+  ],
+  "transcribed_text": [
+   "ALESSANDRO",
+   "BASTONI",
+   "BOSNA I HERCEGOVINA",
+   "PONOS. IDENTITET. SRCE.",
+   "手写签名涂鸦 + 95",
+   "SAN SIRO MILANO",
+   "è casa nostra（首字母字形略变形，疑似 è）",
+   "JEDNA ZEMLJA JEDAN SAN JEDNO SRCE",
+   "SAN SIRO, MILANO",
+   "NAŠA ZEMLJA. NAŠA PRAVILA.",
+   "NAŠA POBJEDA!",
+   "GARBLED：看台横幅上约4-8个伪字母字符（黄色横幅局部）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

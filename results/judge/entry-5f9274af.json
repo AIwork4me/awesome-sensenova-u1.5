@@ -1,0 +1,38 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-5f9274af",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 174,
+ "round": 1,
+ "seed": "1240301248",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 8,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "工笔画质感执行到位：做旧绢本底色、丝织衣纹的晕染、牡丹与蝴蝶的渲染边缘干净，异形甲壳的高光与哑光质感统一连贯；人物双手结构正确、持绳动作自然，仅衣褶略有程式化重复，无明显AI塑料感或分辨率伪影。",
+   "aesthetics": "构图左右均衡，人物俯视与异形仰坐形成视线闭环；浅绛灰绿的淡雅配色与庭院景深层次舒服，优雅仕女与驯服怪物的反差营造出生动而不违和的情绪；人物开脸秀美，符合传统仕女审美。",
+   "alignment": "金色牵引链、穿粉色丝绸马甲的异形、如训犬般乖巧的坐姿、牡丹、蝴蝶、右下角竖排红印'吴先生'、工笔风格与贵族女子气质全部到位；唯一偏差：要求 --ar 3:4，实际画幅为 2:3（1664x2496）。",
+   "real_world_fidelity": "唐代贵族女性的服装与头饰是浪漫化演绎而非严格考古复原，但襦裙制式、金饰与庭院栏杆、牡丹等元素经得起一般推敲；异形为按提示明确要求引入的电影虚构形象；印章文字为真实规范汉字。",
+   "creative_generation": "恐怖片形象与古典工笔的跨类型融合完成度高，'遛异形'的情境叙事自然可信，信息层级（人物-宠物-背景-印章）清晰，竖排水印式印章收尾颇具收藏感与作品感。"
+  },
+  "unfulfilled_requirements": [
+   "要求 --ar 3:4 画幅，实际为 2:3（1664x2496）"
+  ],
+  "transcribed_text": [
+   "右下角红色竖排印章：吴先生（逐字正确）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

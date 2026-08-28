@@ -1,0 +1,39 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-6dda8e6a",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 167,
+ "round": 1,
+ "seed": "293257532",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 3,
+   "alignment": 2,
+   "real_world_fidelity": 2,
+   "creative_generation": 1
+  },
+  "score_reasons": {
+   "quality": "The typography that exists is clean, bold, and artifact-free with correct glyphs, but the image consists of nothing more than two lines of text on a plain off-white field; the last character 圈 is rendered slightly tightly but remains legible and correct.",
+   "aesthetics": "Bare title-card layout with vast empty margins and no composition, color, atmosphere, or visual interest beyond centered black text.",
+   "alignment": "The prompt asks for a depiction of the WeChat Moments feed of the Xuanwu Gate Incident; the output merely restates the prompt's title text ('玄武门之变的朋友圈' / 'WeChat Moments of the Xuanwu Gate Incident') on a blank background. No WeChat interface, posts, avatars, comments, or any scene content related to the historical incident is present, so the core deliverable is missing.",
+   "real_world_fidelity": "Nothing to verify against reality: no WeChat UI elements and no historical/cultural content appear; only the naming of the event in the title is accurate.",
+   "creative_generation": "No creative execution at all — the concept was not visualized, only echoed back as text."
+  },
+  "unfulfilled_requirements": [
+   "WeChat Moments interface and content about the Xuanwu Gate Incident (posts, avatars, comments, period details) entirely absent; output is only the prompt title text on a blank background"
+  ],
+  "transcribed_text": [
+   "玄武门之变的朋友圈",
+   "WeChat Moments of the Xuanwu Gate Incident"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

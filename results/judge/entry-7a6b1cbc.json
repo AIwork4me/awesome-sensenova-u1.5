@@ -1,0 +1,58 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-7a6b1cbc",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 1,
+ "round": 2,
+ "seed": "925107384",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 8,
+   "alignment": 6,
+   "real_world_fidelity": 8,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "线稿清晰、剖面结构连贯，管线材质与地下分层细节丰富；但所有面板正文英文字为乱码伪文本，底部时间轴刻度文字亦有变形，降低整体质量。",
+   "aesthetics": "双栏环绕中央剖面的构图平衡，米纸底色与彩色管线形成和谐对比，信息层级清晰，工程白皮书风格还原度高。",
+   "alignment": "标题双语逐字正确，地上地下均呈现，含地铁、管线、数据中心、储水罐、含水层、地热井与基岩，底部有24h时间轴；但12个面板编号混乱（出现两个8及11/13，缺6/9），部分面板英文标签错误（Recycle、Larges、Filter、Govern），提示词明确要求no gibberish text而面板正文大量乱码，纵横比约2:3而非9:16。",
+   "real_world_fidelity": "城市基础设施描绘（地铁、综合管廊、数据中心、含水层、地热井）符合现实逻辑，无失实地标或文化元素。",
+   "creative_generation": "天空到基岩的剖切叙事有想象力，色彩编码流线与编号面板的信息层级设计执行到位，镜头语言成熟。"
+  },
+  "unfulfilled_requirements": [
+   "12个面板编号非1-12顺序（重复8、出现11/13、缺6/9）",
+   "部分面板英文标签与要求不符（Recycle应为Buildings、Larges应为Logistics、地质/治理看板英文错误）",
+   "提示词要求no gibberish text但面板正文英文为乱码",
+   "纵横比约为2:3而非9:16",
+   "标题下副标题行为乱码伪中文"
+  ],
+  "transcribed_text": [
+   "城市生命系统图谱（正确）",
+   "Urban Metabolism Atlas（正确）",
+   "副标题行：乱码伪中文，GARBLED，约20字符",
+   "1 能源 Power",
+   "2 水循环 Water Circ.",
+   "3 交通 Traffic",
+   "4 数据 Data",
+   "5 垃圾 Garbage",
+   "8 建筑 Recycle（编号8应为6，英文标签错误）",
+   "7 公共服务 Public Service",
+   "8 地质服务 Filter（编号重复，英文错误）",
+   "11 物流 Larges（英文错误）",
+   "13 气候韧性（编号13应为9，英文乱码）",
+   "10 生态 Ecologic",
+   "12 治理看板 Govern",
+   "24h 时间线 (00:07...)（部分乱码）",
+   "各面板正文英文段落：GARBLED 伪文本，每块约30-60字符，合计约400字符乱码"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 6,
+   "visual_defects": false
+  }
+ }
+}

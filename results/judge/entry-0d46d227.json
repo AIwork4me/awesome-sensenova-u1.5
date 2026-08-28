@@ -1,0 +1,44 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-0d46d227",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 167,
+ "round": 1,
+ "seed": "405240617",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 7,
+   "alignment": 6,
+   "real_world_fidelity": 5,
+   "creative_generation": 6
+  },
+  "score_reasons": {
+   "quality": "中央古门场景电影感强：逆光城门、兵士剪影、烟尘氛围统一，UI卡片图形干净；瑕疵：点赞行用户名为乱码伪汉字，中景士兵面部与手部细节含糊，标题与英文说明上下重复出现显得版面未完成，卡片四周留白偏大。",
+   "aesthetics": "暖褐单色调渲染出肃杀历史氛围，中央构图聚焦城门纵深；但整体是简单“卡片+配图”的版式，构图创意与氛围层次一般。",
+   "alignment": "交付了题为“玄武门之变的朋友圈”的社交媒体帖子卡片，标题文案与配图主题对应正确。未满足：提示词明确要求微信朋友圈，实际界面为Instagram式布局（红心/评论/纸飞机/收藏图标、居中卡片），缺少朋友圈特有的封面头图、昵称时间戳、点赞头像列表与评论区；点赞行仅一条且为乱码。",
+   "real_world_fidelity": "微信朋友圈这一核心现实界面未忠实还原（被Instagram式UI替代），点赞者名字为乱码进一步破坏真实感；唐代城门、扎甲兵士与长戟的意象大体符合玄武门之变的历史语境，但均为泛化符号，无具体历史细节。",
+   "creative_generation": "历史事件与现代社交媒介混搭的概念成立，但执行停留在通用模板层面：标题英文重复两次、点赞区乱码、未做出朋友圈式的叙事细节（如评论里的人物对话），想象深度不足。"
+  },
+  "unfulfilled_requirements": [
+   "要求微信朋友圈界面，实际为Instagram风格卡片：缺少朋友圈封面头图、昵称与时间戳、真实点赞/评论列表",
+   "点赞行用户名为乱码伪汉字",
+   "标题“玄武门之变/WeChat Moments of the Xuanwu Gate Incident”在帖子上方与图片下方重复出现，版式冗余"
+  ],
+  "transcribed_text": [
+   "玄武门之变",
+   "WeChat Moments of the Xuanwu Gate Incident（出现两次，拼写均正确）",
+   "玄武门之变的朋友圈",
+   "12（点赞计数）",
+   "点赞行用户名：GARBLED，约4个伪汉字"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

@@ -1,15 +1,28 @@
 {
-  "case_id": 9,
-  "title": "主题海报版式设计",
-  "category": "Posters & Typography",
-  "source_url": "",
-  "upstream_image": "/images/case9.jpg",
-  "styles": [
-    "Poster"
-  ],
-  "scenes": [
-    "Fashion",
-    "Travel"
-  ],
-  "selected_at": "2026-08-27T04:06:41Z"
+ "case_id": 9,
+ "title": "主题海报版式设计",
+ "category": "Posters & Typography",
+ "source_url": "",
+ "upstream_image": "/images/case9.jpg",
+ "styles": [
+  "Poster"
+ ],
+ "scenes": [
+  "Fashion",
+  "Travel"
+ ],
+ "selected_at": "2026-08-27T04:06:41Z",
+ "history": [
+  {
+   "version": 2,
+   "strategy": "S2_simplify_display_text",
+   "failed_checks": [
+    "b_display_text: display text incorrect",
+    "d_miss_zero: text missing elements"
+   ],
+   "applied_directive": "Typography constraint: render ONLY the required title strings; use short letterforms, high contrast between text and background, and avoid any decorative distortion of glyphs. Spell each word exactly as given.",
+   "small_text_exempt": false,
+   "ts": "2026-08-28T00:36:39Z"
+  }
+ ]
 }

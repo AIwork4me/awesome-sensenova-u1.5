@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-52152ae0",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 22,
+ "round": 1,
+ "seed": "1620506884",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 10,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "Clean, confident anime lineart with crisp cel shading and richly textured wood grain on floor, pillars and sign. Effect work (energy rings, splash particles, dust) is layered convincingly; impact debris has clear silhouettes. Anatomy of both fighters holds up in difficult poses; only minor stiffness in the foreground girl's raised hand prevents a 10.",
+   "aesthetics": "Excellent action composition: mirrored red and blue energy swirls frame the two fighters in opposing diagonals, complementary color scheme reads instantly, wide-angle low perspective exaggerates the forward lunge. Faces are expressive and on-model; lighting is dramatic with rim highlights separating figures from the busy dojo background.",
+   "alignment": "All specified elements are present: black-haired girl with high bun in red-and-white Chinese-style outfit with baggy pants in a low forward-thrusting stance; light-purple-haired girl with twin buns in green-and-purple Chinese dress with gold embroidery and black tights performing a flying kick; swirling red energy with water splashes around fighter 1; blue energy around fighter 2; splintering floorboards with flying debris and dust; traditional wooden dojo; weathered sign reading 武術会 exactly; dramatic low-angle action framing.",
+   "real_world_fidelity": "Dojo architecture (post-and-beam wood, shoji screens), kung-fu style garments with frog buttons/gold trim, and the sign characters 武術会 are all plausible and correctly rendered; color-coded qi effects are genre-appropriate rather than misleading.",
+   "creative_generation": "Strong multi-element fusion: dual-energy color storytelling, foreground/background depth hierarchy, and camera language (wide low angle, motion splashes) all serve the battle narrative; design goes beyond a static duel staging."
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "武術会 (weathered wooden sign, large display text, verbatim correct)"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

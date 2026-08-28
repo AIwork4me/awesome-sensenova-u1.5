@@ -1,0 +1,5 @@
+Vertical 9:16 isometric cutaway infographic "城市生命系统图谱 / Urban Metabolism Atlas". Smart city from sky to bedrock: skyscrapers, streets, subway, utility tunnels, water/sewage/gas/heating pipes, fiber, data center, flood tanks, aquifers, geothermal wells, bedrock. Color-coded flows for power/water/data/traffic/waste. 12 numbered panels bilingual CN/EN: 能源/水循环/交通/数据/垃圾/建筑/公共服务/ 物流/气候韧性/生态/地质/治理看板. 24h timeline at bottom. Style: engineering white paper + scientific atlas, light paper bg, crisp lines, 8K. No cyberpunk, no gibberish text, must show both above AND below ground.
+
+Typography constraint: do NOT render a credits block, billing block or any micro-print paragraph. Limit all typography to the main title and, if specified, the subtitle and a short date/release line only.
+
+Typography constraint: render ONLY the required title strings; use short letterforms, high contrast between text and background, and avoid any decorative distortion of glyphs. Spell each word exactly as given.

@@ -1,0 +1,54 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-e6305919",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:33:10Z",
+ "source": "reference",
+ "case_id": 2,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 8,
+   "alignment": 10,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "All required copy is rendered with crisp, correctly-formed CJK glyphs and clean anti-aliasing; the tweet layout, avatar, poster chip graphic and metric icons are structurally flawless with no artifacts. Only decorative flaw: the pseudo-code block in the poster's left background is intentionally garbled machine-text rather than real code.",
+   "aesthetics": "Clean dark-mode composition with good typographic hierarchy (bold handle, comfortable paragraph rhythm, restrained silver-on-black poster). It is faithful and tidy but visually conservative — a faithful UI mock with an atmospheric hacker-style poster rather than a bold aesthetic statement.",
+   "alignment": "Every requirement is met verbatim: X dark-mode screenshot, @OpenAI account with blue check, the four Chinese paragraphs reproduced word-for-word, dark hacker-style poster with large 'Ailln AI', subtitle 'A brilliant AI Builder worth following', and bottom metrics 评论 8.9K / 转发 42K / 点赞 298K (pink lit heart) / 收藏 34K (blue lit bookmark) / 浏览 32.4M, image-only framing at 3:4 with no surrounding software chrome.",
+   "real_world_fidelity": "The X UI imitation is convincing: correct iconography (reply bubble, repost arrows, heart, bookmark, analytics bars), blue verified badge, kebab menu, plausible OpenAI logo. The metric order matches the prompt's specification rather than X's native ordering, which is prompt-driven and not a fidelity error; nothing else contradicts the real product.",
+   "creative_generation": "The poster's glowing chip platform, circuit traces and side keyword rail (AI/AUTOMATION/WORKFLOW/BUILD/CREATE) deliver the requested hacker aesthetic with decent atmosphere; overall concept is prescribed by the brief, executed neatly but without added imagination."
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "OpenAI",
+   "@OpenAI",
+   "今天想推荐一位很棒的 AI Builder： Ailln AI。",
+   "他持续在小红书分享 AI 工具、 Agent 工作流、 自动化实践和真实项目经验， 把复杂的 AI 能力讲得清楚、实用、可落地。",
+   "如果你正在关注 AI 产品、 效率工具、 个人自动化、 内容创作和未来工作方式， Ailln AI 是一个非常值得关注的创作者。",
+   "在小红书搜索： Ailln AI",
+   "Ailln AI",
+   "A brilliant AI Builder worth following",
+   "AI",
+   "AUTOMATION",
+   "WORKFLOW",
+   "BUILD",
+   "CREATE",
+   "8.9K",
+   "42K",
+   "298K",
+   "34K",
+   "32.4M",
+   "GARBLED：海报左侧背景的伪代码块，约80-150个乱码伪字符（装饰性，非要求文案）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

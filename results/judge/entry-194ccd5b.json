@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-194ccd5b",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 26,
+ "round": 1,
+ "seed": "765700029",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "Direct-flash photographic look is convincingly rendered: specular hotspots on the nose, cheekbones and collarbones fall off naturally into a dark background, exactly as harsh on-camera flash behaves. Ribbed tank-top texture, loose knit cardigan fibers and the thin silver chain are all sharply resolved with believable material response. Skin shows natural pores and blush gradient without plastic sheen; film grain is present but fine. No anatomical distortions, no visible artifacts; only very slight over-smoothing on the forehead keeps it from 10.",
+   "aesthetics": "Well-balanced centered portrait with a candid snapshot mood; warm muted palette with dusty rose blush against beige/tan clothing is harmonious. Facial anatomy is correct, gaze direct and engaging, slightly parted glossy lips read naturally. Background clutter adds authentic atmosphere without distracting from the subject.",
+   "alignment": "Young Asian woman with long dark wavy hair and wispy bangs: matched. White ribbed tank top: matched. Delicate silver necklace: matched. Soft makeup, pink blush, glossy lips, direct gaze, slightly parted lips: matched. Dim messy room with clothes on a table and a wooden shelf with folded clothes: matched. Flash-lit candid film aesthetic with muted color: matched. Minor deviation: the beige knit cardigan has slipped off both shoulders rather than 'one shoulder'.",
+   "real_world_fidelity": "All elements withstand real-world scrutiny: clothing, necklace, room furniture and folded garments are ordinary and correctly depicted; no landmarks or cultural artifacts to verify; depiction is respectful and non-problematic.",
+   "creative_generation": "Execution of the candid-flash film-snapshot concept is strong, with good tonal hierarchy (lit subject vs murky interior) and convincing amateur framing. The concept itself is a fairly conventional portrait template, so imagination headroom remains; not counted against execution quality."
+  },
+  "unfulfilled_requirements": [
+   "Cardigan is slipping off both shoulders instead of the specified single shoulder"
+  ],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

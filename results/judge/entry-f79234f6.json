@@ -1,0 +1,40 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-f79234f6",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 16,
+ "round": 1,
+ "seed": "1241735233",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "双曝光融合干净，剪影边缘清晰，米白底与褐色内部过渡自然，印刷颗粒质感到位；人物背部解剖结构（肩、臂、腿）比例正确，无明显AI塑料感或分辨率伪影。左手手掌细节略含糊但整体无硬伤。",
+   "aesthetics": "构图克制、留白充分，米白-土褐配色和谐统一，压抑宿命感氛围营造成功，剪影内小孩与飞鸟剪影带来情绪落点，符合正式动画电影海报的气质。",
+   "alignment": "双重曝光构图、大剪影主体、内部融合风景/人物/图标元素、土褐色主导、颗粒质感、竖版、留白均符合；提示词中的占位文案（XX、XXXX队、XXX的大）被逐字渲染。唯一偏差：提示要求文字以细体为主，而主标题'XXXX队'为粗体。",
+   "real_world_fidelity": "无真实地标或特定文化符号需要核对；足球图案结构正确，人物剪影写实，无刻板印象或合规问题。",
+   "creative_generation": "剪影内嵌风景、孩童、飞鸟与左侧图标列的多元素融合无缝，信息层级（图标列表-主标题-副标题分隔线）清晰，镜头语言为标准院线竖版海报，想象力与执行力俱佳。"
+  },
+  "unfulfilled_requirements": [
+   "提示词要求'图片中若出现文字则以细体字为主'，但主标题'XXXX队'使用了粗重笔画，仅副标题为细体"
+  ],
+  "transcribed_text": [
+   "XX（左列图标旁，共4处）",
+   "XXXX队（主标题，白色粗体）",
+   "XXX的大（副标题，细体衬线）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-027e0392",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 3,
+ "round": 2,
+ "seed": "206889309",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 8,
+   "alignment": 5,
+   "real_world_fidelity": 4,
+   "creative_generation": 7
+  },
+  "score_reasons": {
+   "quality": "Cinematic sports-photography look with sharp facial detail, sweat sheen, realistic flag fabric, credible packed-crowd bokeh, floodlight flare and blue-black smoke; high contrast is well controlled with no banding or upscaling mush. Minor deductions for slightly muddled finger/fabric merging in the viewer-left grip and generic club crest rendering.",
+   "aesthetics": "Strong movie-poster composition: low heroic angle, figure centered as the core, title layered behind the head with good depth separation; blue/black kit echoes the smoke and stand colors; the scream conveys passion. The chaotic pseudo-lettering at top and mid-poster cheapens the otherwise premium look.",
+   "alignment": "Scene elements largely delivered: player celebrating at midfield with arms raised and flag draped over shoulders, passionate roaring expression, packed stands, spotlights, blue-black smoke, confetti, and crowd flags with a Champions-League-style starball banner; knee-up framing satisfies half-to-full body. Misses: the main title is misspelled BASITONI instead of BASTONI; an extra garbled tagline line above the title violates the no-micro-print/limited-typography constraint; the flag is not the required Bosnia and Herzegovina design; stadium is generic rather than recognizably San Siro; exact five-finger count is unverifiable since both hands are closed fists.",
+   "real_world_fidelity": "Multiple real-world checks fail: the draped flag mixes a red field with a yellow star (China-like) and a blue field with an oversized yellow star, lacking Bosnia and Herzegovina's yellow triangle and diagonal white stars; the title misspells the player's name; the jersey sponsor is garbled pseudo-text; the shirt number 10 does not match the player's real squad number; the crest is an approximation rather than the actual club mark.",
+   "creative_generation": "The poster energy is genuinely dramatic — diagonal flag wings frame the figure, confetti and smoke create layered depth, and the title-figure stacking shows competent poster craft; however three separate garbled text zones destroy the professional billing and undercut the design execution."
+  },
+  "unfulfilled_requirements": [
+   "Bosnia and Herzegovina flag design incorrect (no yellow triangle/diagonal white stars; includes an off-brief red field with yellow star)",
+   "Main title misspelled: BASITONI instead of BASTONI",
+   "Extra garbled tagline line above the title violates the limited-typography constraint",
+   "Subtitle line is garbled pseudo-words, not real text",
+   "Jersey sponsor lettering is garbled",
+   "Stadium lacks distinctive San Siro identifiers"
+  ],
+  "transcribed_text": [
+   "BASITONI (main title; MISSPELLED, should be BASTONI)",
+   "INRANSTR IMEA = CUN OOCNIREAT CLEG_BRATDE (top tagline line; GARBLED, roughly 30 pseudo-English characters)",
+   "CUMEIGN N OK (subtitle under title; GARBLED)",
+   "aèadel/acodel-like pseudo-lettering (jersey chest sponsor; GARBLED)",
+   "10 (shorts number, digits correct)",
+   "Circular generic club crest and swoosh-like logo on jersey (approximations, no readable text)"
+  ],
+  "hard_flags": {
+   "display_text_correct": false,
+   "small_text_quality": "garbled",
+   "text_miss_count": 2,
+   "visual_defects": false
+  }
+ }
+}

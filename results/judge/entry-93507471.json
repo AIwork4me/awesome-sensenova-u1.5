@@ -1,0 +1,38 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-93507471",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 33,
+ "round": 1,
+ "seed": "2119745309",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 8,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "哑光黏土/捏捏乐质感还原极佳，表面细腻无噪点，眼睛的高光泽黑与哑光身体形成恰当材质对比，底部粉-紫-蓝渐变过渡柔和，阴影轻柔自然，无任何伪影或结构缺陷。",
+   "aesthetics": "极简构图居中饱满，纯白背景干净，配色柔和甜美，双眼高光位置讲究显得有神，微笑与腮红传达出治愈情绪，kawaii美学完成度高。",
+   "alignment": "大体符合：可爱角色、纯白背景、哑光squishy质感、大而亮的黑眼带白色高光、弧形微笑、圆形粉色腮红、边缘和底部粉/蓝/紫柔和渐变、柔和棚拍光与轻影均到位。唯一偏差：造型为一个光滑的圆形团子而非带起伏波瓣的云朵形状，'cloud'的识别度偏弱。",
+   "real_world_fidelity": "作为玩具/图标设计在物理上可信（落地接触、投影方向一致），无现实物件或文化元素需要核对，无合规问题。",
+   "creative_generation": "执行干净利落但想象力中等：单一体块+标准kawaii面部模板，缺少云朵形态或附加设计语言带来的惊喜，信息层级与镜头语言简洁有效。"
+  },
+  "unfulfilled_requirements": [
+   "角色轮廓为光滑椭圆团状，未呈现可识别的云朵（cloud）起伏外形"
+  ],
+  "transcribed_text": [
+   "图中无任何文字（提示词也未要求文字）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

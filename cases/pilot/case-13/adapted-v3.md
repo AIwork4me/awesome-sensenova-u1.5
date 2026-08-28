@@ -1,0 +1,5 @@
+A realistic photo of a Chinese high school math exam paper, printed inblack and white on slightly gray paper, titled “数学试卷”, with multiplechoice questions and math formulas, including a small 3D geometrycube diagram. The paper is photographed casually with asmartphone, slightly tilted, with uneven lighting, soft shadows, andminor blur. The text is in Chinese with a mix of bold title font andstandard serif body font. Realistic paper texture, exam layout,authentic classroom test sheet style.
+
+Typography constraint: do NOT render a credits block, billing block or any micro-print paragraph. Limit all typography to the main title and, if specified, the subtitle and a short date/release line only.
+
+Typography constraint: render ONLY the required title strings; use short letterforms, high contrast between text and background, and avoid any decorative distortion of glyphs. Spell each word exactly as given.

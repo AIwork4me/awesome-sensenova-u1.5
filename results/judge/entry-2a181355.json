@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-2a181355",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 26,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "皮肤质感、发丝、针织纹理细腻真实，正面闪光灯造成的面部高光与背景快速衰减符合直射闪光物理逻辑，颗粒与轻微色偏呈现可信的胶片质感；无肢体或结构畸变，仅背景细节略含糊。",
+   "aesthetics": "竖幅半身构图自然，视线直视镜头营造 candid 情绪；暖米色开衫与暗调背景对比柔和，粉色腮红与唇色呼应，整体怀旧氛围统一，人物解剖学无异常。",
+   "alignment": "默认描述逐项吻合：年轻亚洲女性、深色长卷发配空气刘海、白色罗纹背心、米色针织开衫滑落单肩、细银项链、粉腮红与水光唇、微张唇直视镜头、昏暗房间（桌面衣物、右侧木架）、胶片颗粒与怀旧质感均出现；仅闪光灯的'harsh'强度表现偏温和，扣少量分。",
+   "real_world_fidelity": "作为写实人像照片成立，服装、饰品、室内陈设符合现实，无失真或不当内容。",
+   "creative_generation": "对'复古胶片抓拍'风格的还原完整，光影叙事与氛围营造到位，但属于对既定摄影风格的执行，想象力空间有限。"
+  },
+  "unfulfilled_requirements": [
+   "闪光灯'harsh direct flash'的生硬感表现偏柔和，接近柔化闪光效果"
+  ],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

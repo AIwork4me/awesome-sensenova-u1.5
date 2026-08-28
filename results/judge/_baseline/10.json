@@ -1,0 +1,43 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-c4a34020",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:33:10Z",
+ "source": "reference",
+ "case_id": 10,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 7,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "年代宣传画质感出色：做旧纸张纹理、放射光芒、红旗与牡丹均以统一油画笔触呈现，人物结构与手部（抱书、指向）基本正确；瑕疵：左侧持书人物肖像与我方刻板印象中的原型相似度偏弱、背景人群面孔略有复制感、局部笔触平滑略失细节。",
+   "aesthetics": "经典年画式三角构图，红橙暖调与光芒中心聚焦视线，主标题、人物、标语牌、底部姓名的信息层级分明，怀旧情绪饱满。",
+   "alignment": "标语“热烈庆祝GPT-Image-2全量开放”以大标题逐字呈现，Sam Altman、Dario Amodei、Elon Musk三人并排出现且底部姓名标签一一对应，中间人物（标签为Dario Amodei）佩戴红领巾，80年代宣传画风格还原到位；全部硬性要求满足。",
+   "real_world_fidelity": "公众人物为风格化肖像，相似度中等（中间人物添加了原型不常戴的眼镜、左侧卷发造型偏年轻），但姓名标签消除了身份歧义；标语牌“科技创新造福人类”“AI的未来无限可能”及书本“安全可靠有益”符合宣传话语体系，复古语境融合自洽。",
+   "creative_generation": "将当代AI人物植入八十年代宣传画的概念执行完整幽默，红旗、火箭、人群、花朵等符号系统无缝融合，叙事与视觉层次俱佳。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "热烈庆祝GPT-Image-2全量开放（大标题，逐字正确）",
+   "科技创新 造福人类（左侧标语牌）",
+   "AI的未来 无限可能（右侧标语牌）",
+   "GPT-Image-2 / 全量开放（左侧人物所抱红书封面）",
+   "安全 可靠 有益（中间人物所抱书册竖排）",
+   "Sam Altman",
+   "Dario Amodei",
+   "Elon Musk（底部姓名均拼写正确）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

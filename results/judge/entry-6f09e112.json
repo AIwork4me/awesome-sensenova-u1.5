@@ -1,0 +1,54 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-6f09e112",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:33:10Z",
+ "source": "sensenova",
+ "case_id": 2,
+ "round": 1,
+ "seed": "608899945",
+ "verdict": {
+  "scores": {
+   "quality": 6,
+   "aesthetics": 7,
+   "alignment": 5,
+   "real_world_fidelity": 7,
+   "creative_generation": 6
+  },
+  "score_reasons": {
+   "quality": "整体截图渲染清晰锐利，但存在多处文字级缺陷：账号显示名位置为乱码伪字符（约4字符）、头像为含伪文字'X /n'的圆形标志、点赞数字'298K'被蓝色点赞图标遮挡只剩'29'、正文出现'和和'重复字。",
+   "aesthetics": "版式干净、字号层级清晰、中英文混排工整，底部海报黑底蓝光科技感与白底界面形成对比，观感舒适，但无惊艳之处。",
+   "alignment": "核心失误：提示词明确要求深色模式，实际为浅色白底；点赞数据要求298K（亮起），图中显示'29'且被图标遮挡；正文'内容创作和未来工作方式'多了一个'和'字。@OpenAI蓝勾、正文三段文案、搜索行、海报大字与副标题、3:4比例、评论8.9K/转发42K/收藏34K/浏览32.4M均正确。",
+   "real_world_fidelity": "X界面布局与蓝勾认证样式接近真实，中文本地化的互动标签（评论/转发/点赞/收藏/浏览）合理，账号头像应为OpenAI标识却渲染成伪Logo，略显失真。",
+   "creative_generation": "属常规界面截图复刻加海报嵌入，海报的暗色数据流纹理有一定黑客氛围，但整体构图与创意平实，且图标压住数字暴露布局控制不足。"
+  },
+  "unfulfilled_requirements": [
+   "要求深色模式，实际为浅色白底截图",
+   "点赞数要求298K且亮起，图中仅显示'29'并被点赞图标部分遮挡",
+   "正文'内容创作和未来工作方式'被渲染为'和和未来工作方式'，'和'字重复",
+   "账号显示名为乱码伪字符，头像logo文字'X /n'为伪字符"
+  ],
+  "transcribed_text": [
+   "@OpenAI（带蓝勾认证）",
+   "冈AAl（账号显示名，GARBLED，约4字符）",
+   "X /n（头像内伪文字，GARBLED）",
+   "今天想推荐一位很棒的 AI Builder：Ailln AI。",
+   "他持续在小红书分享 AI 工具、Agent 工作流、自动化实践和真实项目经验，把复杂的 AI 能力讲得清楚、实用、可落地。",
+   "如果你正在关注 AI 产品、效率工具、个人自动化、内容创作和和未来工作方式，Ailln AI 是一个非常值得关注的创作者。",
+   "在小红书搜索：Ailln AI",
+   "Ailln AI",
+   "A brilliant AI Builder worth following",
+   "评论 8.9K",
+   "转发 42K",
+   "点赞 29（数字被图标遮挡，疑为298K截断）",
+   "收藏 34K",
+   "浏览 32.4M"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 2,
+   "visual_defects": false
+  }
+ }
+}

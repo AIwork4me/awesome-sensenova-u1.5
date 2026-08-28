@@ -1,0 +1,45 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-dbc9afcf",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 7,
+ "round": 1,
+ "seed": "920906195",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 8,
+   "alignment": 5,
+   "real_world_fidelity": 7,
+   "creative_generation": 7
+  },
+  "score_reasons": {
+   "quality": "写实人物渲染精细，皮肤质感与毛发自然，咖啡厅背景虚焦玻璃器皿层次丰富，边缘干净无明显AI塑料感；扣分点：状态栏电量图标显示为畸形的'18:6%'，对话框内中文为伪字符，肩上背带走向略含糊。",
+   "aesthetics": "暖色吧台灯光氛围柔和，浅景深突出人物，构图居中稳定，表情温柔看向镜头符合要求，真人带动漫感五官融合较自然；整体观感舒适但构图略显常规。",
+   "alignment": "竖版9:16要求未达成：实际图像为2048x2048正方形。手机状态栏（时间/信号/WiFi/电量图标）、底部半透明galgame对话框、左侧Q版头像、名字行、台词行、下方操作栏均已生成；但要求的两行简体中文台词实为乱码伪字符，电百分比文本畸形，属于硬性文案失败。",
+   "real_world_fidelity": "咖啡厅/酒吧场景、木质家具、玻璃杯、菜单黑板均符合现实逻辑，人物解剖正常；状态栏电量显示'18:6%'不符合真实UI规范，属于文化/功能细节失真。",
+   "creative_generation": "真人写真与二次元galgame界面融合的创意执行完整，头像与本体角色对应，镜头语言（浅景深、视线引导）得当；但台词乱码严重削弱了对话框作为信息层级的完成度。"
+  },
+  "unfulfilled_requirements": [
+   "整体比例应接近9:16竖版，实际为1:1正方形",
+   "对话框台词应为通顺温柔的简体中文，实际两行均为乱码伪字符",
+   "状态栏电量数字'18:6%'格式畸形"
+  ],
+  "transcribed_text": [
+   "状态栏时间：23:41",
+   "状态栏电量：18:6%（畸形，应为形如xx%的电量数字）",
+   "状态栏图标：设置齿轮、WiFi、信号格、水杯状图标",
+   "角色名：斡安（首字'斡'疑似变形伪字）",
+   "台词第一行：你的深牢就很雄鑾，——GARBLED，约8个伪字",
+   "台词第二行：先却玑徝的梯天，哕很治为一下。——GARBLED，约13个伪字"
+  ],
+  "hard_flags": {
+   "display_text_correct": false,
+   "small_text_quality": "garbled",
+   "text_miss_count": 2,
+   "visual_defects": false
+  }
+ }
+}

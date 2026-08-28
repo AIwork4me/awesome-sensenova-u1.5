@@ -1,14 +1,37 @@
 {
-  "case_id": 4,
-  "title": "老干妈风味",
-  "category": "UI & Interfaces",
-  "source_url": "",
-  "upstream_image": "/images/case4.jpg",
-  "styles": [
-    "UI"
-  ],
-  "scenes": [
-    "Social"
-  ],
-  "selected_at": "2026-08-27T04:06:41Z"
+ "case_id": 4,
+ "title": "老干妈风味",
+ "category": "UI & Interfaces",
+ "source_url": "",
+ "upstream_image": "/images/case4.jpg",
+ "styles": [
+  "UI"
+ ],
+ "scenes": [
+  "Social"
+ ],
+ "selected_at": "2026-08-27T04:06:41Z",
+ "history": [
+  {
+   "version": 2,
+   "strategy": "S1_drop_microtext",
+   "failed_checks": [
+    "c_small_text: garbled small text"
+   ],
+   "applied_directive": "Typography constraint: do NOT render a credits block, billing block or any micro-print paragraph. Limit all typography to the main title and, if specified, the subtitle and a short date/release line only.",
+   "small_text_exempt": true,
+   "ts": "2026-08-28T00:36:39Z"
+  },
+  {
+   "version": 3,
+   "strategy": "S4_style_anchor",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance"
+   ],
+   "applied_directive": "Style anchoring: identify the medium (flat vector poster / photographic print / ink painting), name the palette explicitly, and reference the era and genre in the first sentence of the prompt.",
+   "small_text_exempt": false,
+   "repeat": false,
+   "ts": "2026-08-28T14:34:29Z"
+  }
+ ]
 }

@@ -1,0 +1,50 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-61d82351",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 130,
+ "round": 1,
+ "seed": "526527313",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 8,
+   "real_world_fidelity": 8,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "整体工艺高：糖果盒的亚克力心形窗与内部糖体高光、糖纸锡纸褶皱、马克杯陶瓷反光、徽章金属边缘均干净可信，角色六处出镜形象高度一致（棕波波头、粉瞳、白卫衣、浅笑），无明显结构崩坏。瑕疵在文字层：简介为乱码、T恤胸前 logo 字形变形发虚、糖果袋小字不可辨。",
+   "aesthetics": "粉白主色与樱花/爱心母题贯穿，笔刷色块托底副标增加动感，六宫格版面节奏平衡，信息层级清晰，氛围甜美治愈，风格统一。",
+   "alignment": "六个区块全部按指定位置落地，数量项全部达标：糖纸2、散糖5、马克杯1、徽章4、钥匙扣1、糖果袋2（合计9）；主/副logo、樱花、心形碗、4.26 NEW OPEN 等要素齐全。文字缺陷：主页 handle 写成 @yuonchiii（多一个 i，要求 @yuonchii）、'NEW OPEN' 带多余撇号、简介乱码、T恤 logo 变形。",
+   "real_world_fidelity": "虚构品牌无现实核对负担；社媒 mockup（圆头像、Follow 按钮、bio）与周边品类（亚克力钥匙扣、马口铁徽章、糖果袋）符合真实惯例，无合规问题。bio 乱码与 handle 误拼削弱 mockup 可信度，酌情扣分。",
+   "creative_generation": "品牌系统完整、跨触点一致性执行出色；海报让角色手捧心形糖果碗将产品与人物自然融合，横幅/包装/周边的母题变奏（笔刷、樱花枝、心形窗）有设计巧思，镜头语言成熟。"
+  },
+  "unfulfilled_requirements": [
+   "主页 handle 误写为 @yuonchiii（要求 @yuonchii）",
+   "'4.26 NEW OPEN' 文案带多余撇号",
+   "社媒简介为乱码假文",
+   "T恤胸前 logo 字形变形（癒音ちー不完整/发虚）"
+  ],
+  "transcribed_text": [
+   "癒音ちー（头幅/海报/横幅/主页头图/包装盒）",
+   "ゆおんちー（头幅笔刷块、主页头图、包装盒小字）",
+   "4.26",
+   "NEW OPEN'",
+   "@yuonchii（海报，正确）",
+   "@yuonchiii（主页 handle，多一个 i）",
+   "Follow",
+   "简介行：GARBLED（伪拉丁/混排，约20-25字符，如「id ydb@chy.mesterfl. så misted…」）",
+   "T恤胸前 logo：癒音ち（字形变形，局部 GARBLED 约2字符）",
+   "糖果袋小字：GARBLED（每袋约3-5伪字符）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 2,
+   "visual_defects": false
+  }
+ }
+}

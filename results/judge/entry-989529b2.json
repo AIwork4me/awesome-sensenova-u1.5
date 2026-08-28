@@ -1,0 +1,42 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-989529b2",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 25,
+ "round": 2,
+ "seed": "1364368659",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 8,
+   "alignment": 6,
+   "real_world_fidelity": 6,
+   "creative_generation": 6
+  },
+  "score_reasons": {
+   "quality": "扁平矢量海报风格执行干净：色块边缘锐利、像素树与草地纹理一致、人物块面结构符合体素造型逻辑；瑕疵在于面部嘴鼻区域出现不对称的深色块与下颌处橙色杂点，属轻微贴图紊乱，且标题与副标题文字存在拼写/乱码问题。",
+   "aesthetics": "复古游戏海报构图有力：米色底+黄色放射光芒衬托主体剪影，蓝青配色对比明快，信息层级（大标题-副题-底部口号）清晰，风格还原像素游戏年代感到位。",
+   "alignment": "任务核心是创作一个 Minecraft 皮肤，图中以全身角色立绘呈现，可视为皮肤展示，但角色外观基本等同默认 Steve（青衫蓝裤棕发），看不出受『my look』参考影响的定制特征；底部口号『THE LOOK. \\'MY LOOK\\'』呼应了提示词占位默认值，属亮点；标题 MINECRATS 拼写错误、副标题为乱码英文。无参考图可核验相似度，不作额外扣分。",
+   "real_world_fidelity": "对 Minecraft 视觉语言（体素地形、像素树、方块角色）还原较好，但主标题将知名游戏名 MINECRAFT 误拼为 MINECRATS，品牌级文字经不起现实核对。",
+   "creative_generation": "放射状光晕+巨型立绘的经典海报语言成熟但偏套路；将提示词占位文本转译为口号文字有巧思；整体创意中规中矩，文本执行失误拉低完成度。"
+  },
+  "unfulfilled_requirements": [
+   "主标题拼写错误：图中为 MINECRATS，对应正确名称应为 MINECRAFT",
+   "副标题为乱码伪英文，不可读",
+   "角色为默认 Steve 外观，未体现『my look』参考的定制皮肤特征"
+  ],
+  "transcribed_text": [
+   "MINECRATS（主标题，拼写错误）",
+   "GARBLED 约30字符（副标题『I ne dynadums = the narigm ‡ onxnunes』为伪英文乱码）",
+   "THE LOOK. 'MY LOOK'（底部口号，逐字正确）"
+  ],
+  "hard_flags": {
+   "display_text_correct": false,
+   "small_text_quality": "garbled",
+   "text_miss_count": 2,
+   "visual_defects": false
+  }
+ }
+}

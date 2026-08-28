@@ -1,0 +1,44 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-29cb78de",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 13,
+ "round": 2,
+ "seed": "1761092871",
+ "verdict": {
+  "scores": {
+   "quality": 6,
+   "aesthetics": 7,
+   "alignment": 5,
+   "real_world_fidelity": 4,
+   "creative_generation": 6
+  },
+  "score_reasons": {
+   "quality": "摄影层面相当真实：纸张纹理、轻微倾斜、不均匀光照、柔和阴影、左侧手机离焦虚化都到位；但试卷正文印刷文字大面积乱码伪中文，作为打印品的物理合理性不成立，构成内容级缺陷。",
+   "aesthetics": "随手手机翻拍的构图自然，光影氛围与景深可信，黑白灰纸面色调还原了教室试卷的朴素质感。",
+   "alignment": "标题数学试卷逐字正确、2025年日期行、右上3D立方体几何图、黑白印刷、衬线正文、倾斜与轻微模糊均符合；但多选题与数学公式正文为乱码、题号格式混乱（4.73}、5.6{6}等）、A/B/C/D选项结构未正确呈现、立方体标注乱码。",
+   "real_world_fidelity": "真实高中数学试卷必有可读题目与规范题号选项结构，图中伪文字经不起现实核对，试卷版式规范也失真；摄影质感反而加分，综合偏低。",
+   "creative_generation": "画面内加入半入镜的智能手机强化了随手翻拍叙事，是个不错的细节；但整体为单据特写，创意空间有限。"
+  },
+  "unfulfilled_requirements": [
+   "试题正文与选项为乱码伪中文，非逐字可读的中文题目",
+   "选择题A/B/C/D选项结构缺失",
+   "题号编号格式混乱畸形",
+   "立方体几何图的字母标注为乱码"
+  ],
+  "transcribed_text": [
+   "数学试卷（粗体标题，逐字正确）",
+   "2025年（日期行，正确）",
+   "正文题目行：如 1. 3)=3} 葡能考现试即 / 2. 55) 筏—帧上数离昍—钝势括, 33)去验雨; 決学与( / 想凵· 等大量伪中文乱码，GARBLED，估计全页约250-350字符受累，仅的/角/12/19等零星字符真实",
+   "立方体图内标注（如ロ等）：GARBLED，约4-6字符"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 2,
+   "visual_defects": false
+  }
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-aea68422",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 3,
+ "round": 2,
+ "seed": "550961719",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 8,
+   "alignment": 6,
+   "real_world_fidelity": 4,
+   "creative_generation": 7
+  },
+  "score_reasons": {
+   "quality": "Sharp, high-contrast cinematic render: detailed skin pores and stubble on the face, realistic vein detail in the raised forearms, believable flag fabric folds and confetti depth of field, controlled floodlight bloom. Deductions for the invented dragon-emblem crest on the flag (rendered sharply but nonsensical) and slightly plasticky sheen on the jersey.",
+   "aesthetics": "Strong poster composition: symmetrical raised arms form a triangular frame with the flag cape, title block anchors the bottom third, cool blue/black palette with white smoke reads as an epic European night; determined grimace suits the brief. Title typography is bold and well kerned, though the fictional letterforms undermine authenticity.",
+   "alignment": "Delivered: player at midfield with both hands raised high, flag draped over shoulders, packed stands, floodlights, blue-white smoke, flying confetti, crowd flags including a Champions-League-style starball banner, knee-up framing, and notably both open hands show five fingers each. Misses: the flag is not the Bosnia and Herzegovina design; the main title is misspelled BASTONE instead of BASTONI; the subtitle and date lines are garbled pseudo-words; the stadium lacks San Siro identifiers; expression is more stern than blazing passion.",
+   "real_world_fidelity": "Fails several real-world checks: draped flag shows a fantasy white dragon crest on blue with a single stray yellow star rather than Bosnia's yellow triangle with white stars; jersey sponsor reads 'Jeen', a garbled approximation of Jeep; the title misspells the player's name; the date line '2021' is arbitrary; the club crest is an approximation. Player likeness is generically plausible rather than a verified likeness.",
+   "creative_generation": "Effective movie-poster craft: cape-like flag staging, symmetrical hero framing, clean title hierarchy with divider rules; the open-palm pose gives iconic silhouette. Execution is solid but derivative of standard sports-poster formulas, and the invented flag crest breaks the illusion of a real celebration."
+  },
+  "unfulfilled_requirements": [
+   "Flag is not the Bosnia and Herzegovina design (blue field with fantasy dragon crest and one yellow star instead of yellow triangle with white stars)",
+   "Main title misspelled: BASTONE instead of BASTONI",
+   "Subtitle line 'EMMA 11 JINT' is garbled pseudo-text",
+   "Date/release line 'CUEMEN IN S | 2021' is garbled pseudo-text",
+   "Stadium not recognizably San Siro"
+  ],
+  "transcribed_text": [
+   "BASTONE (main title; MISSPELLED, should be BASTONI)",
+   "EMMA 11 JINT (subtitle; GARBLED, 3 pseudo-words)",
+   "CUEMEN IN S | 2021 (date line; GARBLED except year 2021)",
+   "Jeen (jersey chest sponsor; GARBLED brand approximation)",
+   "Generic circular club crest and swoosh logo (no readable text)",
+   "Illegible micro-text on captain armband (few characters, GARBLED but negligible size)"
+  ],
+  "hard_flags": {
+   "display_text_correct": false,
+   "small_text_quality": "garbled",
+   "text_miss_count": 3,
+   "visual_defects": false
+  }
+ }
+}

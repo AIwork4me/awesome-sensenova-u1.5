@@ -27,6 +27,37 @@ def test_identity_leak_scan():
     assert model_identity_leak(GOOD) == []
 
 
+def test_identity_leak_exempt_transcribed_text():
+    v = {**GOOD, "transcribed_text": GOOD["transcribed_text"] + ["Celebrating GPT-Image-2"]}
+    assert model_identity_leak(v) == []
+
+
+def test_identity_leak_still_flags_score_reasons():
+    leaky = {**GOOD, "score_reasons": {**GOOD["score_reasons"], "alignment": "renders GPT-Image-2 branding"}}
+    flagged = model_identity_leak(leaky)
+    assert flagged and "GPT-Image-2" in flagged[0]
+
+
+def test_identity_leak_prompt_context_exempt():
+    # R17: brand words quoted from the entry's own prompt are fidelity wording.
+    leaky = {**GOOD, "score_reasons": {**GOOD["score_reasons"], "alignment": "renders GPT-Image-2 branding"}}
+    assert model_identity_leak(leaky, allowed_text="海报标题：热烈庆祝GPT-Image-2 发布") == []
+
+
+def test_identity_leak_flagged_when_allowed_text_lacks_term():
+    leaky = {**GOOD, "score_reasons": {**GOOD["score_reasons"], "alignment": "renders GPT-Image-2 branding"}}
+    flagged = model_identity_leak(leaky, allowed_text="an unrelated prompt about a cat")
+    assert flagged and "GPT-Image-2" in flagged[0]
+
+
+def test_identity_leak_exempt_only_matching_substrings():
+    # Multiple matches: exempted ones pardon only themselves; any other hit still leaks.
+    leaky = {**GOOD, "score_reasons": {**GOOD["score_reasons"],
+                                       "quality": "gpt-image style, yet the @OpenAI logo is invented"}}
+    assert model_identity_leak(leaky, allowed_text="draw an OpenAI logo") != []
+    assert model_identity_leak(leaky, allowed_text="gpt-image style with an OpenAI logo") == []
+
+
 def test_unhashable_small_text_quality_returns_error():
     bad = {**GOOD, "hard_flags": {**GOOD["hard_flags"], "small_text_quality": []}}
     errs = validate_verdict(bad)

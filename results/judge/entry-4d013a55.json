@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-4d013a55",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 31,
+ "round": 1,
+ "seed": "258898940",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "photorealistic anime风格完成度极高：发丝数量惊人且随风飘动的动态自然，开衫针织纹理、格子裙与领结的织纹、乐福鞋的皮革高光、皮肤通透质感都经得起细看，浅景深把铁丝网与绿树压到底部背景。扣分：垂下的那只手手指偏长、关节略扭转，有轻度畸形感；右侧长发与肩部交接处发丝与衣物略有粘连。",
+   "aesthetics": "低角度仰拍+人物俯视镜头的构图富有张力，蓝天白云的高饱和与灰金发色、灰色开衫形成清爽和谐配色，日光下的柔和阴影有电影感，眼神与微表情传达安静情绪，视觉焦点明确。",
+   "alignment": "提示词（默认参数值）逐项命中：蹲姿、低角度俯视镜头、ash-blonde长发随风飘动、白皙皮肤、大而明亮的眼睛、浅灰开衫+白衬衫+深色格纹领结+深色格纹百褶裙+深色及膝袜+黑色乐福鞋、明亮的蓝天白云、底部虚化的铁丝网与绿树校园背景、自然日光。细微偏差：要求双臂搭在膝上，图中一只手臂搭膝、另一只手垂落在膝侧未搭。",
+   "real_world_fidelity": "校园场景可信：铁丝网、操场铺装、远树与日式学生装（灰色开衫制服、乐福鞋、及膝袜）符合现实校服文化，材质与光影物理合理，无文化失真或合规问题。",
+   "creative_generation": "执行精良但题材常规：真实感二次元少女写真是常见范式，亮点在于低机位镜头语言、风动发丝的动感与材质保真度的融合，层次与信息焦点处理成熟；想象力与叙事性中等。"
+  },
+  "unfulfilled_requirements": [
+   "'双臂搭在膝上'仅部分满足：一臂搭膝，另一手自然垂落于膝侧"
+  ],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

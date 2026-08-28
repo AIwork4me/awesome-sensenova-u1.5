@@ -1,0 +1,38 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-3bc16c60",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 6,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 7,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "画面精细度高，云层、星空、水面光点细节丰富，人物服装与发丝边缘清晰，倒影过渡自然，无明显AI塑料感或分辨率伪影。",
+   "aesthetics": "高饱和粉紫与深蓝交织的星空冲击力强，巨型流星与边缘发光的层云营造梦幻氛围，人物比例与解剖正确，仰头张手的姿态空灵，唯美感强烈。",
+   "alignment": "构图、色调、蓝色巨型流星、发光层云、水面镜像反射、9:16竖幅等大部分要求达标；但『人物背光形成暗调剪影』未实现——人物实际被充分照亮、服装细节明亮清晰；水面倒影中缺失流星的蓝色光带，人物自身倒影上半身亦不完整。",
+   "real_world_fidelity": "幻想场景无现实地标核对点；镜面水面反射、光斑衰减符合物理直觉，无文化元素失真或不合规内容。",
+   "creative_generation": "天空之镜加巨型流星的奇观化处理电影感强，流星-人物-倒影的视觉层级清晰，多元素融合无缝，空灵静谧的梦境意境完成度高。"
+  },
+  "unfulfilled_requirements": [
+   "要求人物处于背光暗调剪影状态，实际人物受光充分、服装明亮清晰，剪影效果未达成",
+   "要求水面完美对称反射星空、流星、云彩与女孩，图中流星光带未在水面出现对应倒影",
+   "人物自身倒影上半身模糊不完整，对称性打折扣"
+  ],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

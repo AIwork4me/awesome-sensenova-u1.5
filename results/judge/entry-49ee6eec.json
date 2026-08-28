@@ -1,0 +1,43 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-49ee6eec",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 22,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 7,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "Excellent anime illustration craft: crisp confident linework, rich fabric textures with gold embroidery, convincing splintering wood, sparks, dust and liquid effects layered coherently; only minor vagueness in some extended fingers and the far figure's hands.",
+   "aesthetics": "Superb diagonal low-angle composition contrasting the red-energy foreground fighter against the blue-energy airborne fighter, harmonious warm/cool palette, dramatic lighting and dense but readable action staging that conveys high impact.",
+   "alignment": "Most elements delivered: red/white Chinese-style outfit with baggy red pants and low forward-thrusting stance for the black-haired girl, green-and-gold Chinese dress with black tights and airborne leap for the purple-haired girl, swirling red and blue energy, splintering floorboards with debris, weathered hanging sign reading 武術会 correctly, dramatic lighting and low-angle view. Deviations: the black-haired girl's hair reads as a flowing high ponytail/partial tie rather than a distinct high bun, and the purple-haired girl's pose is a leaping knee-strike rather than an extended flying kick; the building reads more as a Chinese temple hall than a Japanese dojo (arguably consistent with the Chinese-style outfits).",
+   "real_world_fidelity": "Chinese cultural details hold up well: knotted frog-button closures, red sashes and tasseled ornaments, gold-embroidered qipao-style dress, calligraphy plaques, and traditional lattice-window timber architecture; 武術会 uses correct traditional characters.",
+   "creative_generation": "Highly imaginative and seamless fusion of two character themes, water/energy effects, and environmental destruction; strong information hierarchy, effective leading lines from the signs to the fighters, and cinematic impact framing."
+  },
+  "unfulfilled_requirements": [
+   "Black-haired girl's hairstyle is a flowing high ponytail/partial tie instead of the specified high bun",
+   "Purple-haired girl performs a leaping knee-strike rather than a clear extended flying kick",
+   "Setting reads as a Chinese temple hall rather than a traditional Japanese-style wooden dojo"
+  ],
+  "transcribed_text": [
+   "武術会",
+   "GARBLED (vertical decorative calligraphy banner on the left pillar, ~6-8 pseudo or semi-legible characters resembling 龍…必達)",
+   "Tanemomi",
+   "2026.04"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

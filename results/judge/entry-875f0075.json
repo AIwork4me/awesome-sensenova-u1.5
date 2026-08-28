@@ -1,0 +1,51 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-875f0075",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 130,
+ "round": 1,
+ "seed": "448700401",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 7,
+   "real_world_fidelity": 8,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "版面渲染极干净：3D 糖果盒高光与亚克力窗、心形糖果的糖衣质感、T恤/马克杯织物与陶瓷材质均可信，人物在各区块保持高一致性，无明显物理或结构错误。瑕疵集中在文字层：个人简介为乱码假日文，海报 OPEN 后多出撇号，包装盒侧面竖排小字发虚。",
+   "aesthetics": "粉白配色与樱花/爱心母题贯穿全板，网格布局平衡、留白得当，角色表情温柔统一，情绪治愈，完成度接近商业交付水平。",
+   "alignment": "六个区块（头幅、包装、海报、横幅、社媒主页、周边）全部按位呈现，角色设定（棕发波波头、粉瞳、白卫衣）与双 logo 完全吻合。但数量有偏差：独立糖纸 2→1、散落心形糖果 5→4、马克杯 1→2、圆徽章 4→3；'4.26 NEW OPEN' 文案带多余撇号；简介文案为乱码未达成'可读假想文案'的质感。",
+   "real_world_fidelity": "虚构品牌无现实核对对象；社媒主页 mockup 的版式惯例（圆形头像、Follow 按钮、handle、bio）符合真实平台样式，电商周边（亚克力钥匙扣、徽章、糖果袋）符合真实周边品类；无合规风险。扣分点是 bio 乱码削弱了 mockup 的真实感。",
+   "creative_generation": "作为品牌全案设计板，主视觉跨六个触点高度统一，信息层级（大 logo→产品→周边）专业，樱花枝、爱心窗、心形碗等母题变奏有巧思，镜头/展示语言成熟。"
+  },
+  "unfulfilled_requirements": [
+   "包装区独立糖纸要求2个，实际仅1个",
+   "散落心形糖果要求5颗，实际可见4颗",
+   "周边区马克杯要求1个，实际出现2个",
+   "圆形徽章要求4枚，实际可见3枚",
+   "社媒简介文字为乱码假文，非可信 mock bio",
+   "海报文案误写为 4.26 NEW OPEN'（多余撇号）"
+  ],
+  "transcribed_text": [
+   "癒音ちー（头幅/海报/横幅/T恤/糖果袋等多处）",
+   "ゆおんちー（副标多处）",
+   "4.26 NEW OPEN'",
+   "@yuonchii（海报及主页 handle）",
+   "Follow",
+   "简介行：GARBLED（伪日文混'Five''0'等，约30字符，如「てそな言葉を…涯ふよなる」不可辨）",
+   "主页底部灰色小字疑似 @yuihachii（过小不确定，疑为 handle 误拼）",
+   "糖果包装竖排：癒音ちー（局部发虚）",
+   "盒子侧面竖排小字：GARBLED（约4-6字符发虚）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 1,
+   "visual_defects": false
+  }
+ }
+}

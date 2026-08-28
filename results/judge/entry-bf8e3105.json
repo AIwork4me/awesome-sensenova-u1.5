@@ -1,0 +1,38 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-bf8e3105",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 22,
+ "round": 1,
+ "seed": "1635237774",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "绘制精度高：木地板纹理与裂纹、飞溅水花与碎屑、红蓝能量流的透明质感、织物褶皱均扎实；两人解剖结构基本正确（低弓步重心、腾空踢腿透视脚底都处理得当），仅前景角色前伸手掌的手指细节略含糊、背景角色手臂前后关系稍隐晦，无硬伤。",
+   "aesthetics": "红蓝双色能量对撞构成强对比，低角度斜线构图极具冲击力，侧窗冷光与尘埃粒子营造戏剧氛围，速度线与飞溅物引导视线，动作张力与情绪饱满。",
+   "alignment": "提示词要素全部命中：传统木造道场、黑发高丸子头红白衣+灯笼裤的前景低姿突进、浅紫发双丸子头绿紫中式绣金裙+黑裤袜的右侧飞踢、红色能量+水花、蓝色能量、地板爆裂碎片尘埃、上方风化木匾「武術会」逐字正确、低角度戏剧光。唯一可挑：飞踢腿向后下方踢出，'flying kick' 的方向感稍弱。",
+   "real_world_fidelity": "「武術会」三字写法正确且木匾做旧合理；中式武服（立领盘扣、绣金纹样）与道场木构建筑经得起核对，无文化误用或合规问题。",
+   "creative_generation": "动作场面镜头语言成熟：低机位+对角线动势+双色能量漩涡的视觉叙事接近格斗游戏立绘水准，两角色主次分明，信息层级清晰，多元素（水、能量、木屑、尘埃）融合自然。"
+  },
+  "unfulfilled_requirements": [
+   "背景角色的踢击方向偏后下，'flying kick（飞踢）'前踢指向感略弱"
+  ],
+  "transcribed_text": [
+   "武術会（木匾，逐字正确）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

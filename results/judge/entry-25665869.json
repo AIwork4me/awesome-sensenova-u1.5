@@ -1,0 +1,65 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-25665869",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 17,
+ "round": 1,
+ "seed": "349048863",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 8,
+   "real_world_fidelity": 8,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "Studio-grade 3D product rendering: believable matte plastics on the visor and straps, convincing PCB detail with a legible XR2 chip, glossy pancake lens elements with realistic reflections, and a soft glowing accent line. Clean edges, no geometry defects; only a faint duplicated ghost line of watermark text near the lower-left callout counts as a rendering artifact.",
+   "aesthetics": "Professional exploded-diagram poster: vertical stack centered on a soft purple-blue gradient, 3+5 callout columns create clear information hierarchy, consistent blue leader lines and typography; lighting is even studio style with gentle grounding shadows. Very cohesive and polished.",
+   "alignment": "Header logo ∞ + Meta Quest 3: correct. Eight callouts in the required 3-left/5-right arrangement: present, and most copy is verbatim correct. Layer stack is close to the requested 9 (top strap, camera wings with three tracking cameras, motherboard, pancake lens unit, main visor shell, battery, side strap, facial cushion) though the 'internal frame' layer is not distinctly separable and only one side strap is clearly shown. Leader-line targeting is partially imprecise (e.g., フェイスプレート/バッテリー arrows land near the strap rather than their parts). Header subtitle and two callout titles are misspelled, see transcription.",
+   "real_world_fidelity": "Snapdragon XR2 Gen 2 is the correct real chip for this product and the PCB/battery/lens internals are plausible; however the rendered visor front (curved glossy shell with glowing rim) resembles a generic/PSVR2-like headset more than the actual angular Quest 3 front plate, so real-product fidelity is only approximate. Trademark text use stays within product-ad conventions.",
+   "creative_generation": "Excellent execution of a complex infographic brief: seamless fusion of photoreal 3D parts with poster typography, strong reading order (title → layers → footer copy), and effective use of glow accents and gradient for a high-tech mood."
+  },
+  "unfulfilled_requirements": [
+   "Header subtitle まったく新しい現実を、まったく新しい構造から。 is garbled (renders as まてこく新しい… in both halves)",
+   "Callout body 幅広いユーザーに… has the word ユーザー garbled",
+   "Callout title トラッキングカメラ misspelled as トラッキンクカカラ",
+   "Callout title パンケーキレンズ deformed (パンケャキレンズ)",
+   "Requested 'internal frame' layer not distinctly shown; side straps only one clearly visible",
+   "Several leader lines point to imprecise components"
+  ],
+  "transcribed_text": [
+   "Meta Quest 3 (header title, correct)",
+   "まてこく新しい現実を、まてこく新しい構造から。 (header subtitle — GARBLED, should read まったく新しい現実を、まったく新しい構造から。; ~5 wrong characters)",
+   "Snapdragon® XR2 Gen 2 (correct)",
+   "圧倒的な処理性能でリアルタイムな体験を。(correct)",
+   "調整可能なIPD機構 (correct)",
+   "幅広いユーアテーに快適なフィット感を。(body partially GARBLED, should read 幅広いユーザーに…; ~3 wrong characters)",
+   "精密設計されたヘッドストラップ (correct)",
+   "快適さと安定性を追求したエルゴノミクス。(correct)",
+   "フェイスプレート (correct)",
+   "洗練されたデザインと最適な重量バランス。(correct)",
+   "トラッキンクカカラ (GARBLED, should read トラッキングカメラ; ~3 wrong characters)",
+   "高精度な位置トラッキングと環境認識を実現。(correct)",
+   "パンケャキレンズ (mildly deformed, should read パンケーキレンズ)",
+   "薄型設計で広い視野角と鮮明な映像を提供。(correct)",
+   "高性能バッテリー (correct)",
+   "長時間駆動を支える最適化された電源設計。(correct)",
+   "柔らかなフェイスインターフェース (correct)",
+   "長時間でも快適な装着感を実現。(correct)",
+   "体験は、構造から進化する。(footer headline, correct)",
+   "一つひとつのパーツに、没入体験を支える最先端テクノロジーとこだわりの設計。Meta Quest 3は、未来を感じさせる体験を内部から生み出しています。(footer body, correct)",
+   "∞ Meta (footer logo, correct)",
+   "XR2 (chip marking, correct)",
+   "Snapdragon® (faint ghost duplicate near lower-left callout — GARBLED artifact, ~12 duplicated characters)"
+  ],
+  "hard_flags": {
+   "display_text_correct": false,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 4,
+   "visual_defects": false
+  }
+ }
+}

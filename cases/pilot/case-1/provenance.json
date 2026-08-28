@@ -1,17 +1,43 @@
 {
-  "case_id": 1,
-  "title": "信息图可视化设计",
-  "category": "UI & Interfaces",
-  "source_url": "",
-  "upstream_image": "/images/case1.jpg",
-  "styles": [
-    "UI",
-    "Infographic"
-  ],
-  "scenes": [
-    "Tech",
-    "Education",
-    "Travel"
-  ],
-  "selected_at": "2026-08-27T04:06:41Z"
+ "case_id": 1,
+ "title": "信息图可视化设计",
+ "category": "UI & Interfaces",
+ "source_url": "",
+ "upstream_image": "/images/case1.jpg",
+ "styles": [
+  "UI",
+  "Infographic"
+ ],
+ "scenes": [
+  "Tech",
+  "Education",
+  "Travel"
+ ],
+ "selected_at": "2026-08-27T04:06:41Z",
+ "history": [
+  {
+   "version": 2,
+   "strategy": "S1_drop_microtext",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance",
+    "c_small_text: garbled small text",
+    "d_miss_zero: text missing elements"
+   ],
+   "applied_directive": "Typography constraint: do NOT render a credits block, billing block or any micro-print paragraph. Limit all typography to the main title and, if specified, the subtitle and a short date/release line only.",
+   "small_text_exempt": true,
+   "ts": "2026-08-28T00:36:39Z"
+  },
+  {
+   "version": 3,
+   "strategy": "S2_simplify_display_text",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance",
+    "d_miss_zero: text missing elements"
+   ],
+   "applied_directive": "Typography constraint: render ONLY the required title strings; use short letterforms, high contrast between text and background, and avoid any decorative distortion of glyphs. Spell each word exactly as given.",
+   "small_text_exempt": false,
+   "repeat": false,
+   "ts": "2026-08-28T14:34:29Z"
+  }
+ ]
 }

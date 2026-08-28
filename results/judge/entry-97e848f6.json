@@ -1,0 +1,57 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-97e848f6",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 17,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 10,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "3D渲染精致：主板芯片、排线、 pancake 镜片组、织带纹理、面部泡棉材质均具工业级可信度，演播室布光+淡紫光晕点缀，边缘干净无伪影；个别内部件（右侧电池块）形态略显含糊。",
+   "aesthetics": "紫蓝渐变底与白黑双色组件对比清爽，垂直爆解结构居中对称、左右标签对称呼应，信息层级（标题/注释/结语）分明，高级科技海报质感。",
+   "alignment": "9层结构（外壳、摄像头传感器、主板芯片、pancake镜头、内部框架、电池、侧带、顶带、面部垫）齐备；8条标注文案与提示词逐字一致（含Snapdragon® XR2 Gen 2与全部日文说明）；标题'∞ Meta Quest 3'、副标题'まったく新しい現実を、まったく新しい構造から。'、结语'体験は、構造から進化する。'、正文与'∞ Meta'角标全部准确。",
+   "real_world_fidelity": "与真实Quest 3营销语汇一致：正面三颗药丸形摄像舱、Snapdragon XR2 Gen 2、pancake镜头、面部缓冲垫等均经得起现实核对，无失实。",
+   "creative_generation": "爆解图叙事清晰、镜头语言专业，标注-部件对应逻辑严密，属于高完成度的产品海报执行；创意方向由提示词给定，主动发挥适度。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "Meta Quest 3（含∞标志）",
+   "まったく新しい現実を、",
+   "まったく新しい構造から。",
+   "Snapdragon® XR2 Gen 2",
+   "圧倒的な処理性能でリアルタイムな体験を。",
+   "調整可能なIPD機構",
+   "幅広いユーザーに快適なフィット感を。",
+   "精密設計されたヘッドストラップ",
+   "快適さと安定性を追求したエルゴノミクス。",
+   "フェイスプレート",
+   "洗練されたデザインと最適な重量バランス。",
+   "トラッキングカメラ",
+   "高精度な位置トラッキングと環境認識を実現。",
+   "パンケーキレンズ",
+   "薄型設計で広い視野角と鮮明な映像を提供。",
+   "高性能バッテリー",
+   "長時間駆動を支える最適化された電源設計。",
+   "柔らかなフェイスインターフェース",
+   "長時間でも快適な装着感を実現。",
+   "体験は、構造から進化する。",
+   "一つひとつのパーツに、没入体験を支える最先端テクノロジーとこだわりの設計。Meta Quest 3は、未来を感じさせる体験を内部から生み出しています。",
+   "∞ Meta"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

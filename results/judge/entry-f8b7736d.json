@@ -1,0 +1,38 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-f8b7736d",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 5,
+ "round": 2,
+ "seed": "522679952",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 8,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "Rich watercolor-plus-ink rendering with credible paper grain, dry-brush edge flywhite and misty aerial perspective inside the silhouette; profile contour is crisp. Minor weaknesses: some mid-tone areas turn muddy where scenes overlap, and the clock-orb and dragon head read slightly ambiguously at close inspection.",
+   "aesthetics": "Quiet, grand and poetic: harmonious navy-sepia-gold palette on a mostly white page, strong large-area negative space, restrained composition with a clear focal ladder (landscape top, standing figures middle, emblem bottom); double-exposure effect is elegant rather than busy.",
+   "alignment": "All core asks are visibly met: a giant elegant profile silhouette whose interior grows a coherent fantasy worldview — citadels and spires, waterfall and river valley, a cloaked wanderer and a second staff-bearing figure, a dragon, a bull-like creature, symbolic props (planted sword, compass-rose emblem, orb) and sacred atmosphere; cinematic-poster-meets-watercolor style, soft fog, paper texture, restrained layout, and the low-key elegant signature WHY in the lower-left integrated as a collector-edition mark. Character 'relationships' are only lightly implied, the one soft spot.",
+   "real_world_fidelity": "Purely invented fantasy subject, so no real landmarks to verify; internal logic is consistent (era-appropriate architecture, creatures, props), nothing culturally offensive or non-compliant, and the single word WHY is spelled correctly.",
+   "creative_generation": "Excellent narrative synthesis: silhouette-as-world concept executed seamlessly without hard collage seams, with a coherent symbol system, staged depth like film key art, and a legible heroic legend read at a glance; memorably above template level."
+  },
+  "unfulfilled_requirements": [
+   "Character relationships inside the world are only weakly implied (two lone figures, no interaction)"
+  ],
+  "transcribed_text": [
+   "WHY (signature, lower left, spelled correctly)"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

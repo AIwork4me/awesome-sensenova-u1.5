@@ -1,0 +1,57 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-eed45ad0",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 1,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "941x1672竖版，线条密集但清晰锐利，等距剖面体的建筑、地铁、管廊、地质分层渲染一致稳定，无崩坏或明显伪影；唯一保留意见：评判分辨率下部分最小号说明文字无法逐一辨识，其正确性无法完全核实。",
+   "aesthetics": "工程白皮书+科学图集风格还原出色：米白纸面底色、统一色标体系、编号面板网格与中央剖面形成清晰主从关系，信息密度极高却层次井然，专业感和秩序感强。",
+   "alignment": "竖版9:16比例精确符合（0.563≈0.5625）；等距剖切同时呈现地上摩天楼/街道与地下地铁、综合管廊、光纤、数据机房、含水层、地热、基岩，含天空到基岩的深度标尺；系统图例给出电力/供水/供热/交通/物流/数据/生态等彩色流线；12个双语面板主题全部出现（能源①水循环②交通③数据④垃圾⑤建筑⑥公共服务⑦食物物流⑧气候韧性⑨生态⑩地质⑪，治理看板以'关键指标(实时)'面板呈现但未见⑫编号徽标）；底部有'24小时城市运行图/24-Hour City Cycle'时间轴；无赛博朋克元素。扣分：第12面板编号缺失，洪水调蓄池未能明确辨认，微缩文字可读性存疑。",
+   "real_world_fidelity": "城市基础设施体系（地铁、管廊、变电站、污水处理、地热交换、基岩）的相对深度与功能关系符合现实工程认知，指标数字（8,620 MW、3.45 million m³、18,540t等）量级合理，无文化失真或合规问题。",
+   "creative_generation": "以单一连续剖面贯通天际线到基岩的叙事极具野心且执行完整，'城市作为生命系统'的隐喻通过流线与器官式面板落地，信息层级、图例体系与时间轴镜头语言成熟，是罕见的高完成度信息图。"
+  },
+  "unfulfilled_requirements": [
+   "第12号面板'治理看板'以关键指标面板形式出现但缺少⑫编号圆标",
+   "部分最小字号说明文字在评判分辨率下不可辨，无法逐一转写核实"
+  ],
+  "transcribed_text": [
+   "标题：城市生命系统图谱（正确）",
+   "标题：Urban Metabolism Atlas（正确）",
+   "副标题：城市是一座有生命的系统 / The City is a Living System",
+   "图例标题：系统图例 System Legend；图例项：电力 Power、供水 Water、供热 Heating、冷却、通信 Communication、交通 Traffic、物流 Logistics、数据 Data Flow、生态 Ecology 等",
+   "面板①：能源系统 Energy Grid",
+   "面板②：城市水循环 Water Cycle",
+   "面板③：交通网络 Transportation",
+   "面板④：数据网络 Data Layer",
+   "面板⑤：垃圾与资源回收 Waste System",
+   "面板⑥：建筑内部系统 Building Systems",
+   "面板⑦：公共服务 Public Services",
+   "面板⑧：食物与物流 Food & Logistics",
+   "面板⑨：气候韧性 Climate Resilience",
+   "面板⑩：城市生态 Ecology",
+   "面板⑪：地下地质 Underground Geology",
+   "地下标注：地铁隧道 Subway Tunnel、综合管廊 Utility Tunnel、光纤管网、数据机房 Data Center、地热、基岩 Bedrock、地下水层等",
+   "指标面板：关键指标（实时）Key Indicators (Real-time)：8,620 MW、3.45 million m³、6.2 万辆、42、18,540t、2起 等",
+   "时间轴：24小时城市运行图 / 24-Hour City Cycle：06:00-09:00 早高峰通勤 Morning Commute、09:00-12:00 电力需求高峰、12:00-14:00 午间出行、17:00-20:00 晚间物流高峰、20:00-24:00 污水处理高峰、00:00-06:00 数据中心负载",
+   "底部标语：可持续的城市 · 韧性的系统 · 美好的生活 Sustainable City · Resilient System · Better Life"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

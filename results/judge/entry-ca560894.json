@@ -1,0 +1,50 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-ca560894",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 130,
+ "round": 2,
+ "seed": "931797733",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 8,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "角色形象一致、粉白糖果材质光泽细腻，包装盒心形开窗与糖果质感真实，边缘清晰；仅包装盒侧面竖排小字、糖纸微缩logo与简介文字存在乱码。",
+   "aesthetics": "淡粉与白的配色高度和谐，樱花与粉爱心母题贯穿全板，六个版块疏密得当，商业品牌板的专业感与可爱风格兼具。",
+   "alignment": "六大版块全部到位：顶部横幅（主logo癒音ちー逐字正确、副logoゆおんちー正确、樱花、右侧人物立绘）、心形开窗糖果盒、宣传海报（4.26 NEW OPEN、@yuonchii逐字正确、心形糖碗）、网页横幅、社媒主页样机（@yuonchii、follow按钮）、周边系列；偏差：徽章仅3枚（要求4枚）、中左区糖纸仅1张（要求2张）、散落糖果约6颗（要求5颗）、NEW OPEN多出撇号。",
+   "real_world_fidelity": "虚构品牌内容自洽，樱花文化元素使用得当，社媒主页样机符合真实产品逻辑，无失实或合规问题。",
+   "creative_generation": "品牌系统完整统一，信息层级与版式执行专业，但人物多次复用相近姿态，周边设计变化略少。"
+  },
+  "unfulfilled_requirements": [
+   "圆形徽章3枚而非4枚",
+   "中左版块独立糖纸1张而非2张",
+   "散落心形糖果约6颗而非5颗",
+   "海报文字显示为NEW OPEN'多出撇号",
+   "社媒简介文字为乱码伪日文"
+  ],
+  "transcribed_text": [
+   "癒音ちー（主logo，头部横幅/糖果盒/海报竖排/网页横幅/主页头图/T恤上均逐字正确）",
+   "ゆおんちー（副logo，逐字正确）",
+   "4.26（正确）",
+   "NEW OPEN'（多出尾部撇号，轻微）",
+   "@yuonchii（海报与主页两处，逐字正确）",
+   "follow（按钮，正确）",
+   "简介文字：安首いね可囲ならくに茹い/距棄軽いさね勧。GARBLED伪日文，约25字符",
+   "糖果盒侧面竖排小字：GARBLED，约10字符",
+   "糖纸微缩文字ら-ち-/癒音-：轻度变形，GARBLED约6字符"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 2,
+   "visual_defects": false
+  }
+ }
+}

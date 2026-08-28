@@ -1,0 +1,42 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-79833bf4",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 13,
+ "round": 1,
+ "seed": "1240501913",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 7,
+   "alignment": 6,
+   "real_world_fidelity": 4,
+   "creative_generation": 6
+  },
+  "score_reasons": {
+   "quality": "手机随手拍氛围到位：纸面灰白质感、光照不均、柔和投影、轻微虚化和桌面木纹都可信，画面左侧还压着一部手机增强场景感；但试卷正文几乎全为乱码伪文字，题号逻辑混乱，纸面内容层面的完成度打折。",
+   "aesthetics": "略倾斜构图与不均匀光线营造出随意的抓拍感，黑白灰影调统一，视觉重心落在标题与几何图上，符合日常记录式审美。",
+   "alignment": "标题'数学试卷'粗体逐字正确，黑白灰纸张、数学公式版式、右侧带 a/b/c 等字母标注的立方体三维几何示意图、倾斜拍摄、不均光、软阴影、轻模糊均满足；未满足项：要求的多选题未出现（全卷无 A/B/C/D 选项），正文中文为乱码而非可读中文，题号排列（1,2,3,15,…,8,18,11）无序。",
+   "real_world_fidelity": "乍看像真实试卷，细看则经不起核对：正文全部为乱码伪字符，公式为形似的伪数学式，题号顺序违背真实考卷编排逻辑，'真实课堂试卷'的可信度仅在远观层面成立。",
+   "creative_generation": "以手机+试卷+木桌的静物组合还原随手拍情境，道具与光影设计合理，但试卷内容本身的信息层级因乱码而失效。"
+  },
+  "unfulfilled_requirements": [
+   "未出现多选题（无 A/B/C/D 选项）",
+   "试卷正文中文为乱码伪文字，不满足'正文为中文'的要求",
+   "题号顺序混乱（1,2,3,15,…,8,18,11），不符合真实试卷编排"
+  ],
+  "transcribed_text": [
+   "数学试卷",
+   "立方体图标字母：a、b、c、ε（形似）",
+   "GARBLED：正文约15行中文与公式均为乱码伪字符（夹杂少量真字符如 3/4、ln、Stol、lim f、a_i、d_n、1/7 等），估计乱码总量约250–350字"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

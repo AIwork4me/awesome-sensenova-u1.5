@@ -6,7 +6,10 @@ status=="fail" row gets exactly ONE strategy chosen from its failed_checks
 strings (pick_strategy), and that strategy's directive is appended to the
 case's latest prompt text as adapted-v{n+1}.md. All application converges on
 the pure function apply_strategy(), so swapping in an LLM rewriter later only
-replaces that body, not the pipeline. Rewrites stop after MAX_REWRITE_ROUNDS
+replaces that body, not the pipeline. If the picked strategy equals the case's
+last applied one (R18), the text is kept unchanged — same prompt, fresh seeds
+— while version, provenance (history entry flagged repeat: true) and ledger
+still advance. Rewrites stop after MAX_REWRITE_ROUNDS
 per case; further failures record a status_capped ledger event instead. When
 main() runs with --round, cases already carrying a rewritten event for that
 round are skipped, so operator reruns cannot stack duplicate directives.
@@ -124,14 +127,19 @@ def rewrite_one(case_id, failed_checks, root=Path("."), ledger="ledger/append.js
     s = pick_strategy(failed_checks)
     case_dir = root / f"cases/pilot/case-{case_id}"
     ver = _next_version(case_dir)
-    (case_dir / f"adapted-v{ver}.md").write_text(
-        apply_strategy(latest_prompt_text(case_dir), s), encoding="utf-8")
     prov_p = case_dir / "provenance.json"
     prov = json.loads(prov_p.read_text(encoding="utf-8")) if prov_p.exists() else {}
     hist = prov.setdefault("history", [])
+    # R18: re-picking the same strategy is a fresh-seed retry, not a new
+    # directive — keep the text unchanged so directives never stack twice.
+    repeat = bool(hist) and hist[-1].get("strategy") == s
+    latest = latest_prompt_text(case_dir)
+    (case_dir / f"adapted-v{ver}.md").write_text(
+        latest if repeat else apply_strategy(latest, s), encoding="utf-8")
     hist.append({"version": ver, "strategy": s, "failed_checks": list(failed_checks),
                  "applied_directive": STRATEGIES[s]["directive"],
                  "small_text_exempt": STRATEGIES[s]["sets_small_text_exempt"],
+                 "repeat": repeat,
                  "ts": _now()})
     prov_p.write_text(json.dumps(prov, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     append_event(lpath, "rewritten",

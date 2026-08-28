@@ -1,0 +1,53 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-e802f703",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 2,
+ "round": 2,
+ "seed": "1394809615",
+ "verdict": {
+  "scores": {
+   "quality": 6,
+   "aesthetics": 7,
+   "alignment": 5,
+   "real_world_fidelity": 6,
+   "creative_generation": 7
+  },
+  "score_reasons": {
+   "quality": "Tweet body Chinese text and poster headline render crisply with correct glyphs; however the bottom UI action row contains two visibly malformed Chinese labels (the character after 转 is wrong, and the two-character label before 32.4M is garbled), the bookmark icon in the poster stats row is an odd rectangular glyph rather than a bookmark ribbon, and the X avatar logo is off-brand blue-on-black. No structural/anatomy defects.",
+   "aesthetics": "Clean card layout with clear hierarchy; the embedded dark poster has convincing depth with blue circuit-line perspective and a disciplined black/white/blue palette; subtitle placement is balanced. The light UI around the dark poster creates acceptable contrast, though overall it reads generic.",
+   "alignment": "Several explicit requirements missed: the tweet interface is LIGHT mode, not the required dark mode; canvas is 2:3 (1664x2496), not the required 3:4; 收藏 34K is shown plain, not lit (点赞 298K is correctly lit red); an extra inconsistent gray handle 'birtipil' appears under @OpenAI. On the plus side, all required copy is present verbatim: the four Chinese body sentences, the search line, poster title Ailln AI, subtitle, and all five engagement figures with correct values.",
+   "real_world_fidelity": "The X UI skeleton is plausible (display name, blue verified check, menu dots, K/M stat formatting, heart = likes), but fidelity breaks down: the gray handle contradicts the @OpenAI account, the bottom action row omits like/bookmark and carries garbled Chinese labels, and the logo colors deviate from the real brand mark.",
+   "creative_generation": "The embedded poster executes the 'dark official hacker' brief well: minimal typography, neon circuit cityscape, restrained accent color; integrating it as a media attachment inside a believable post shell shows good compositional thinking. Deduction because the surrounding UI details undermine the illusion."
+  },
+  "unfulfilled_requirements": [
+   "Dark mode required but the tweet interface is rendered in light mode",
+   "Aspect ratio is 2:3, not the required 3:4",
+   "收藏 34K required to be lit/highlighted but is shown unlit",
+   "Stray handle text 'birtipil' under @OpenAI is inconsistent with the required account",
+   "Bottom action row labels for retweet and views are garbled Chinese characters"
+  ],
+  "transcribed_text": [
+   "@OpenAI (header display name, correct, with blue verified checkmark)",
+   "birtipil (stray gray handle text under the name)",
+   "今天想推荐一位很棒的 AI Builder： Ailln AI。 (correct)",
+   "他持续在小红书分享 AI 工具、 Agent 工作流、自动化实践和真实项目经验，把复杂的 AI 能力讲得清楚、实用、可落地。 (correct)",
+   "如果你正在关注 AI 产品、效率工具、个人自动化、内容创作和未来工作方式，Ailln AI 是一个非常值得关注的创作者。 (correct)",
+   "在小红书搜索： Ailln AI (correct)",
+   "Ailln AI (poster headline, correct)",
+   "A brilliant AI Builder worth following (poster subtitle, correct)",
+   "评论 8.9K / 转发 42K / 298K with red heart / 收藏 34K / 浏览 32.4M (poster stats row, all values and labels correct; bookmark icon malformed)",
+   "评论 8.9K (bottom action row, correct)",
+   "转浚 42K (bottom action row; second character GARBLED, should be 转发)",
+   "star icon + 窚寉 32.4M (bottom action row; label GARBLED, approx. 2 wrong characters, should be 浏览 32.4M)"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

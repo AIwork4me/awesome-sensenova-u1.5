@@ -1,0 +1,34 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-906ed6ea",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 28,
+ "round": 1,
+ "seed": "896924953",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 7
+  },
+  "score_reasons": {
+   "quality": "四格人像均为高写实摄影质感：皮肤纹理、发丝、织物细节真实，虚化背景自然，无肢体或结构畸变；仅橙色背心反光条近乎不可见、个别面板面部光泽略平滑。",
+   "aesthetics": "专业肖像布光，四格影调统一又各有场景氛围（灰墙/公园绿荫/仓库/实验室冷光），浅景深运用得当，观感干净高级。",
+   "alignment": "2x2网格、4个面板、位置与描述逐一对应：左上深藏青西装配蓝领带灰纹背景、右上深蓝圆领T恤公园虚化、左下黄色安全帽+深蓝工装+亮橙背心+仓库虚化、右下白大褂浅蓝衬衫实验室虚化；同为一头短发黑发微笑的年轻东亚男性，身份一致性总体良好，仅下排两格与上排相比脸部略宽、存在轻度身份漂移。",
+   "real_world_fidelity": "四种职业着装符合现实规范与安全常识（安全帽、高可见度背心、白大褂、商务正装），背景道具合理，无刻板化或不当呈现。",
+   "creative_generation": "属模板化身份一致性任务，创意空间有限，但影调衔接、场景区分与信息层级执行到位。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

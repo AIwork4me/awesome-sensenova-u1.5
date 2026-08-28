@@ -1,0 +1,54 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-92d87023",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 2,
+ "round": 2,
+ "seed": "971735558",
+ "verdict": {
+  "scores": {
+   "quality": 5,
+   "aesthetics": 7,
+   "alignment": 5,
+   "real_world_fidelity": 6,
+   "creative_generation": 6
+  },
+  "score_reasons": {
+   "quality": "海报部分渲染干净（全息机器人、辉光、黑客质感佳），但推文正文第二句出现严重字符重叠与乱码、副句柄为伪文本，属明显文字质量硬伤；其余段落文字清晰。",
+   "aesthetics": "整体版式层级清晰，黑色外框+深色海报氛围统一，机器人全息形象有科技感；但深色模式要求下推文卡片为浅色底，明暗协调被打断。",
+   "alignment": "大字「Ailln AI」、副标题、蓝勾认证、评论8.9K/转发42K/298K/34K/32.4M数字均逐字正确且点赞收藏图标亮起；但正文第二句严重乱码、副句柄错误、点赞与收藏缺文字标签、卡片底色与深色模式不符、比例约2:3而非3:4。",
+   "real_world_fidelity": "X界面元素（蓝勾、三点菜单、互动图标、底部横条）形似真实产品；但深色模式中出现浅色卡片不符合真实UI逻辑，其余为虚构宣传内容无合规问题。",
+   "creative_generation": "UI截图+内嵌宣传海报的复合构图执行完整，信息层级合理，但题材常规、创意发挥有限。"
+  },
+  "unfulfilled_requirements": [
+   "正文第二句（他持续在小红书分享...可落地）严重乱码重叠未逐字正确",
+   "副句柄显示为@OtmeNal而非@OpenAI",
+   "点赞298K、收藏34K仅有图标与数字，缺文字标签",
+   "深色模式要求下推文卡片为浅色底",
+   "图片比例约2:3而非3:4"
+  ],
+  "transcribed_text": [
+   "@OpenAI（蓝色认证勾，正确）",
+   "@OtmeNal（乱码，GARBLED，约7字符，应为@OpenAI）",
+   "今天想推荐一位很棒的 AI Builder： Ailln AI。（正确）",
+   "第二句：他持续在小红书分享 AI 工具、 Agent 工作流、 自 / 自动化 之后重叠乱码（GARBLED，约35字符受累，含【实践…真实项…】经验复复的AI能力讲例楚等伪字）",
+   "如果你正在关注 AI 产品、效率工具、 个人自动化、 内容创作和未来工作方式， Ailln AI 是一个非常值得关注的创作者。（正确）",
+   "在小红书搜索： Ailln AI（正确）",
+   "Ailln AI（海报大字，逐字正确）",
+   "A brilliant AI Builder worth following（逐字正确）",
+   "评论 8.9K（正确）",
+   "转发 42K（正确）",
+   "298K（数字正确，文字标签点赞缺失）",
+   "34K（数字正确，文字标签收藏缺失）",
+   "32.4M（正确）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 3,
+   "visual_defects": false
+  }
+ }
+}

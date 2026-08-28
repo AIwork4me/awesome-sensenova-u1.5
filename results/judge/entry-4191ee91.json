@@ -1,0 +1,48 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-4191ee91",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 7,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "写实coser渲染极为精细：皮肤质感细腻、发丝与白手套褶皱自然、眼神光到位，托腮手势解剖正确；咖啡杯与碟、木质吧台材质真实；仅背景酒瓶区（画面左侧）在景深虚化下有局部形态含糊，但被焦外合理掩盖，无结构硬伤。",
+   "aesthetics": "暖色吧台灯光与冷绿发色形成舒服的冷暖对比，浅景深电影感构图，人物表情温柔看向镜头，氛围治愈，二次元与真人融合自然不违和。",
+   "alignment": "竖版接近9:16；顶部状态栏含时间、定位箭头、信号格、5G、电量87%；人物坐于吧台、表情温柔直视镜头；底部半透明galgame对话框含左侧圆形动漫头像、大字名字行、两行治愈系中文台词、下方操作栏（回退/历史/自动/跳过/菜单）与home条，全部要素齐备。名字行'大局已定'更像成语而非人名，与上传参考角色名的对应关系无法核验，存轻微不确定性。",
+   "real_world_fidelity": "手机系统UI图标（信号、5G、电量、定位）形态正确可信，galgame操作栏按钮语义与图标匹配，场景道具合理；角色名用词略不合常理但无文化错误或合规问题。",
+   "creative_generation": "手机截图+galgame界面+真人cos的三层融合创意执行完整，信息层级（状态栏-主体人物-对话框-操作栏）清晰，头像与本体角色对应，镜头语言成熟。"
+  },
+  "unfulfilled_requirements": [
+   "对话框首行'大局已定'作为角色名与上传参考图角色名的对应性无法核验，用词更像成语，存在不确定性"
+  ],
+  "transcribed_text": [
+   "20:47（状态栏时间）",
+   "5G（网络标识）",
+   "87（电量百分比）",
+   "大局已定（对话框名字行，青色大字）",
+   "今天也辛苦了，指挥官。（台词第一行）",
+   "要不要我陪你一起放松一下？（台词第二行）",
+   "回退",
+   "历史",
+   "自动",
+   "跳过",
+   "菜单（操作栏按钮）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

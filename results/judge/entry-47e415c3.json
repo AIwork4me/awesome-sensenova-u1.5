@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-47e415c3",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 31,
+ "round": 1,
+ "seed": "1662821900",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "Exceptionally detailed semi-realistic anime rendering: believable knit texture on the grey cardigan, crisp tartan weave on the bow and skirt, soft leather sheen on the loafers, and individual windblown hair strands. Both hands and the crouched leg anatomy survive close inspection with no structural errors; shadows on the knees and socks are consistent with overhead daylight. Slight over-smoothing of skin and occasional stringy hair clumps keep it from 10.",
+   "aesthetics": "Strong low-angle composition with direct eye contact, dynamic diagonals from the crouch and wind, and a bright, cheerful blue-dominant palette against ash-blonde hair. Large expressive eyes and soft facial shading carry the intended gentle mood; depth-of-field separation from the fence is cinematic.",
+   "alignment": "All wardrobe items match: light grey cardigan, white shirt, dark plaid bow tie, dark plaid pleated skirt, dark knee-high socks, black leather loafers. Crouching pose with arms resting on knees, gaze slightly down at camera from a low angle, clear blue sky with scattered clouds, and blurred chain-link fence with green trees at the bottom are all present. Only deviation: hair is blowing vigorously rather than 'gently'.",
+   "real_world_fidelity": "The outfit is an authentic Japanese school-uniform configuration (seifuku ribbon, pleated skirt, loafers, knee socks); schoolyard fence, trees and daylight read as real; content is wholesome and non-problematic.",
+   "creative_generation": "Beautifully executed but conceptually conventional schoolyard portrait trope; the wind effect, lens height and wardrobe styling are handled with skill, though the scene offers limited narrative novelty."
+  },
+  "unfulfilled_requirements": [
+   "Hair blowing strongly rather than 'gently in the wind'"
+  ],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

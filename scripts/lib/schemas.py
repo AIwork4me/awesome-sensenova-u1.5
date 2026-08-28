@@ -39,12 +39,24 @@ def validate_verdict(v):
     return errs
 
 
-def model_identity_leak(v):
-    texts = [str(t) for t in v.get("transcribed_text", [])]
-    texts += [str(t) for t in v.get("unfulfilled_requirements", [])]
+def model_identity_leak(v, allowed_text=""):
+    # Scan JUDGMENT fields only: score_reasons values + unfulfilled_requirements items.
+    # transcribed_text is a factual transcription of visible image text and is EXEMPT
+    # (e.g. a poster legitimately rendering "GPT-Image-2" must not void the verdict).
+    # R17 prompt-context exemption: identity leaks are judged only OUTSIDE the prompt.
+    # When a matched banned substring (casefold-compared) also appears verbatim in the
+    # entry's own prompt (allowed_text), the judge is citing prompt-provided brand
+    # words to assess fidelity — that is faithful description, not a leak. Each match
+    # is checked individually; a text with any non-exempt match is still flagged.
+    allowed = allowed_text.casefold()
+    texts = [str(t) for t in v.get("unfulfilled_requirements", [])]
     reasons = v.get("score_reasons") or {}
     texts += [str(x) for x in reasons.values()]
-    return [t[:120] for t in texts if _BANNED.search(t)]
+    out = []
+    for t in texts:
+        if any(m.group(0).casefold() not in allowed for m in _BANNED.finditer(t)):
+            out.append(t[:120])
+    return out
 
 
 def extract_json(text):

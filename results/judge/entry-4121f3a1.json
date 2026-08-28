@@ -1,0 +1,62 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-4121f3a1",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 11,
+ "round": 2,
+ "seed": "380020392",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 8,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "Watercolor plus colored-pencil hand-drawn texture is convincing and consistent; all 12 food vignettes are cleanly rendered with credible materials (glaze on bowls, steam, sugar dusting); only the smallest handwritten caption lines show smudged pseudo-characters.",
+   "aesthetics": "Delightful cohesive palette of bayberry red, ginger yellow, sea blue and green; balanced numbered layout over the pale map, unified vine/seafood border, chubby rounded title lettering; cute style held throughout without clutter.",
+   "alignment": "Nearly complete delivery: bird's-eye simplified map base, region and water labels (椒江、路桥、黄岩、临海、三门、台州湾 etc.), all 12 required foods present with correct signature details — chopsticks pulling strands on 蛋清羊尾, ginger-vinegar dish beside the 三门青蟹, eight bowls in a circle for 仙居八大碗, blue-and-white bowl for 姜汁调蛋 — plus compass marked 东海, legend box, square 1:1 ratio, and the title 台州·山海食光地图 decorated with bayberry and fish. Shortfalls: several one-line recommendation quotes are garbled or semi-legible, and a couple of region labels are tiny and deformed.",
+   "real_world_fidelity": "Taizhou culinary culture is faithfully represented (三门青蟹, 石塘渔港海鲜面, 紫阳古街食饼筒 are real local icons); the non-scale cute map is per brief; compass direction 东海 is geographically correct; no cultural errors.",
+   "creative_generation": "Imaginative fusion of story-map and food illustration with a numbered tasting route, clear information hierarchy between title, numbered items and map, and thoughtful framing decoration; execution is polished though the garbled micro-copy slightly undercuts the map's believability."
+  },
+  "unfulfilled_requirements": [
+   "Several handwritten recommendation-quote lines are garbled pseudo-characters (e.g., captions under 食饼筒 and 青蟹)",
+   "Legend box text only partially legible",
+   "Small region/water labels 椒江/灵江 slightly deformed"
+  ],
+  "transcribed_text": [
+   "台州·山海食光地图",
+   "1. 椒江老粮坊",
+   "蛋清羊尾",
+   "2. 临海紫阳古街",
+   "食饼筒",
+   "3. 三门",
+   "青蟹",
+   "4. 温岭石塘渔港(个别字变形)",
+   "海鲜面",
+   "5. 路桥糟羹",
+   "6. 玉环坎门",
+   "炊圆",
+   "7. 黄岩",
+   "麦虾",
+   "8. 仙居的八大碗",
+   "9. 天台的饺饼筒",
+   "10. 临海(古城)麦油脂",
+   "11. 温岭的嵌糕",
+   "12. 椒江姜汁调蛋",
+   "map labels: 椒江 路桥 黄岩 临海 台州湾 等",
+   "compass: 东海 / 东南",
+   "图例",
+   "GARBLED: 部分手写推荐语小字行为伪汉字，约30-60字"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 2,
+   "visual_defects": false
+  }
+ }
+}

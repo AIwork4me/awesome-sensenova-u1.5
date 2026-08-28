@@ -1,0 +1,64 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-7f42e4dd",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 11,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 10,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 10
+  },
+  "score_reasons": {
+   "quality": "Watercolor-plus-colored-pencil texture is consistent and controlled across the whole sheet: bark-like landmasses, layered blue sea wash, clean object edges and no structural breakage; all twelve food illustrations are structurally coherent (steamers, bowls, crabs, rolls). Tiny recommendation lines soften into semi-legible strokes at viewing resolution, which is the only quality caveat.",
+   "aesthetics": "Outstanding picture-book charm: warm bayberry-red accents against sea-blue and turmeric-yellow fields, a vine-and-seafood border that frames without crowding, clear visual hierarchy from title to numbered spots to legend, and a cohesive cute hand-drawn style that stays uniform across dozens of elements.",
+   "alignment": "Nearly everything requested is present: bird's-eye simplified map base; region labels 椒江/路桥/黄岩/临海/温岭/玉环/仙居/三门/天台; water names 灵江 and 台州湾; twelve numbered food spots matching the list (蛋清羊尾, 食饼筒, 青蟹, 海鲜面, 糟羹, 炊圆, 麦虾, 八大碗, 饺饼筒, 麦油脂, 嵌糕, 姜汁调蛋) with handwritten names and recommendation lines; vine/bayberry/shellfish border; compass with 东海 direction; legend box; fat rounded title 台州·山海食光地图 decorated with berries and a fish; square 1:1 ratio. Minor gaps: spot ③'s label appears to possibly read 香蟹 rather than the required 青蟹 (cannot fully resolve at this resolution), and several recommendation lines are too small to verify verbatim.",
+   "real_world_fidelity": "The depicted foods are genuine Taizhou specialties with plausible appearances (green mud crab with ginger-vinegar dish, eight-bowl feast, glutinous cuan yuan in steamer, blue-white porcelain for ginger-egg custard); geography is directionally sensible (灵江 flowing to 台州湾, 东海 to the east, coastal islands); no cultural missteps found.",
+   "creative_generation": "A richly imagined fusion of cartography, gastronomy and illustration: numbered culinary tour logic, per-spot taglines, decorative border narrative, compass and legend world-building; information density is high yet organized with excellent hierarchy and seamless multi-element integration."
+  },
+  "unfulfilled_requirements": [
+   "③号插画的菜名标签疑似写作'香蟹'而非要求的'青蟹'（分辨率所限无法完全确认）",
+   "多句推荐语字号过小，无法逐字核对（要求为示例性文案，未强行计缺）"
+  ],
+  "transcribed_text": [
+   "台州·山海食光地图",
+   "仙居",
+   "临海",
+   "三门",
+   "黄岩",
+   "椒江",
+   "灵江",
+   "温岭",
+   "路桥",
+   "玉环",
+   "台州湾",
+   "东海",
+   "图例",
+   "① 椒江老粮坊 蛋清羊尾（及推荐语小字）",
+   "② 临海紫阳古街 食饼筒（及推荐语小字）",
+   "③ 三门 香蟹（存疑，应为青蟹）及小字",
+   "④ 温岭石塘渔港 海鲜面（及推荐语小字）",
+   "⑤ 路桥 糟羹（及推荐语小字）",
+   "⑥ 玉环坎门 炊圆（及推荐语小字）",
+   "⑦ 黄岩 麦虾（及推荐语小字）",
+   "⑧ 仙居 八大碗（及推荐语小字）",
+   "⑨ 天台 饺饼筒（及推荐语小字）",
+   "⑩ 临海 麦油脂（及推荐语小字）",
+   "⑪ 温岭 嵌糕（及推荐语小字）",
+   "⑫ 椒江 姜汁调蛋（及推荐语小字）",
+   "GARBLED：图例框内部分小字与个别推荐语笔画在当前分辨率下无法逐字辨认（约30-60字）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

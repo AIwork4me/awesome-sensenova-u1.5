@@ -1,0 +1,38 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-b4c93f02",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 26,
+ "round": 1,
+ "seed": "550187906",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "直闪胶片质感还原出色，皮肤高光与颗粒过渡自然，发丝、罗纹针织、银项链吊坠细节清晰，无塑料感、无肢体或结构缺陷。",
+   "aesthetics": "主体居中特写构图，直闪平光与昏暗背景形成快照氛围，粉腮红与水光唇的妆容自然，直视镜头微张唇的眼神有情绪张力，人物解剖正确。",
+   "alignment": "长卷发+碎刘海、白色罗纹背心、米色针织开衫滑落肩头、银色细项链、粉腮红水光唇、直视镜头微张唇、昏暗凌乱房间（木架与堆放衣物）等要素逐项命中；『重胶片颗粒』呈现程度中等，属轻微弱化，其余全部符合。",
+   "real_world_fidelity": "完全符合真实35mm直闪快照的视觉逻辑，人物形象自然可信，无文化失真或不合规内容。",
+   "creative_generation": "对『业余快照感』这一摄影风格关键词的执行成熟到位，但题材为人像摄影常见套路，想象力与信息层级属常规水平。"
+  },
+  "unfulfilled_requirements": [
+   "heavy film grain 要求的颗粒感偏轻，仅中等程度呈现"
+  ],
+  "transcribed_text": [
+   "图中无清晰可辨文字（背景衣物与木架上无成块文字）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

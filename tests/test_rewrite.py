@@ -49,6 +49,30 @@ def test_rewrite_writes_next_version(tmp_path, monkeypatch):
     assert len(rw) == 1 and rw[0]["idem"] == "rw-511-2" and rw[0]["payload"]["version"] == 2
 
 
+def test_repeat_strategy_keeps_text_and_retries_fresh(tmp_path, monkeypatch):
+    """R18: same strategy twice = same prompt text, fresh-seed retry (R18)."""
+    monkeypatch.chdir(tmp_path)
+    d = _mk_case(tmp_path, 25)
+    checks = [GAP_CHECK]                       # routes to S4_style_anchor
+    assert rp.rewrite_one(25, failed_checks=checks) == "rewritten"
+    v2 = (d / "adapted-v2.md").read_text()
+    assert rp.rewrite_one(25, failed_checks=checks) == "rewritten"
+    v3 = (d / "adapted-v3.md").read_text()
+    assert v3 == v2                            # directive must not stack twice
+    prov = json.loads((d / "provenance.json").read_text())
+    assert prov["history"][0]["repeat"] is False
+    last = prov["history"][1]
+    assert last["repeat"] is True
+    assert last["strategy"] == "S4_style_anchor"
+    assert last["version"] == 3
+    assert last["failed_checks"] == checks
+    assert last["applied_directive"] == rp.STRATEGIES["S4_style_anchor"]["directive"]
+    events = load_events(tmp_path / "ledger/append.jsonl")
+    rw = [e for e in events if e["type"] == "rewritten"]
+    assert [e["payload"]["version"] for e in rw] == [2, 3]
+    assert rw[1]["idem"] == "rw-25-3" and rw[1]["payload"]["strategy"] == "S4_style_anchor"
+
+
 def test_rewrite_caps_after_max_rounds(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     d = _mk_case(tmp_path, 42)

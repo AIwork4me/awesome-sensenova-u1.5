@@ -1,0 +1,37 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-2cf04e84",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 208,
+ "round": 1,
+ "seed": "1721098344",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 8,
+   "real_world_fidelity": 9,
+   "creative_generation": 7
+  },
+  "score_reasons": {
+   "quality": "Very clean anime rendering: crisp line art, smooth cel shading with layered light through the blossoms, detailed tree bark, plausible plaid pattern and pleated skirt physics; hands are hidden behind the back avoiding extremity errors, shoes and socks are well drawn. Only the ground petals get slightly blobby in places and window grids on the building are a touch uneven.",
+   "aesthetics": "Bright, harmonious pink/blue palette with high contrast as requested; centered figure against a framing tree with falling petals creates pleasing depth layers; face is cute and symmetric with a blushing shy smile; composition is conventional but balanced.",
+   "alignment": "Nearly all specs met: pink twin tails with purple gradient tips, large purple eyes, white shirt, dark blue plaid skirt, red bow, white over-knee socks, brown shoes, pink hair bows, cherry blossom tree with falling petals, school building in the distance, shy smile, standing with hands behind back and slight forward lean. Two shortfalls: the image is square-format rather than the requested 16:9 wallpaper ratio, and the 'star highlights' in the pupils cannot be clearly verified at viewing resolution.",
+   "real_world_fidelity": "For a fictional anime subject there is little real-world surface to verify; the background school building reads as a plausible Japanese campus with correct window rhythm, and the cherry blossoms are botanically presented; no culturally off elements.",
+   "creative_generation": "Faithful, polished genre execution but low originality: standard moe pose, textbook sakura backdrop and safe centered composition; the light layering and petal scatter add some atmosphere but no novel idea or inventive camera language."
+  },
+  "unfulfilled_requirements": [
+   "比例要求 16:9（手机壁纸）未满足：成品为约 1:1 方图",
+   "眼睛'星星高光'在现有分辨率下无法确认是否绘制"
+  ],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

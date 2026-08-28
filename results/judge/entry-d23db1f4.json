@@ -1,0 +1,49 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-d23db1f4",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 130,
+ "round": 2,
+ "seed": "595872439",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 7,
+   "real_world_fidelity": 8,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "整体渲染干净利落：包装盒体光影与透视合理、糖果高光质感到位、徽章/马克杯/T恤等周边渲染细腻，角色在各版块中形象一致、无肢体崩坏；扣分点为部分小字为伪日文乱码、礼盒心形开窗内角色插画与糖果叠放略显逻辑含混。",
+   "aesthetics": "粉白柔和配色高度统一，樱花+爱心母题贯穿全版面，信息层级清晰（大标题→分区块→周边陈列），角色表情温柔符合设定，商业版面审美完成度高。",
+   "alignment": "六大版块基本齐全：头部横幅（主logo癒音ちー、副logoゆおんちー、樱花、右侧立绘）、左侧包装（心形开窗盒+角色插画+2枚独立糖纸）、右侧宣传海报（立绘、心形糖果碗、4.26 NEW OPEN、@yuonchii）、中部横幅、左下社交主页模拟（头像、@yuonchii、Follow按钮）、右下9件周边（T恤/马克杯/4徽章/亚克力钥匙扣/2糖包）数量与种类均达标；未达标项：海报主logo误写为『癒首ご』而非『癒音ちー』；散落爱心糖果为4颗而非要求的5颗；简介文字与徽章环字为乱码。",
+   "real_world_fidelity": "社交媒体界面（圆形头像、Follow按钮、底部标签栏）符合真实产品范式，周边制品（徽章、钥匙扣、糖包）形态可信；品牌为虚构内容，无真实商标或文化元素误用，日文假名在清晰可读处拼写正确。",
+   "creative_generation": "一次性构建完整品牌识别系统的想象力和执行力俱佳，母题在各载体上的融合自然，版面镜头语言（分区陈列）专业；文本执行瑕疵与糖果计数偏差使完成度略降。"
+  },
+  "unfulfilled_requirements": [
+   "海报主logo拼写错误：图中为『癒首ご』，要求为『癒音ちー』",
+   "散落爱心糖果为4颗，要求为5颗",
+   "社交简介mock bio text为乱码伪日文，非可读文本"
+  ],
+  "transcribed_text": [
+   "癒音ちー（头部横幅主logo，正确）",
+   "ゆおんちー（头部横幅副logo，正确）",
+   "癒首ご（海报主logo，与要求癒音ちー不符）",
+   "ゆおんちー（海报副logo，正确）",
+   "4.26 NEW OPEN!",
+   "@yuonchii（海报与社交主页两处，均正确）",
+   "癒音ちー／ゆおんちー（中部横幅，正确）",
+   "Follow",
+   "癒音ちー（礼盒与T恤上，正确）",
+   "GARBLED 约30字（社交简介两行伪日文、4枚徽章环形文字、2个糖包文字均为伪字符乱码）"
+  ],
+  "hard_flags": {
+   "display_text_correct": false,
+   "small_text_quality": "garbled",
+   "text_miss_count": 2,
+   "visual_defects": false
+  }
+ }
+}

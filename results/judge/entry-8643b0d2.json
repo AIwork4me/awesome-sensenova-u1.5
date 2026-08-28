@@ -1,0 +1,39 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-8643b0d2",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:33:10Z",
+ "source": "sensenova",
+ "case_id": 10,
+ "round": 1,
+ "seed": "1161818295",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 8,
+   "alignment": 9,
+   "real_world_fidelity": 6,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "复古丝网印刷/老宣传画质感出色，红黄网点、放射光芒与纸张肌理统一，三人物面部刻画清晰完整；握拳手势指部刻画略有简化，属风格化范围，无结构崩坏。",
+   "aesthetics": "典型八十年代宣传画构图：上横幅、中三人群像、下飘带，视觉层级分明；正红+明黄+放射线氛围强烈，人物表情与姿态有号召力，解剖学无异常。",
+   "alignment": "标语完整出现：上横幅'热烈庆祝GPT-Image-2'加下飘带'全量开放'拼合即全句、逐字正确；三名指定真实人物均出现且可辨识（左：浅发戴眼镜微笑者、中：深发戴眼镜者、右：短发微笑者），中位戴眼镜人物按提示系红领巾，年代感宣传画风格到位；扣分点仅是标语被拆成两段横幅呈现。",
+   "real_world_fidelity": "八十年代中国宣传画的美术语汇（红领巾、飘带、放射光芒、五角星）还原经得起核对；但画面为庆祝目的绘制三名真实在世公众人物的形象，未经授权的真实人物肖像使用存在公平性与合规风险，人物 likeness 亦为近似而非精确，故降分。",
+   "creative_generation": "将复古政治宣传美学与当代科技人物嫁接，反差幽默感强，信息层级与镜头语言（正面平视群像）执行成熟。"
+  },
+  "unfulfilled_requirements": [
+   "标语被拆分为上下两段横幅，非单一连续标语呈现"
+  ],
+  "transcribed_text": [
+   "热烈庆祝GPT-Image-2",
+   "全量开放"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

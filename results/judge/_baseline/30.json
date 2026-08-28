@@ -1,0 +1,41 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-ad6df359",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 30,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 10,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "线条粗细变化自如、干扫色块保留飞白与叠压痕迹，边缘干净无分辨率伪影；人物解剖在涂鸦夸张语境下控制良好（指认手势、前倾姿态均成立），无塑料感。",
+   "aesthetics": "蓝橙互补配黑色墨线，能量感强；元素沿对角线环绕主体辐射，疏密有致，白底留白充分，情绪明快有感染力，风格还原涂鸦速写本气质。",
+   "alignment": "速写感、自由笔触、干扫色块、无水彩晕染无纸纹、大面积留白、辅助箭头/符号/手写字不拥挤、右下角精致签名BlanPlan——逐项全部满足；'AI builder'主题通过代码窗口、流程图、机器人、agent/build/SHIP IT等元素得到准确演绎。",
+   "real_world_fidelity": "浏览器窗口、<code>编辑器、流程图、齿轮、火箭等图标均符合开发者工作流的真实语汇，无文化失实；涂鸦风格下不追求写实，无违和。",
+   "creative_generation": "idea→agent→build→SHIP IT的叙事线索配合星形爆炸框和节点网络，信息层级清晰、镜头聚焦主体，元素融合自然，创意与执行俱佳。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "idea",
+   "agent",
+   "build!!",
+   "<code>",
+   "SHIP IT!",
+   "BlanPlan"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

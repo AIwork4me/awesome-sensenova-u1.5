@@ -1,0 +1,34 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-717b9595",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 35,
+ "round": 1,
+ "seed": "776465819",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 10,
+   "alignment": 10,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "极高写实度：皮肤质感、发丝、和服织纹与金织带的织锦光泽均精细可信，浅景深过渡自然无AI塑料感；胸前衣领交叠处褶皱略显含糊、皮肤磨皮感轻微，扣1分。",
+   "aesthetics": "左上红枫框架式构图+奶白和服与金色腰封的暖色呼应，背景奶油般焦外虚化营造宁静电影感，回眸微笑情绪传达自然动人，色彩和谐近乎范本。",
+   "alignment": "逐项命中：回眸看镜头、温柔微笑、浅米色和服配橙色枫叶纹、金色织带（背部大结符合女装规制）、深发色盘发配碎发、小珍珠耳环、左上鲜红枫叶取景、背景重虚化秋日庭园，全部实现。",
+   "real_world_fidelity": "和服穿法符合现实（腰带结位于背后、领口层次正确），红枫叶形准确，日本庭园秋景真实可信，无文化失实。",
+   "creative_generation": "构图与镜头语言出色（框架式取景、视线引导），但整体属对提示词的忠实高完成度执行，叙事与元素组织上主动创意有限。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

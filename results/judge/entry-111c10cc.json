@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-111c10cc",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 6,
+ "round": 1,
+ "seed": "860252890",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 7,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "画面完成度高：星空/层云的光影过渡自然，水面镜面反射逻辑成立，云与流星的发光边缘处理细腻；人物服饰细节丰富、无肢体崩坏。小瑕疵：天空高光区有轻微色带/噪点，人物手部与裙摆底部略软，倒影人物面部细节被简化。",
+   "aesthetics": "高饱和粉紫与深蓝冷暖对撞极具冲击力，流星对角线构图与人物中轴形成张力，剪影+边缘光的镜头语言到位，空灵静谧的梦境氛围成功传达；人物解剖与姿态自然。",
+   "alignment": "少女立于水面中心、蓝巨星流星、发光层云、星空、完美水面反射（天空/流星/云/人影俱全）、微光点缀、仰头与张开的单手均按要求呈现。未满足：要求9:16竖版，实际图像接近1:1正方形；4k分辨率无法从交付文件核实。",
+   "real_world_fidelity": "纯奇幻场景，无真实地标或文化元素需要核对，画面内部物理（反射、透视）自洽，无违规内容。",
+   "creative_generation": "宇宙奇观与孤独人物剪影的融合完整，镜像反射形成上下对称的双重构图，视觉层级清晰，电影感强，创意执行卓越。"
+  },
+  "unfulfilled_requirements": [
+   "要求9:16竖版比例，实际为接近1:1的正方形构图"
+  ],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

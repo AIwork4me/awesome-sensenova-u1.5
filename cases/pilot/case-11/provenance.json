@@ -1,14 +1,39 @@
 {
-  "case_id": 11,
-  "title": "一张手绘风格的城市美食地图，以台州为主题",
-  "category": "Architecture & Spaces",
-  "source_url": "",
-  "upstream_image": "/images/case11.jpg",
-  "styles": [
-    "Illustration"
-  ],
-  "scenes": [
-    "Travel"
-  ],
-  "selected_at": "2026-08-27T04:06:41Z"
+ "case_id": 11,
+ "title": "一张手绘风格的城市美食地图，以台州为主题",
+ "category": "Architecture & Spaces",
+ "source_url": "",
+ "upstream_image": "/images/case11.jpg",
+ "styles": [
+  "Illustration"
+ ],
+ "scenes": [
+  "Travel"
+ ],
+ "selected_at": "2026-08-27T04:06:41Z",
+ "history": [
+  {
+   "version": 2,
+   "strategy": "S2_simplify_display_text",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance",
+    "d_miss_zero: text missing elements"
+   ],
+   "applied_directive": "Typography constraint: render ONLY the required title strings; use short letterforms, high contrast between text and background, and avoid any decorative distortion of glyphs. Spell each word exactly as given.",
+   "small_text_exempt": false,
+   "ts": "2026-08-28T00:36:39Z"
+  },
+  {
+   "version": 3,
+   "strategy": "S2_simplify_display_text",
+   "failed_checks": [
+    "a_score_gap: five-dim mean below reference beyond allowance",
+    "d_miss_zero: text missing elements"
+   ],
+   "applied_directive": "Typography constraint: render ONLY the required title strings; use short letterforms, high contrast between text and background, and avoid any decorative distortion of glyphs. Spell each word exactly as given.",
+   "small_text_exempt": false,
+   "repeat": true,
+   "ts": "2026-08-28T14:34:29Z"
+  }
+ ]
 }

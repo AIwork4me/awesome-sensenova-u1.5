@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-ae2a62cc",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 6,
+ "round": 1,
+ "seed": "1402873242",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 8,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "日系插画画风完成度高，线条干净、上色细腻，星云与流星的光效层次丰富；人物服装细节保留完整，无肢体崩坏；水面倒影整体正确，仅人物倒影中出现类似翼状/裙摆扩散的形态与本体略有出入，属轻微艺术化处理而非硬伤。",
+   "aesthetics": "粉紫与深蓝高饱和冷暖对撞极为绚丽，巨大的斜向流星形成强烈对角线构图，星空之镜对称布局营造出空灵静谧的梦境氛围，情绪表达出色，符合日系唯美奇幻的审美取向。",
+   "alignment": "中心少女、镜面水面、粉紫+深蓝天空、耀眼蓝色巨型流星、边缘发光层云、背光剪影但服装可辨、紫色明亮眼眸、微仰头、单手轻张、对称倒影、微小发光点全部落实；少女发带飘动与仰头姿态自然。未达标项：要求9:16竖版，实际画幅接近1:1方形；4K分辨率无法从图内验证。",
+   "real_world_fidelity": "纯奇幻场景，无真实地标或文化符号需核对；人物解剖与水体反射物理基本合理，无合规或刻板印象问题。",
+   "creative_generation": "宏大宇宙背景与孤独人物剪影的对比、镜面反射的双重世界结构、流星群的方向性引导，电影感镜头语言成熟，多元素融合无缝，信息层级清晰。"
+  },
+  "unfulfilled_requirements": [
+   "要求画面比例9:16竖版，实际为约1:1方形构图"
+  ],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

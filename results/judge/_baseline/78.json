@@ -1,0 +1,40 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-f5a8377a",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 78,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 6,
+   "aesthetics": 6,
+   "alignment": 4,
+   "real_world_fidelity": 6,
+   "creative_generation": 5
+  },
+  "score_reasons": {
+   "quality": "剪影边缘干净、构造线绘制利落，但头顶伸出两根触须状多余线条属明显伪影，双脚形态糊化成无结构团块，前脚掌尤其失真；整体更像矢量素材而非草模分析图。",
+   "aesthetics": "动态腾空踢腿姿态张力强、画面平衡尚可，但浅灰平底背景平淡，黑白绿配色为工程图示感，氛围与层次表达有限，头伪影破坏视觉完整性。",
+   "alignment": "核心要求多项未满足：1) 要求纯黑背景，实际为浅灰背景；2) 要求白色身体轮廓线/白色构造线的白线草模，实际为黑色实心剪影配绿色线条，明暗方案完全反转；3) 绿色应表达光照强度渐变的辉光（直射最强/绕射中等/反射最弱）并标注 Main Light 等光源标签，实际绿色仅作关节点与连线标记，无辉光层次、无任何光源推断信息；4) 保留项：无面部、无服饰、简易于头部、姿态结构与肢体布局可读。",
+   "real_world_fidelity": "人体比例与动态大体符合真实运动解剖，但足部结构严重简化失真，手指团块化；作为结构代理图可信度中等。",
+   "creative_generation": "成品更接近动作捕捉标记图而非任务要求的姿态-光源分析表，光源分析这一核心创意未落地，想象力与任务契合度不足。"
+  },
+  "unfulfilled_requirements": [
+   "背景应为纯黑，实际为浅灰",
+   "应为白色轮廓线草模，实际为黑色剪影配绿色线条，方案反转",
+   "绿色应表现光源辉光强度渐变，实际仅为均匀关节标记线",
+   "未做任何光源位置推断与标签标注（Main Light/Rim Light 等）",
+   "头顶出现触须状多余线条伪影"
+  ],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": true
+  }
+ }
+}

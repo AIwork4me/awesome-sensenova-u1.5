@@ -1,0 +1,34 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-14043798",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 35,
+ "round": 1,
+ "seed": "581949131",
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 10,
+   "alignment": 10,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "Skin texture, hair strands and fabric weave are rendered with high realism; lighting on the face is consistent with the soft ambient daylight; edges are clean with no visible artifacts. Only minor over-smoothing of skin keeps it from a perfect score, and hands are not shown so extremity quality is unverified.",
+   "alignment": "All specified elements are present: subject looks back over her shoulder at the camera with a gentle smile, light beige kimono with orange maple leaf patterns, gold brocade obi with back bow, dark elegant updo with loose framing strands, small pearl drop earring, red maple foliage framing the top-left, and heavily blurred bokeh background.",
+   "aesthetics": "Excellent cinematic portrait: shallow depth of field with creamy bokeh, harmonious red-gold-beige palette, subject placed on a pleasing diagonal, mood is serene and warm, facial anatomy and expression are natural and appealing.",
+   "real_world_fidelity": "Kimono is worn in a culturally plausible way with a proper obi knot and himo, the foliage reads as genuine Japanese momiji, and jewelry/hairstyle are era-appropriate; nothing contradicts real-world reference.",
+   "creative_generation": "While the composition closely follows the prompt's shot description, the execution shows strong camera language: over-the-shoulder gaze, layered foreground leaves, and color-graded depth; element fusion (subject, obi sheen, foliage bokeh) is seamless."
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

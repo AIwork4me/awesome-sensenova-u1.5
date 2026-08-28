@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-b63b07d6",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "sensenova",
+ "case_id": 33,
+ "round": 1,
+ "seed": "728616493",
+ "verdict": {
+  "scores": {
+   "quality": 10,
+   "aesthetics": 9,
+   "alignment": 10,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "3D渲染质量极高：哑光黏土/减压玩具质感真实，边缘圆润无锯齿，粉蓝紫渐变过渡柔和自然，大眼睛高光与哑光表面形成恰当材质对比，底部柔和投影物理逻辑正确，无任何伪影或瑕疵。",
+   "aesthetics": "居中极简构图干净利落，马卡龙粉彩配色和谐治愈，表情亲切微笑传递愉悦情绪，留白充分，完全符合kawaii图标审美。",
+   "alignment": "纯白背景、柔软哑光挤压质感、带白色高光的黑色大眼睛、弧形微笑、圆形粉色腮红、底部与边缘的粉/蓝/紫淡彩渐变、柔和棚拍光、轻柔投影——规格逐项达成，云朵轮廓可辨识，无未遵循项。",
+   "real_world_fidelity": "虚构卡通角色，无现实地标或文化元素需要核对；光影与投影符合物理常识，内容中性无合规风险，给基准高分。",
+   "creative_generation": "渐变在腮红与底部间的融合处理显示出细腻的色彩设计功底，云朵造型识别度好；但任务本身为单主体图标模板，创意空间有限，属高质量执行而非突破性想象，给中上分。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "图中无任何文字元素"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-9d47e83b",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 25,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "皮肤各视图（正面/侧面/背面）像素纹理一致、边缘干净，主渲染图有真实的Minecraft式光影和场景（草地、水面、树叶方块），无分辨率伪影，无结构崩坏；仅帽子与头发衔接处个别像素过渡略生硬。",
+   "aesthetics": "深色信息板布局专业，标题区/视图区/细节区/色板区层级清晰，大地色+牛仔蓝配色和谐统一，左上游戏场景与右侧图纸形成虚实对比，情绪轻松亲切。",
+   "alignment": "提示词仅要求'create a minecraft skin inspired by my look'，图像完整交付：一套连贯的Minecraft皮肤（黑帽印字building things、浅胡须、棕T恤、蓝牛仔裤、白鞋）并以正面/侧面/背面视图+细节清单+色板呈现，超出预期地完成了任务，无未遵循项。",
+   "real_world_fidelity": "Minecraft的方块地形、皮肤UV分区与像素美学还原准确可信；文字全部清晰正确，无文化失真或合规问题。",
+   "creative_generation": "把皮肤设计包装成产品级展示图的创意出色：细节图标列表、色卡、多视角三连渲染增强信息层级，'building things'帽字成为记忆点，镜头语言（场景渲染+设计图纸）成熟。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "标题：MINECRAFT SKIN（正确）",
+   "副标题：INSPIRED BY ME（正确）",
+   "视图标签：FRONT / SIDE / BACK / SIDE（均正确）",
+   "帽子文字：building things（多处出现，拼写均正确）",
+   "DETAILS（正确）",
+   "BLACK CAP \"building things\"（正确）",
+   "LIGHT BEARD（正确）",
+   "TAN SHIRT（正确）",
+   "BLUE JEANS（正确）",
+   "WHITE SNEAKERS（正确）",
+   "COLOR PALETTE（正确）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

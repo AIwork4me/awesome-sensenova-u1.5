@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-f02c69a4",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 35,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "写实度极高：皮肤、发丝、珍珠耳钉与和服织纹细节清晰，浅景深过渡自然，前景枫叶与背景焦外光斑符合光学逻辑，无结构畸变或塑料感。",
+   "aesthetics": "人物置于右侧三分线回眸构图，左上红叶框景形成对角呼应，红叶暖调与米白和服对比和谐，柔光氛围宁静电影感，人物解剖学与表情自然。",
+   "alignment": "回眸微笑、浅米色枫叶纹和服、金色宽带（背部可见金棕色织纹腰带）、盘发加碎发、珍珠耳钉、秋日红枫庭园、左上红叶框景与重背景虚化全部呈现；唯金色腰带大部分被身体遮挡仅局部可见，扣少量分。",
+   "real_world_fidelity": "和服形制、枫叶纹样与秋季红枫（红叶）庭园场景符合日本文化现实，配饰与妆容得体，无失真或不当内容。",
+   "creative_generation": "回眸视角与红叶框景的镜头语言成熟，情绪传达完整，但场景属经典人像范式，想象与多元素融合的惊喜度中等。"
+  },
+  "unfulfilled_requirements": [
+   "金色腰带仅背部局部可见，未能完整展示"
+  ],
+  "transcribed_text": [],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-faef5bf4",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 15,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 9,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "照片级真实感，皮肤质感、瓶身水珠与气泡、小龙虾壳的油亮质感逼真，手部握瓶结构正确；仅瓶身拉丁字与T恤印花小字有伪字符，无结构硬伤。",
+   "aesthetics": "夜宵摊霓虹氛围浓郁，芥末黄书法大字与暗色背景形成强对比，人物开怀大笑的表情极具感染力，商业海报的视觉层级分明。",
+   "alignment": "19岁中国少女、黑色长直发、开心情绪、夜宵摊、啤酒、小龙虾、芥末黄艺术字标语『趁年轻，激爽才够味！』逐字正确呈现；人物为举瓶展示而非正在饮用的瞬间，属海报常规表达，整体高度契合。",
+   "real_world_fidelity": "雪花啤酒、小龙虾、烧烤摊招牌、霓虹灯牌等中国夜市元素经得起现实核对，文案风格符合本土营销语言，无文化失真。",
+   "creative_generation": "书法大标题+人物+食物前景的经典促销海报结构执行到位，霓虹附标『人生苦短 必须激爽』与铁桶文案呼应主题，创意与信息层级完整。"
+  },
+  "unfulfilled_requirements": [
+   "『喝啤酒』表现为举瓶展示而非正在饮用的瞬间（海报语境下可接受，轻微偏差）"
+  ],
+  "transcribed_text": [
+   "趁年轻，激爽才够味！（主标题，逐字正确，芥末黄书法字）",
+   "人生苦短 必须激爽（霓虹灯牌，正确）",
+   "小龙虾 啤酒·烧烤（店铺招牌，正确）",
+   "生活不设限 爽就对了！（铁桶文字，正确）",
+   "雪花（瓶标汉字，正确）",
+   "瓶身拉丁字（应为SNOW，可见部分变形为类似RON）",
+   "T恤拉丁字母印花 GARBLED（约8-12个伪字母）",
+   "背景左侧招牌局部小字 GARBLED（少量伪字）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

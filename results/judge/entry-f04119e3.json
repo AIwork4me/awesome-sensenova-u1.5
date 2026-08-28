@@ -1,0 +1,41 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-f04119e3",
+ "backend": "agent",
+ "judged_at": "2026-08-28T14:29:12Z",
+ "source": "sensenova",
+ "case_id": 167,
+ "round": 2,
+ "seed": "1107835114",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 8,
+   "alignment": 3,
+   "real_world_fidelity": 8,
+   "creative_generation": 4
+  },
+  "score_reasons": {
+   "quality": "Cinematic rendering is clean: Tang-dynasty gate architecture, banners and ranks of armored soldiers read clearly; foreground figures are silhouetted so no anatomy failures; slight banner-cloth deformation and overall softness are the only blemishes.",
+   "aesthetics": "Strong poster composition with unified golden-sepia palette, atmospheric haze and backlit sun, clear three-tier hierarchy of title, subtitle and scene; mood of tension before the ambush is well conveyed.",
+   "alignment": "Only the text layer matches the brief. The essential creative premise — a WeChat Moments (朋友圈) interface for the Xuanwu Gate Incident — is entirely absent: no phone UI, feed, avatars, likes or comments anywhere. What is delivered is a conventional historical event illustration. The short date line is garbled pseudo-text. Main title and subtitle are correct and the no-micro-print constraint is respected.",
+   "real_world_fidelity": "Tang-style gate towers, city walls, period armor and banners are plausible for 626 CE with no visible anachronisms or cultural errors; nothing offensive or non-compliant.",
+   "creative_generation": "The mashup concept (ancient coup retold as social-media feed) was not executed at all; as a standalone historical poster it is competent but conventional, so imaginative fusion and information layering score low."
+  },
+  "unfulfilled_requirements": [
+   "WeChat Moments interface / social-feed concept completely missing",
+   "Short date/release line garbled (pseudo-characters and scrambled numerals)"
+  ],
+  "transcribed_text": [
+   "玄武门之变的朋友圈",
+   "WeChat Moments of the Xuanwu Gate Incident",
+   "GARBLED date line reading approx.: 日:12: 8年 12月 · 026专"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 1,
+   "visual_defects": false
+  }
+ }
+}

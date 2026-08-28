@@ -1,0 +1,36 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-388a3870",
+ "backend": "agent",
+ "judged_at": "2026-08-28T00:30:33Z",
+ "source": "reference",
+ "case_id": 33,
+ "round": null,
+ "seed": null,
+ "verdict": {
+  "scores": {
+   "quality": 9,
+   "aesthetics": 9,
+   "alignment": 10,
+   "real_world_fidelity": 9,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "渲染非常干净：磨砂哑光的黏土/减压玩具质感 convincingly，表面细微颗粒感真实，云朵团块边缘圆润清晰；眼睛为高光准确的光滑黑球材质，与哑光主体形成材质对比；纯白背景无噪点伪影，仅在底部渐变与投影衔接处略柔和，无结构缺陷。",
+   "aesthetics": "居中极简构图，视线聚焦面部；粉/蓝/紫的低饱和马卡龙渐变点缀在白色主体上和谐悦目；柔光营造温柔的治愈系氛围；五官比例（大眼、短弧笑、圆腮红）符合 kawaii 审美，解剖/比例无异常。",
+   "alignment": "逐项核对全部符合：云朵主体 ✓、纯白背景 ✓、哑光黏土/捏捏乐质感 ✓、带白色高光的大颗光泽黑眼 ✓、简单弧形微笑 ✓、双颊圆形粉腮红 ✓、边缘与底部粉蓝紫淡彩渐变 ✓、柔和棚拍光与浅淡投影 ✓、极简图标风格 ✓。无未遵循项。",
+   "real_world_fidelity": "作为拟物商品渲染在物理上可信：光影方向一致、接地阴影自然、材质（哑光本体+光泽眼珠）符合真实玩具工艺；不含真实地标或文化元素，无失真或合规问题。",
+   "creative_generation": "在极简图标风格框架内完成度高：用渐变色打破纯白单调、以材质对比增加精致感，信息层级与镜头语言（近景平视特写）干净利落；题材本身简单，想象力发挥空间有限，属规范执行型创作。"
+  },
+  "unfulfilled_requirements": [],
+  "transcribed_text": [
+   "图中无任何可辨认文字，也无乱码区块"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}
