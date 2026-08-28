@@ -1,0 +1,39 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-744a0cf2",
+ "backend": "agent",
+ "judged_at": "2026-08-28T23:39:00Z",
+ "source": "sensenova",
+ "case_id": 25,
+ "round": 3,
+ "seed": "1364430545",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 8,
+   "alignment": 9,
+   "real_world_fidelity": 8,
+   "creative_generation": 6
+  },
+  "score_reasons": {
+   "quality": "像素方块纹理干净锐利，人物头/躯干/四肢比例符合Minecraft方块人体规范，草地、树冠、云层的体素光照一致，无明显结构畸变；仅角色为常规默认形象，细节层次一般。",
+   "aesthetics": "蓝天绿地高饱和配色明快，主体居中、黑描边突出，海报构图稳定统一，具有官方渲染图般的干净氛围。",
+   "alignment": "“受 my look 启发的 Minecraft 皮肤/角色”已按常见理解交付：方块人物+青色上衣+蓝色裤子+草地世界场景完整；核心概念达成。",
+   "real_world_fidelity": "Minecraft 体素美学（草方块、云、树）还原可信；角色高度接近该游戏默认男性角色，属于对原作资产风格的贴近复刻。",
+   "creative_generation": "执行工整但创意增量有限：造型与场景均为最常规组合，顶部标题乱码进一步拉低完成度与原创观感。"
+  },
+  "unfulfilled_requirements": [
+   "顶部大号像素标题左半段为乱码伪字形，仅“my reference”可读（提示词本身未要求该文案，属画面自发文字且渲染失败）"
+  ],
+  "transcribed_text": [
+   "GARBLED：顶部像素标题前段约6-8个伪字形（形如“ΛE00M M|e:t”）",
+   "my reference（标题尾段，可读）"
+  ],
+  "hard_flags": {
+   "display_text_correct": false,
+   "small_text_quality": "garbled",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-b13dbcf4",
+ "backend": "agent",
+ "judged_at": "2026-08-28T23:39:00Z",
+ "source": "sensenova",
+ "case_id": 130,
+ "round": 3,
+ "seed": "1232558099",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 7,
+   "real_world_fidelity": 7,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "整版渲染干净利落：六个版块边缘清晰、包装盒质感和糖果光泽可信、角色形象跨版块保持高度一致、分辨率无可见伪影；扣分点为个人简介区及糖果包装上的小字为乱码伪日文，T恤logo下亦有一行微小乱码。",
+   "aesthetics": "粉白配色统一和谐，樱花与爱心母题贯穿全版，信息层级（大标题-版块-单品）清晰，角色可爱、解剖正确、表情温柔，整体是完成度很高的品牌设计板。",
+   "alignment": "六类版块（头幅、包装、海报、横幅、社媒主页、周边集合）全部到位，主logo'癒音ちー'与副logo'ゆおんちー'逐字正确且多处复现一致，樱花/爱心/角色元素齐备。未满足项：海报社交账号写作@yuonchiii（要求@yuonchii，多一个i）；海报'4.26 NEW OPEN'尾部多出一个撇号状伪影；圆形徽章画了5枚（要求4枚）；独立糖纸仅1张（要求2张）；散落爱心糖果约4-5颗（要求5颗，计数不完全确定）。",
+   "real_world_fidelity": "包装、徽章、亚克力钥匙扣、马克杯等周边形制符合现实商品逻辑，社媒主页布局（头像、Follow按钮、handle）贴近真实平台；但简介文案为乱码伪日文/伪中文，弱化真实感。",
+   "creative_generation": "将角色IP展开为完整品牌周边系统的想象力出色，多元素（包装透视、糖果材质、UI拟真）融合无缝，版面节奏与视觉动线成熟。"
+  },
+  "unfulfilled_requirements": [
+   "海报社交账号应为@yuonchii，实际为@yuonchiii",
+   "海报文案应为'4.26 NEW OPEN'，实际尾部带多余撇号状伪影",
+   "圆形徽章要求4枚，实际绘制5枚",
+   "独立糖纸要求2张，实际仅1张",
+   "社媒简介文字要求为可读mock文案，实际为乱码伪日文/伪中文"
+  ],
+  "transcribed_text": [
+   "癒音ちー（头部大标题，正确）",
+   "ゆおんちー（头部副标题，正确）",
+   "癒音ちー（包装盒，正确）",
+   "ゆおんちー（包装盒小字，基本正确）",
+   "4.26 NEW OPEN'（海报，尾部多余撇号状伪影）",
+   "@yuonchiii（海报，拼写错误，应为@yuonchii）",
+   "癒音ちー（横幅，正确）",
+   "癒音ちー／ゆおんちー（主页头图，正确）",
+   "@yuonchii（主页handle，正确）",
+   "Follow（按钮，正确）",
+   "简介三行：発タタちも伯のじつ／支贵信息／へつた尻せの眞造農叐 — GARBLED，约25个乱码字符",
+   "简介下方一行浅色小字 — GARBLED，约10个乱码字符",
+   "T恤logo下小字 — GARBLED，约7个乱码字符",
+   "糖果包装竖排小字 — GARBLED，约6个乱码字符"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 3,
+   "visual_defects": false
+  }
+ }
+}

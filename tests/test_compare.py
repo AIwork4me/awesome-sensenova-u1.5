@@ -178,3 +178,71 @@ def test_round2_report_carries_frozen_rows_idempotent(tmp_path, monkeypatch):
     assert len(rep2b["per_case"]) == 2
     assert sum(1 for r in rep2b["per_case"] if r.get("carried_from_round") == 1) == 1
     assert len(Path("ledger/append.jsonl").read_text().splitlines()) == n_events
+
+
+# --- final scoreboard: best decided row per case across all rounds (R19) -----
+
+
+def _report(rnd, rows, deferred=()):
+    return {"round": rnd, "per_case": rows, "deferred": list(deferred),
+            "milestone": {}}
+
+
+def _score_row(case_id, cand, status, gap):
+    return {"case_id": case_id, "candidate_mean": cand, "reference_mean": 7.0,
+            "gap": gap, "status": status, "failed_checks": []}
+
+
+def test_final_picks_best_row_across_rounds(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    _lock(tmp_path, [11])
+    flags = GOOD_VERDICT["hard_flags"]
+    _layout(tmp_path,
+            _env("e-b11", "reference", 11, None, 6, flags),
+            _env("e-c11-r1", "sensenova", 11, 1, 8, flags, seed="111"))   # win @ 8.0
+    assert cp.main(["--round", "1"]) == 0
+    bad = dict(flags, small_text_quality="garbled")
+    (tmp_path / "results/judge/e-c11-r2.json").write_text(
+        json.dumps(_env("e-c11-r2", "sensenova", 11, 2, 6.4, bad, seed="222")))  # fail @ 6.4
+    assert cp.main(["--round", "2"]) == 0
+    rep2 = json.loads((tmp_path / "runs/comparisons/round-2/report.json").read_text())
+    assert rep2["per_case"][0]["status"] == "fail"        # latest round regressed
+    assert cp.main(["--final"]) == 0
+    fin = json.loads((tmp_path / "runs/comparisons/final/report.json").read_text())
+    assert fin["round"] == "final" and fin["deferred"] == []
+    assert len(fin["per_case"]) == 1
+    row = fin["per_case"][0]
+    assert row["case_id"] == 11 and row["status"] == "win"
+    assert row["candidate_mean"] == 8.0 and row["best_from_round"] == 1
+    m = fin["milestone"]                                   # recomputed from winners
+    assert (m["parity_count"], m["win_count"], m["target"], m["total"]) == (0, 1, 24, 1)
+    assert m["parity_ratio"] == 1.0 and m["overall_gap"] == 2.0
+    # Idempotent rerun: byte-identical report, no ledger churn.
+    before = (tmp_path / "runs/comparisons/final/report.json").read_text()
+    n = len(Path("ledger/append.jsonl").read_text().splitlines())
+    assert cp.main(["--final"]) == 0
+    assert (tmp_path / "runs/comparisons/final/report.json").read_text() == before
+    assert len(Path("ledger/append.jsonl").read_text().splitlines()) == n
+
+
+def test_best_across_rounds_order_independent_and_tie_latest_wins():
+    lo = _score_row(11, 7.0, "parity", 0.0)
+    hi = _score_row(11, 8.0, "win", 1.0)
+    fin = cp.best_across_rounds([_report(2, [dict(lo)]), _report(1, [dict(hi)])])
+    assert fin["round"] == "final" and len(fin["per_case"]) == 1
+    assert fin["per_case"][0]["candidate_mean"] == 8.0     # higher mean wins either order
+    assert fin["per_case"][0]["best_from_round"] == 1
+    tie = cp.best_across_rounds([_report(1, [dict(lo)]), _report(2, [dict(lo)])])
+    assert tie["per_case"][0]["best_from_round"] == 2      # tie -> latest round wins
+
+
+def test_best_across_rounds_carried_row_and_deferred_union():
+    win = _score_row(11, 8.0, "win", 1.0) | {"carried_from_round": 1}
+    regressed = _score_row(11, 6.4, "fail", -0.6)
+    fin = cp.best_across_rounds([_report(3, [dict(regressed)], deferred=[22]),
+                                 _report(2, [dict(win)])])
+    assert fin["per_case"][0]["best_from_round"] == 1      # carried counts for its round
+    assert fin["per_case"][0]["status"] == "win"
+    assert fin["deferred"] == [22]                          # union of inputs' deferred
+    m = fin["milestone"]
+    assert (m["win_count"], m["parity_count"], m["total"], m["parity_ratio"]) == (1, 0, 1, 1.0)

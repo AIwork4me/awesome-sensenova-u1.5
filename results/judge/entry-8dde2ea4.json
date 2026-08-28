@@ -1,0 +1,41 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-8dde2ea4",
+ "backend": "agent",
+ "judged_at": "2026-08-28T23:39:00Z",
+ "source": "sensenova",
+ "case_id": 167,
+ "round": 3,
+ "seed": "2053275814",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 5,
+   "alignment": 5,
+   "real_world_fidelity": 6,
+   "creative_generation": 4
+  },
+  "score_reasons": {
+   "quality": "纯排版类图像：三行文字字形边缘锐利、无渲染伪影、无结构缺陷，黑白对比干净；但除文字外画面为整片空白，无材质、光影、物理逻辑可考察，图像信息量极低。",
+   "aesthetics": "粗黑体中文主标、英文副题、时间行的三级层级清晰，高对比排版规整；但大面积空白使画面失衡空洞，构图缺乏支撑元素，情绪表达单薄。",
+   "alignment": "两句要求文案均逐字正确渲染（中文主标'玄武门之变的朋友圈'与英文副题'WeChat Moments of the Xuanwu Gate Incident'），符合'仅渲染标题串、禁止微缩文字段'的排版约束，日期行属于允许的短日期类别。未遵循项：主题概念本身（玄武门之变的朋友圈）未获任何视觉演绎——无朋友圈界面、头像、帖子或任何事件元素，仅输出标题卡；日期行'2023 /10 4:02'为自造装饰内容。",
+   "real_world_fidelity": "中文史实名词正确，英译'Xuanwu Gate Incident'准确；玄武门之变发生于公元626年，装饰性时间2023年与史实无关联，但仅作装饰行、无文化误用或失实陈述。",
+   "creative_generation": "'历史事件×微信朋友圈'的概念本身有趣，但执行止步于一张白底标题卡，无任何叙事、界面或视觉创意展开，想象力落点为空，多元素融合与镜头语言无从体现。"
+  },
+  "unfulfilled_requirements": [
+   "提示词主题'玄武门之变的朋友圈'未呈现任何朋友圈界面/场景/事件视觉元素，仅输出标题文字卡",
+   "日期行'2023 /10 4:02'为提示词未要求的自造内容，且与史实年代无关联"
+  ],
+  "transcribed_text": [
+   "玄武门之变的朋友圈（主标题，逐字正确）",
+   "WeChat Moments of the Xuanwu Gate Incident（英文副题，逐字正确）",
+   "2023 /10 4:02（装饰性日期/时间行）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

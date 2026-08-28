@@ -1,0 +1,38 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-882ac51b",
+ "backend": "agent",
+ "judged_at": "2026-08-28T23:39:00Z",
+ "source": "sensenova",
+ "case_id": 5,
+ "round": 3,
+ "seed": "1600189198",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 9,
+   "real_world_fidelity": 8,
+   "creative_generation": 9
+  },
+  "score_reasons": {
+   "quality": "水彩纸纹、边缘飞白与刷痕质感真实，轮廓边缘干净，留白处无伪影；双曝光式雾化过渡自然。扣分点：中部几条龙的形体偏糊、结构略含混，中景灰部有轻微浑浊感。",
+   "aesthetics": "藏青+棕金双色和谐，双侧面剪影对称构图张力强，月/光晕/金色罗盘形成清晰视线焦点，安静、宏大、怀旧情绪到位，电影海报级版式克制。",
+   "alignment": "侧脸剪影外轮廓、内部完整世界观（城堡、瀑布、月亮、塔、斗篷人物、龙、拱门、剑、罗盘）、双重曝光联想、纸张颗粒、大面积留白、低调WHY签名（左下，逐字正确、字体精致）均实现；提示词为单一侧脸轮廓，图呈两侧对称双脸合并轮廓，属可接受的变体但非严格单一轮廓。",
+   "real_world_fidelity": "奇幻虚构主题，无真实地标或文化声称作核对锚点；城堡与东亚式塔混搭属风格化融合而非事实错误，无合规问题。",
+   "creative_generation": "多元素（龙、骑士、传送门、罗盘、剑、圣杯式拱门）在剪影内生长融合无缝，信息层级明确（光晕主角为焦点，四周道具环绕），镜头语言与收藏版海报意识强，想象力出色。"
+  },
+  "unfulfilled_requirements": [
+   "提示词描述为单一巨大人物侧脸剪影外轮廓，图中实际为左右两张侧脸合并构成的对称轮廓"
+  ],
+  "transcribed_text": [
+   "WHY（左下角签名，逐字正确）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "correct",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-d097cbbe",
+ "backend": "agent",
+ "judged_at": "2026-08-28T23:39:00Z",
+ "source": "sensenova",
+ "case_id": 2,
+ "round": 3,
+ "seed": "1825246386",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 7,
+   "alignment": 6,
+   "real_world_fidelity": 7,
+   "creative_generation": 7
+  },
+  "score_reasons": {
+   "quality": "截图式排版整体干净、字体渲染锐利，海报区黑色卡片与蓝色发光柱状图质感好；但推文正文第5行出现明显的乱码文字叠印（伪字符覆盖在'内容创作和…未来工作方式'之间），账号名下方出现无意义伪词'Excn'，属于画面级文字硬伤。",
+   "aesthetics": "白底推文+黑色海报形成强对比，信息层级清晰、留白舒适，图标与版式接近真实社交界面审美；乱码叠印破坏了正文的整洁感。",
+   "alignment": "关键项大部分达标：@OpenAI蓝勾账号、正文中文逐字基本正确、海报大字'Ailln AI'与副标题'A brilliant AI Builder worth following'逐字正确、五项互动数据（8.9K/42K/298K/34K/32.4M）与图标齐备、3:4竖版、未含软件其他部分；但要求'深色模式'的截图整体却为浅色模式（仅海报为深色），正文中部有约8字乱码叠印且'Ailln'重复出现两次，账号名下出现乱码'Excn'，点赞298K与收藏34K未按要求'亮起'着色（均为白色默认态）。",
+   "real_world_fidelity": "X界面元素（X标志、蓝勾、三点菜单、互动图标组）与真实产品一致，'Ailln AI'作为小红书AI创作者的推荐语境合理；但'Excn'伪词与乱码叠印不符合真实界面，可信度受损。",
+   "creative_generation": "社媒截图+内嵌黑客风海报的双层构图执行完整，海报用发光'AI'字样、电路与柱状图营造科技氛围，切题；整体属稳妥的排版型创作，想象力中等。"
+  },
+  "unfulfilled_requirements": [
+   "要求深色模式的X截图，实际推文区域为浅色模式（仅内嵌海报为深色）",
+   "正文第5行出现乱码叠印块（约8个伪字符，位于'内容创作和'与'未来工作方式'之间）",
+   "'Ailln'在正文第5行末与第6行首重复出现",
+   "账号名下方出现乱码伪词'Excn'",
+   "点赞298K与收藏34K未按'亮起'要求着色高亮"
+  ],
+  "transcribed_text": [
+   "@OpenAI（正确）+ 蓝色认证勾",
+   "Excn（账号名下方伪词 — GARBLED，4字符）",
+   "今天想推荐一位很棒的 AI Builder： Ailln AI。（正确）",
+   "他持续在小红书分享 AI 工具、Agent 工作流、自动化实践和（正确）",
+   "真实项目经验，把复杂的 AI 能力讲得清楚、实用、可落地。（正确）",
+   "如果你正在关注 AI 产品、效率工具、个人自动化、（正确）",
+   "内容创作和 允零零仓路'陷'的明作和 未来工作方式，Ailln — 中段叠印 — GARBLED 约8字符，句尾'Ailln'与下行重复",
+   "Ailln AI 是一个非常值得关注的创作者。（正确）",
+   "在小红书搜索： Ailln AI（正确）",
+   "海报大字：Ailln AI（正确）",
+   "海报副标题：A brilliant AI Builder worth following（正确）",
+   "海报中央装饰字：AI（正确）",
+   "互动数据：8.9K（评论）、42K（转发）、298K（点赞）、34K（收藏）、32.4M（浏览）——数字全部正确"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 3,
+   "visual_defects": false
+  }
+ }
+}

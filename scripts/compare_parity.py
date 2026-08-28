@@ -18,6 +18,9 @@ frozen and no longer generates) is pre-seeded into per_case with its previous
 row plus `carried_from_round`, so the latest report stays a complete cumulative
 view for render_gallery/PUBLISH. Milestone counts treat carried rows the same
 as fresh ones — they were decided.
+
+Controller ruling R19: `--final` folds every runs/comparisons/round-*/report.json
+into runs/comparisons/final/report.json via best_across_rounds — the finale reports each case's best decided row across all rounds, so a later regression (e.g. case13 R2 7.4 -> R3 6.4) can no longer eclipse an earlier better result.
 """
 import argparse
 import json
@@ -146,6 +149,68 @@ def carried_rows(prior_report: dict, from_round: int, decided_ids: set) -> list:
     return out
 
 
+def best_across_rounds(reports: list[dict]) -> dict:
+    """Final scoreboard (controller ruling R19): per case, the best decided
+    row across every round, so a later regression can never eclipse an earlier
+    better result in the published finale. Reports may come in any order; each
+    per_case row is attributed to the round it was decided in — fresh rows to
+    their report's round, carried rows to carried_from_round. The winner is
+    the row with the highest candidate_mean; on a tie the latest round wins.
+    Milestone and deferred are recomputed from the winning rows (deferred is
+    the union of the inputs' deferred lists)."""
+    best = {}   # case_id -> (candidate_mean, decided_round, winning row)
+    deferred = set()
+    for rep in reports:
+        try:
+            rnd = int(rep["round"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        for row in rep.get("per_case", []):
+            cid = row.get("case_id")
+            dec_round = row.get("carried_from_round", rnd)
+            try:
+                m = float(row["candidate_mean"])
+            except (KeyError, TypeError, ValueError):
+                continue
+            cur = best.get(cid)
+            if cur is None or m > cur[0] or (m == cur[0] and dec_round > cur[1]):
+                win = dict(row)
+                win["best_from_round"] = dec_round
+                best[cid] = (m, dec_round, win)
+        deferred.update(rep.get("deferred", []))
+    per_case = [best[cid][2] for cid in sorted(best)]
+    wins = sum(1 for r in per_case if r["status"] == "win")
+    pars = sum(1 for r in per_case if r["status"] == "parity")
+    total = len(per_case)
+    milestone = {
+        "parity_count": pars,
+        "win_count": wins,
+        "target": TARGET_PARITY,
+        "total": total,
+        "parity_ratio": round((pars + wins) / total, 4) if total else 0.0,
+        "overall_gap": round(sum(r["gap"] for r in per_case) / total, 4) if total else 0.0,
+    }
+    return {"round": "final", "per_case": per_case,
+            "deferred": sorted(deferred), "milestone": milestone}
+
+
+def _final_report(root: Path) -> dict:
+    """Load every round report on disk and fold them into the final one."""
+    reps = []
+    for d in sorted((root / "runs/comparisons").glob("round-*")):
+        try:
+            rnd = int(d.name.split("-", 1)[1])
+        except ValueError:
+            continue
+        rep = _load_json(d / "report.json")
+        if isinstance(rep, dict):
+            rep.setdefault("round", rnd)
+            reps.append(rep)
+    if not reps:
+        raise SystemExit("compare: no runs/comparisons/round-*/report.json found")
+    return best_across_rounds(reps)
+
+
 def _print_table(report):
     print(f"[compare] round={report['round']} decided={len(report['per_case'])} "
           f"deferred={len(report['deferred'])}")
@@ -164,10 +229,25 @@ def _print_table(report):
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Formal parity decision (spec section 8).")
-    ap.add_argument("--round", type=int, required=True)
+    ap.add_argument("--round", type=int)
+    ap.add_argument("--final", action="store_true",
+                    help="fold every runs/comparisons/round-*/report.json into the "
+                         "best-across-rounds final scoreboard at runs/comparisons/final/")
     ap.add_argument("--ledger", default="ledger/append.jsonl")
     a = ap.parse_args(argv)
     root = Path(".")
+    if a.final:
+        if a.round is not None:
+            ap.error("--final and --round are mutually exclusive")
+        report = _final_report(root)
+        outdir = root / "runs/comparisons/final"
+        outdir.mkdir(parents=True, exist_ok=True)
+        (outdir / "report.json").write_text(
+            json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+        _print_table(report)
+        return 0
+    if a.round is None:
+        ap.error("--round is required unless --final is given")
     lock = json.loads((root / "configs/pilot.lock.json").read_text(encoding="utf-8"))
     cands = best_candidates(root, a.round)
     gfiles = generated_files(root / a.ledger)

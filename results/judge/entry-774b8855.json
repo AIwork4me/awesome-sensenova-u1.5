@@ -1,0 +1,44 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-774b8855",
+ "backend": "agent",
+ "judged_at": "2026-08-28T23:39:00Z",
+ "source": "sensenova",
+ "case_id": 13,
+ "round": 3,
+ "seed": "599811941",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 7,
+   "alignment": 5,
+   "real_world_fidelity": 3,
+   "creative_generation": 6
+  },
+  "score_reasons": {
+   "quality": "纸张微灰质感、手机与桌面的软阴影、不均匀光照与轻微倾斜都相当真实，立方体线稿图结构正确（含虚线隐藏边）；硬伤在文字层：正文为伪汉字与断裂公式，底部题号“3.”重复出现。",
+   "aesthetics": "随手拍摄的手机视角构图自然，景深与暖色桌面氛围可信，主体试卷突出；但正文密排乱码在审美上略显失真。",
+   "alignment": "标题“数学试卷”逐字正确、黑白印刷灰纸、倾斜+不均匀光照+轻微模糊、粗体标题+宋体正文混排、3D立方体小图均达成；但“多道选择题与数学公式”这一核心内容大面积乱码不可读，且自拟日期“20 月12 日”为不存在的日期。",
+   "real_world_fidelity": "真实试卷正文必然可读，图中为伪汉字与无逻辑公式拼片，经不起现实核对；日期“20月12日”不成立，严重削弱可信度。",
+   "creative_generation": "桌面+手机+试卷的场景转译可信、电影感随手拍氛围到位，但内容层仅做到形似，题目文案执行失败。"
+  },
+  "unfulfilled_requirements": [
+   "多选题题干与选项正文大面积乱码，无法构成可读题目",
+   "日期行“20 月12 日”为不存在的月份（20月）",
+   "末行题号“3.”重复出现，序号断裂"
+  ],
+  "transcribed_text": [
+   "数学试卷（主标题，逐字正确）",
+   "20 月12 日（不存在的日期）",
+   "题号 1. 2. 3. 4. 5. 3.（末行题号重复）",
+   "GARBLED：正文伪汉字约180字（如“题种选题数平询”“叫写1C分珊分霞灵”等）",
+   "GARBLED：公式碎片如 (1(01)∫ = |±1)|x = 0|、= x(x) = 3 (x = i)、13, e ≡ 2.3 等，约60字符无逻辑"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 1,
+   "visual_defects": false
+  }
+ }
+}

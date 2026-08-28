@@ -1,0 +1,42 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-de777ac3",
+ "backend": "agent",
+ "judged_at": "2026-08-28T23:39:00Z",
+ "source": "sensenova",
+ "case_id": 167,
+ "round": 3,
+ "seed": "878715703",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 5,
+   "alignment": 2,
+   "real_world_fidelity": 3,
+   "creative_generation": 3
+  },
+  "score_reasons": {
+   "quality": "文字边缘锐利、黑白高对比、无渲染伪影，字卡工艺本身干净；但画面仅三行字，信息量极低，日期行字体大小混杂、排印略显局促。",
+   "aesthetics": "黑白极简排版大体均衡，但上下大面积空白使画面空洞，缺乏海报应有的视觉组织与情绪。",
+   "alignment": "主题为“玄武门之变的朋友圈/WeChat Moments”，要求呈现朋友圈内容；画面只渲染了中英文标题与日期的字卡，朋友圈界面、动态、评论点赞、任何唐代叙事元素全部缺失，核心概念未执行。",
+   "real_world_fidelity": "中英文主副标题拼写均逐字正确、中文字形规范；但日期行“2021年16月10·25”为不存在的月份且格式混乱，朋友圈产品形态完全未出现，无从经得起现实核对。",
+   "creative_generation": "概念未被展开，仅是一张标题卡，无信息层级与想象力可言。"
+  },
+  "unfulfilled_requirements": [
+   "朋友圈（WeChat Moments）界面与动态内容完全缺失，仅渲染标题字卡",
+   "日期行“2021年16月10·25”为不存在的日期（16月）且格式混乱",
+   "无任何玄武门之变相关的历史场景、人物或叙事元素"
+  ],
+  "transcribed_text": [
+   "玄武门之变（主标题，逐字正确）",
+   "WeChat Moments of the Xuanwu Gate Incident（副标题，逐字正确）",
+   "2021年16月10·25（不存在的日期，格式混乱）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 1,
+   "visual_defects": false
+  }
+ }
+}

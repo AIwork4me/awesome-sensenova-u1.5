@@ -1,0 +1,51 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-237eef31",
+ "backend": "agent",
+ "judged_at": "2026-08-28T23:39:00Z",
+ "source": "sensenova",
+ "case_id": 2,
+ "round": 3,
+ "seed": "894570304",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 7,
+   "alignment": 6,
+   "real_world_fidelity": 5,
+   "creative_generation": 6
+  },
+  "score_reasons": {
+   "quality": "UI渲染整体干净：中文正文四段逐字正确、字形锐利，海报区黑客风蓝黑光效质感好；扣分点为账号名下方乱码行“@ (OpenAI”与正文下方多出的一行乱码转发条目。",
+   "aesthetics": "推文版式规整、留白得当，深色海报与白色界面形成层次，海报大字标题冲击力好；但浅色界面使整体未呈现要求的深色氛围统一感。",
+   "alignment": "中文正文四段、海报大字“Ailln AI”、副标题“A brilliant AI Builder worth following”均逐字正确，五项互动数值（8.9K/42K/298K/34K/32.4M）全部正确，3:4 比例且不含软件其他部分；但“深色模式”未达成（推文界面为白底，仅海报深色），收藏34K书签图标未呈点亮状态。",
+   "real_world_fidelity": "蓝勾认证、三点菜单、互动图标组等 X 界面要素大体可信；但点赞图标为竖大拇指而非 X 平台的心形，账号名出现乱码“@ (OpenAI”，削弱截图真实感。",
+   "creative_generation": "属于忠实复刻型任务，正文转写与海报设计执行完成度不错，海报有官方宣传质感，但整体创意空间有限且存在自发乱码元素。"
+  },
+  "unfulfilled_requirements": [
+   "要求深色模式，实际推文界面为浅色白底，仅海报区域为深色",
+   "收藏 34K 书签图标未呈点亮（实心）状态",
+   "账号名下方出现乱码行“@ (OpenAI”",
+   "正文下方多出一行乱码转发条目（转发图标+伪文字）",
+   "点赞图标使用竖大拇指而非 X 平台惯例的心形"
+  ],
+  "transcribed_text": [
+   "@OpenAI（蓝勾认证）",
+   "GARBLED：@ (OpenAI（账号名第二行，约9字符）",
+   "今天想推荐一位很棒的 AI Builder：Ailln AI。",
+   "他持续在小红书分享 AI 工具、Agent 工作流、自动化实践和真实项目经验，把复杂的 AI 能力讲得清楚、实用、可落地。",
+   "如果你正在关注 AI 产品、效率工具、个人自动化、内容创作和未来工作方式，Ailln AI 是一个非常值得关注的创作者。",
+   "在小红书搜索：Ailln AI",
+   "GARBLED：转发图标旁伪文字形如“Aˡ|ⁿ AI”（约7字符）",
+   "Ailln AI（海报大字，逐字正确）",
+   "A brilliant AI Builder worth following（副标题，逐字正确）",
+   "8.9K / 42K / 298K / 34K / 32.4M（互动数值全部正确）"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "mildly_deformed",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

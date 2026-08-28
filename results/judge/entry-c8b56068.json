@@ -1,0 +1,45 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-c8b56068",
+ "backend": "agent",
+ "judged_at": "2026-08-28T23:39:00Z",
+ "source": "sensenova",
+ "case_id": 3,
+ "round": 3,
+ "seed": "247052534",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 7,
+   "real_world_fidelity": 4,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "人像皮肤毛孔、汗珠、球衣织纹与旗帜褶皱细节丰富，体育场馆灯光、蓝黑烟雾与纸屑层次写实，双臂与双手结构正常无畸变；扣分点为胸前赞助横幅与看台广告牌均为乱码伪文字，俱乐部徽章形制不准。",
+   "aesthetics": "低角度仰拍构图具冲击力，蓝黑主色与橙黄旗帜形成强对比，主标题排版利落、信息层级清晰，欧冠之夜的戏剧光影氛围出色，电影海报感强。",
+   "alignment": "激情庆祝、双手高举、满座看台、聚光灯、蓝黑烟雾、飘扬旗帜、飞舞纸屑、半身构图、五根手指正常、写实高对比海报风格均达成；但“披波黑国旗”未达标——旗面为蓝橙斜分四色块，无波斯尼亚国旗的黄色三角与白色五角星。",
+   "real_world_fidelity": "披挂旗帜与波黑国旗不符是硬伤；所披国家队旗颜色体系错误；国际米兰队徽为近似盾形而非真实的圆形徽标；人物五官与巴斯托尼本人仅近似；看台广告牌文字均为乱码，经不起现实核对。",
+   "creative_generation": "海报级镜头语言成熟：主标题/副题/日期层级分明，氛围元素（灯雾、纸屑、人群）融合无缝，视觉叙事完整有力。"
+  },
+  "unfulfilled_requirements": [
+   "披的旗帜不是波黑国旗：为蓝/橙斜分四色块，缺少波黑国旗标志性的黄色三角形与白色五角星",
+   "副标题行首词为乱码伪字形（形如“IOl9IHAL”），无法成词",
+   "胸前赞助横幅与看台广告牌均为乱码伪文字",
+   "国际米兰队徽形制与真实徽章不符（盾形近似而非圆形徽标）"
+  ],
+  "transcribed_text": [
+   "BASTONI（主标题，逐字正确）",
+   "GARBLED：副标题形如“IOl9IHAL META NIGHT”，首词约8个伪字形，META NIGHT 可读",
+   "JUNE 12, 2022（日期行，正确）",
+   "GARBLED：看台广告牌伪文字如 MEDEN、IEMERIADOS、CLI AILAL 等，合计约25字符",
+   "GARBLED：胸前白色横幅伪文字约6字符"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 1,
+   "visual_defects": false
+  }
+ }
+}

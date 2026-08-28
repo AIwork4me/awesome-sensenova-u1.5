@@ -1,0 +1,42 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-95d8c49c",
+ "backend": "agent",
+ "judged_at": "2026-08-28T23:39:00Z",
+ "source": "sensenova",
+ "case_id": 7,
+ "round": 3,
+ "seed": "425247298",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 8,
+   "alignment": 6,
+   "real_world_fidelity": 8,
+   "creative_generation": 7
+  },
+  "score_reasons": {
+   "quality": "真人写实部分质量高：皮肤质感细腻、发丝清晰、背景吧台酒瓶虚化自然，光影柔和无明显AI塑料感；状态栏与UI元素边缘干净。轻微问题：饮料吸管穿插关系略显含糊，UI文字区存在渲染伪影。",
+   "aesthetics": "构图居中稳定，暖色咖啡厅氛围与柔光营造舒适情绪，人物五官略带动漫感且解剖正确，眼神温柔看向镜头，符合治愈系基调；背景虚化层次佳。",
+   "alignment": "大部分要求已满足：顶部状态栏（时间、信号、WiFi、电量）、底部半透明对话框、左侧动漫头像、角色名大字、下方操作栏均存在，人物为写实风带动漫感并看向镜头。未满足项：整体比例接近方形而非9:16竖版；对话框台词两行均为乱码伪汉字（混有日文假名），不构成可读的简体中文台词；头像对应的上传角色无法核验。",
+   "real_world_fidelity": "咖啡厅/酒吧场景道具真实可信（酒瓶、咖啡杯、花瓶），状态栏图标符合真实手机UI逻辑；无文化失真或合规问题。",
+   "creative_generation": "二次元头像+真人coser+galgame UI的多层融合执行完整，信息层级清晰（状态栏-主体-对话框-操作栏），镜头语言（浅景深、视线引导）到位；但台词文字乱码削弱了对话框作为核心叙事元素的完成度。"
+  },
+  "unfulfilled_requirements": [
+   "画面比例应接近9:16竖版，实际接近方形",
+   "对话框台词应为可读的温柔治愈风简体中文，实际两行均为乱码伪汉字（含日文假名'れ'）"
+  ],
+  "transcribed_text": [
+   "10:41",
+   "唩嬟（角色名，大字）",
+   "第一行台词：被煈靎溫鑣，不手迢鬎，— GARBLED，约10个乱码字符",
+   "第二行台词：这澨㗎不一日涾蚕拉れ。— GARBLED，约8个乱码字符"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 1,
+   "visual_defects": false
+  }
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-e0f4775d",
+ "backend": "agent",
+ "judged_at": "2026-08-28T23:39:00Z",
+ "source": "sensenova",
+ "case_id": 3,
+ "round": 3,
+ "seed": "89724207",
+ "verdict": {
+  "scores": {
+   "quality": 7,
+   "aesthetics": 8,
+   "alignment": 6,
+   "real_world_fidelity": 5,
+   "creative_generation": 7
+  },
+  "score_reasons": {
+   "quality": "人物解剖与握拳双手基本正确、球衣与披旗布料质感良好，逆光聚光灯与烟雾层次有电影感；远景人群与看台有涂抹感、部分纸屑边缘含糊；文字渲染严重劣化，主标题字形扭曲且多行为乱码伪词。",
+   "aesthetics": "对称构图、高举的双臂自然框住标题区，蓝黑色调加冷色烟雾营造欧冠之夜氛围，标题-副题-人名-日期的信息层级清晰，视觉冲击力强，人物情绪（热血、自信）表达到位。",
+   "alignment": "双臂高举、披旗、满座看台、蓝黑烟雾、聚光灯、旗帜、纸屑、蓝黑条纹球衣均符合；半身构图与戏剧光影成立。未遵循项：波黑国旗样式画错；排版约束（只渲染要求的标题串、避免字形装饰性扭曲）被违反——提示词未给出任何必须文案却渲染了六行文字，主标题首词为扭曲伪词，小字多为乱码。提示词要求的'五根手指'因双手握拳无法逐指核验，但未见明显缺指畸形。",
+   "real_world_fidelity": "圣西罗式球场、蓝黑条纹球衣与圆形队徽基本可信；人物为通用面孔，与指定真实球员的相似度一般；波黑国旗作为真实国家符号被画错（缺黄色三角形与沿斜边的白色星列，左侧多出不存在的红色竖条），经不起现实核对。",
+   "creative_generation": "电影海报式镜头语言成熟，烟雾/聚光灯/纸屑多元素融合无缝，海报层级明确；但核心标题是乱码词、多行小字为伪词，创意执行被文字层明显拖累。"
+  },
+  "unfulfilled_requirements": [
+   "波黑国旗未按真实样式呈现：缺少黄色三角形与沿斜边排列的白色五角星，左侧多出不存在的红色竖条",
+   "排版约束被违反：渲染了多行未要求的文字（顶部标语、副标题、副行、日期行），且主标题'CIUWPEL'字形严重装饰性扭曲",
+   "顶部标语'FOOTBRAL BASCIMPER ALI DEEIGARE'、副标题'ON THE FOOTBUYEB GEPTENIBE'、蓝色副行'EL OE BIIO AI CAMB RELONE'、日期行'ONY 22'均为乱码伪词"
+  ],
+  "transcribed_text": [
+   "FOOTBRAL BASCIMPER ALI DEEIGARE（顶部标语，乱码伪词）",
+   "CIUWPEL NIGHT（主标题，首词乱码且字形扭曲，NIGHT拼写正确）",
+   "ON THE FOOTBUYEB GEPTENIBE（副标题，乱码）",
+   "BASTONI（人名，拼写正确）",
+   "EL OE BIIO AI CAMB RELONE（蓝色副行，乱码）",
+   "ONY 22（日期行，乱码）"
+  ],
+  "hard_flags": {
+   "display_text_correct": false,
+   "small_text_quality": "garbled",
+   "text_miss_count": 0,
+   "visual_defects": false
+  }
+ }
+}

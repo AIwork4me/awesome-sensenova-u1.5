@@ -1,0 +1,52 @@
+{
+ "schema_version": "1.0",
+ "entry_id": "entry-5167348e",
+ "backend": "agent",
+ "judged_at": "2026-08-28T23:39:00Z",
+ "source": "sensenova",
+ "case_id": 130,
+ "round": 3,
+ "seed": "1414798457",
+ "verdict": {
+  "scores": {
+   "quality": 8,
+   "aesthetics": 9,
+   "alignment": 7,
+   "real_world_fidelity": 7,
+   "creative_generation": 8
+  },
+  "score_reasons": {
+   "quality": "整体渲染精细：角色线稿干净、糖果半透明质感与糖纸褶皱可信、爱心玻璃碗折射自然、版块边缘锐利无明显伪影；扣分点为简介文案与若干周边小字为乱码伪日文，海报上另有一条乱码装饰横幅。",
+   "aesthetics": "粉白樱花配色统一柔和，樱花与爱心母题密度恰当，六段式版面节奏舒适，角色形象可爱、解剖正确、微笑表情统一，完成度很高。",
+   "alignment": "头部横幅、包装盒（含心形透明窗+角色插画）、宣传海报（角色+爱心糖果碗+4.26 NEW OPEN'+@yuonchii）、横幅、社媒主页（头像/@yuonchii/Follow/简介）、周边集合大体齐备，主logo'癒音ちー'与副logo'ゆおんちー'在头部/包装/横幅逐字正确。未满足项：海报版块缺少main logo；'NEW OPEN'尾部多出撇号状伪影；圆形徽章仅3枚（要求4枚，总件数8/9）；社媒头图只有角色插画未见logo；简介文字为乱码；海报中部多出一条乱码小横幅。",
+   "real_world_fidelity": "周边商品形制与社媒主页布局贴近真实平台与商品逻辑，账号handle两处均正确拼写；乱码简介与乱码装饰横幅削弱真实品牌可信度。",
+   "creative_generation": "IP周边全家福式品牌板设计成熟：包装透视、糖果堆积、徽章阵列、钥匙扣层次自然，信息层级与视觉动线清晰；但海报遗漏主logo使该版块品牌闭环略欠。"
+  },
+  "unfulfilled_requirements": [
+   "海报版块要求包含main logo，实际缺失",
+   "'4.26 NEW OPEN'尾部多出撇号状伪影",
+   "圆形徽章要求4枚，实际3枚（周边总数8件，要求9件）",
+   "社媒主页头图要求'header image with logo'，实际头图无logo文字",
+   "社媒简介要求为mock文案，实际为乱码伪日文"
+  ],
+  "transcribed_text": [
+   "癒音ちー（头部大标题，正确）",
+   "ゆ お ん ち ー（头部副标题，正确）",
+   "癒音ちー／ゆおんちー（包装盒，正确）",
+   "4.26 NEW OPEN'（海报，尾部多余撇号状伪影）",
+   "（れム楓癣时驒亣でひ）（海报装饰横幅 — GARBLED，约9个乱码字符）",
+   "@yuonchii（海报，正确）",
+   "癒音ちー／ゆおんちー（横幅，正确）",
+   "@yuonchii（主页handle，正确）",
+   "Follow（按钮，正确）",
+   "简介两行：お煎色必鬃锇も擂捒込倉富畗めの／ひのごてづが出帰錓讧穾。 — GARBLED，约24个乱码字符",
+   "钥匙扣与糖果包装小字 — GARBLED，约10个乱码字符"
+  ],
+  "hard_flags": {
+   "display_text_correct": true,
+   "small_text_quality": "garbled",
+   "text_miss_count": 4,
+   "visual_defects": false
+  }
+ }
+}
