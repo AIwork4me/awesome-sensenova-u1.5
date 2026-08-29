@@ -5,7 +5,7 @@
 - 上游依赖：[SenseNova-U1.5-ROCm](https://github.com/AIwork4me/SenseNova-U1.5-ROCm)（推理管线）、[freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2)（案例与参考基线）
 - 相关背景：作者的 SenseNova-U1 上游 PR [OpenSenseNova/SenseNova-U1#260](https://github.com/OpenSenseNova/SenseNova-U1/pull/260) 已合并
 
-> **术语与口径注记（2026-08-29）**：本文为历史设计记录，保留原始措辞。文中的「双盲」此后统一改称 **source-blind**（判官对图像来源盲：中性内容哈希 entry ID、来源元数据不进判官上下文、队列按轮号确定性乱序、落盘前泄漏扫描）——本协议是单侧盲（仅判官盲），非双方互盲，也非 A/B 成对比较（每 entry 独立打分）。结果表述自 2026-08-29 起分两级：primary = R1 原始提示词 15/30；optimization ceiling = 跨轮最优 17/30。
+> **术语与口径注记（2026-08-29）**：本文为历史设计记录，保留原始措辞。文中的「双盲」此后统一改称 **source-blind**（判官对图像来源盲：中性内容哈希 entry ID、来源元数据不进判官上下文、队列按轮号确定性乱序、落盘前泄漏扫描）——本协议是单侧盲（仅判官盲），非双方互盲，也非 A/B 成对比较（每 entry 独立打分）。结果表述自 2026-08-29 起分两级：primary = R1 原始提示词 15/30（original-prompt result）；跨轮最优 17/30 = prompt-adapted best observed（初称 optimization ceiling）。
 
 ## 0. 摘要
 

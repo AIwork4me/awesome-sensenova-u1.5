@@ -93,9 +93,9 @@ def main():
     ap.add_argument("--round", type=int, required=True)
     ap.add_argument("--isolated", action="store_true",
                     help="write the provenance manifest to runs/judge-private/round-N/ "
-                         "instead of the judge-visible queue dir (source-isolated "
-                         "judge workspace for future runs; historical frozen "
-                         "artifacts are untouched)")
+                         "instead of the judge-visible queue dir (provenance-"
+                         "separated judge queue for future runs; historical "
+                         "frozen artifacts are untouched)")
     args = ap.parse_args()
     gens = [e for e in load_events("ledger/append.jsonl") if e["type"] == "generated"]
     gens_r = [e for e in gens if f"-r{args.round}-" in e["payload"]["tag"]]

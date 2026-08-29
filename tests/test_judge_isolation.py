@@ -1,6 +1,6 @@
 """Source-isolation properties of the judge queue assembly (hardening pass).
 
-Properties (spec: future source-isolated judge workspace):
+Properties (spec: future provenance-separated judge queue):
 1. public tasks.jsonl carries no `source` field;
 2. public prompt files carry no provenance wording;
 3. public filenames use neutral content-hash entry IDs only;
@@ -72,13 +72,15 @@ def test_default_assembly_keeps_manifest_in_queue(tmp_path, monkeypatch):
     assert {m["source"] for m in man} == {"reference", "sensenova"}
 
 
-def test_collect_prefers_private_manifest(tmp_path, monkeypatch):
-    from collect_verdicts import _manifest_path
+def test_collect_prefers_private_manifest(tmp_path):
+    from lib.judge_manifest import load_manifest, manifest_path
     q = tmp_path / "runs" / "judge-queue" / "round-2"
     q.mkdir(parents=True)
-    (q / "manifest.json").write_text("[]", encoding="utf-8")
-    assert _manifest_path(q, tmp_path) == q / "manifest.json"            # historical
+    (q / "manifest.json").write_text('[{"entry_id": "public"}]', encoding="utf-8")
+    assert manifest_path(tmp_path, 2) == q / "manifest.json"          # historical
+    assert load_manifest(tmp_path, 2) == [{"entry_id": "public"}]
     priv = tmp_path / "runs" / "judge-private" / "round-2"
     priv.mkdir(parents=True)
-    (priv / "manifest.json").write_text("[]", encoding="utf-8")
-    assert _manifest_path(q, tmp_path) == priv / "manifest.json"         # isolated
+    (priv / "manifest.json").write_text('[{"entry_id": "private"}]', encoding="utf-8")
+    assert manifest_path(tmp_path, 2) == priv / "manifest.json"       # isolated
+    assert load_manifest(tmp_path, 2) == [{"entry_id": "private"}]

@@ -1,7 +1,7 @@
 # 项目状态与交接文档（Project State & Handoff）
 
 - 更新：2026-08-28 · main `37873fa`
-- 术语与口径更新（2026-08-29，第二次收紧）：结果两级表述定名——primary = **original-prompt result**（R1 原始提示词 **15/30**；best-of-2 确定性种子/案例，GPT 侧参考图采样预算未知），secondary = **prompt-adapted best observed**（跨轮最优 **17/30**；含 task-relaxing 排版策略，衡量实践可用性而非同任务能力）；`双盲` 统一改称 **source-blind**（source-hidden task context：中性内容哈希 entry ID、来源元数据不进判官任务上下文、队列按轮号确定性乱序、落盘前泄漏扫描；单侧盲，非 A/B 成对比较；历史运行未做文件系统级隔离——manifest 与台账保留 entry→来源映射，未来运行用 `--isolated`）。判官运行溯源：`results/judge/JUDGE-RUN-MANIFEST.json`（含 1.40 精确定义：盲样复评最大五维均值差；复评存档仅 round-1 队列 9/90）。历史文档（spec/plans）保留原始术语，以其日期为准。
+- 术语与口径更新（2026-08-29，第二次收紧）：结果两级表述定名——primary = **original-prompt result**（R1 原始提示词 **15/30**；best-of-2 确定性种子/案例，GPT 侧参考图采样预算未知），secondary = **prompt-adapted best observed**（跨轮最优 **17/30**；含 task-relaxing 排版策略，衡量实践可用性而非同任务能力）；`双盲` 统一改称 **source-blind**（source-hidden task context：中性内容哈希 entry ID、来源元数据不进判官任务上下文、队列按轮号确定性乱序、落盘前泄漏扫描；单侧盲，非 A/B 成对比较；历史运行未做文件系统级隔离——manifest 与台账保留 entry→来源映射，未来运行用 `--isolated` 做 **provenance-separated judge queue**，非权限级隔离）。判官运行溯源：`results/judge/JUDGE-RUN-MANIFEST.json`（含 1.40 精确定义：盲样复评最大五维均值差；仲裁阈值作用于五维均值差而非单维度；复评存档仅 round-1 队列 9/90）。生成侧溯源：`results/generation/GENERATION-RUN-MANIFEST.json`（模型 revision/权重校验和 = not_recorded；wrapper 6a5785d + 上游 checkout 76c32c2f 可证；选择先于生成冻结：pilot lock 751986b @ 04:11:05Z < 首生成 04:52:26Z）。历史文档（spec/plans）保留原始术语，以其日期为准。
 - 用途：本文件是项目的完整状态快照与交接包。任何新会话/新任务（例如"写项目总结"）只需读通本文，即可在零上下文下准确引用全部数据、结论与凭据位置。文中每个数字都可在所引路径复核。
 
 ## 1. 项目一句话

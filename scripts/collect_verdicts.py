@@ -13,24 +13,17 @@ import shutil
 import time
 from pathlib import Path
 
+from lib.judge_manifest import manifest_path
 from lib.ledger import append_event
 from lib.schemas import model_identity_leak, validate_verdict
 
 BACKENDS = ("agent", "glm_api")
 
 
-def _manifest_path(q: Path, root: Path) -> Path:
-    """Prefer the source-isolated private manifest (--isolated runs); fall back
-    to the in-queue manifest written by historical default assemblies."""
-    rnd = q.name.split("-", 1)[1]
-    priv = root / f"runs/judge-private/round-{rnd}/manifest.json"
-    return priv if priv.exists() else q / "manifest.json"
-
-
 def _collect_round(rnd: int, ledger: str, root: Path = Path("."),
                    backend: str = "agent") -> int:
     q = root / f"runs/judge-queue/round-{rnd}"
-    man_path = _manifest_path(q, root)
+    man_path = manifest_path(root, rnd)
     man = {m["entry_id"]: m for m in json.loads(man_path.read_text())}
     inv = q / "verdicts-invalid"
     n_bad = 0

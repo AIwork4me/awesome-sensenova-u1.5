@@ -7,7 +7,7 @@
 一轮（round）是状态机的一次完整推进，六步固定顺序、缺一不可：
 
 1. `bash scripts/generate.sh ROUND` —— 唯一 GPU 触点；内部先跑 `env-check.sh`，再按台账增量组装批单、调基础仓库 run-task 生成、对账落账本，整轮最多 3 次 attempt，无 pending 时短路退出。
-2. `.venv-test/bin/python scripts/build_judge_tasks.py --round ROUND` —— 组装本轮盲评队列到 `runs/judge-queue/round-N/`（entries/prompts/verdicts 三目录加 manifest.json 与 tasks.jsonl），参考图首轮后经 `_baseline` 缓存不再重复入队。队列按轮号确定性乱序（seed = sha256("queue-ROUND")），entry_id 为图像内容 sha256 前 8 位的中性编号，原始文件名与来源元数据不进入判官上下文——这是 source-blind 协议（判官对图像来源盲）的实现载体。**历史运行（含已发布的 frozen 产物）均在队列目录内写 manifest；新评测轮建议追加 `--isolated`**：manifest 改写入 `runs/judge-private/round-N/`，判官可见目录不含来源映射（source-isolated judge workspace；`collect_verdicts.py` 会优先读私有 manifest，兼容回退队列目录）。
+2. `.venv-test/bin/python scripts/build_judge_tasks.py --round ROUND` —— 组装本轮盲评队列到 `runs/judge-queue/round-N/`（entries/prompts/verdicts 三目录加 manifest.json 与 tasks.jsonl），参考图首轮后经 `_baseline` 缓存不再重复入队。队列按轮号确定性乱序（seed = sha256("queue-ROUND")），entry_id 为图像内容 sha256 前 8 位的中性编号，原始文件名与来源元数据不进入判官上下文——这是 source-blind 协议（判官对图像来源盲）的实现载体。**历史运行（含已发布的 frozen 产物）均在队列目录内写 manifest；新评测轮建议追加 `--isolated`**：manifest 改写入 `runs/judge-private/round-N/`，判官可见队列与控制器侧 provenance 分离（provenance-separated judge queue；`collect_verdicts.py` 与 resample 工具经共享 resolver 自动优先读私有 manifest，兼容回退队列目录。注意这只是目录级分离，文件系统级隔离仍取决于执行沙箱，不要宣称 judge "无法访问" provenance）。
 3. 判官批阅 —— 按 §2 的派发模板把 tasks.jsonl 分批交给子代理，直至每个 verdict_path 都已落盘。
 4. `.venv-test/bin/python scripts/collect_verdicts.py --round ROUND` —— schema 校验 + 身份泄漏扫描，合格 verdict 加信封写入 `results/judge/{entry_id}.json`，非法文件移入 `verdicts-invalid/` 并记 `judge_failed` 台账事件（走 run_judge_api 判定的批次须按 §3 传 `--backend glm_api`）。
 5. `.venv-test/bin/python scripts/compare_parity.py --round ROUND` —— 对照参考基线做打平判定，产出 `runs/comparisons/round-N/report.json` 与 `compared` / `status_parity` 台账事件（T13 交付；`status_capped` 由第 6 步的 rewrite_prompts 封顶时落账，compare 本身不写）。每份 report 都是累计视图：上轮已判而本轮没有新决策的案例（通常是已被冻结、不再产生批单）会以 `carried_from_round` 字段结转进 per_case 并计入 milestone 分母。
@@ -72,19 +72,16 @@ PY
 
 ## 3. 一致性抽检
 
-collect 之前（或之后立刻、且在 compare 之前均可，但必须在 compare 使用数据前完成裁决回写）：随机抽取 ceil(entries×0.1) 个已判 entry 作为盲样重走一次 §2 派发，第二次评审判定写成新文件放到同一队列目录的 `verdicts-resample/` 下（其余两个路径不变，样本选择与批次划分都不得让判官知道是复评）。抽取数量计算：
+collect 之前（或之后立刻、且在 compare 之前均可，但必须在 compare 使用数据前完成裁决回写）：随机抽取 ceil(entries×0.1) 个已判 entry 作为盲样重走一次 §2 派发，第二次评审判定写成新文件放到同一队列目录的 `verdicts-resample/` 下（其余两个路径不变，样本选择与批次划分都不得让判官知道是复评）。抽样已固化为脚本——确定性选择（manifest 按 entry_id 排序 + sha256("resample-ROUND") 种子）、经共享 resolver 读 manifest（`--isolated` 轮自动解析私有 manifest，无断链）、任务行不含任何来源字段、选择凭据落盘 `resample-selection.json`、历史冻结产物默认不覆写（重建需显式 `--force`）：
 
 ```bash
 JROUND="<当前轮>"
-PYTHONPATH=scripts .venv-test/bin/python - "$JROUND" <<'PY'
-import json, math, sys
-from lib.constants import ARBITER_MEAN_DIFF, RESAMPLE_RATE   # 2.0 / 0.1
-m = json.load(open(f"runs/judge-queue/round-{sys.argv[1]}/manifest.json"))
-print("entries =", len(m), "-> resample_n =", math.ceil(len(m) * RESAMPLE_RATE))
-PY
+.venv-test/bin/python scripts/build_resample_tasks.py --round "$JROUND"   # isolated 轮追加 --isolated
 ```
 
-比对两次 verdict 的五维分逐维求均差；任一维度差值 > `ARBITER_MEAN_DIFF`（=2.0，取自 `scripts/lib/constants.py`，勿手抄数字）就追加第三次仲裁评审，然后三个结果逐维取中位数作为最终分数，以编辑文件的方式直接修正正式 verdict（保持 JSON 结构与文件路径不变），并在台账追加一条注释事件说明校正原因与本组三份原始分。这一仲裁步骤无脚本承载，属代理手工操作；三次评分的分歧本身记入 `judge_failed` 类注释事件（idem 用 `{entry_id}#resample-arbiter` 形式，避免与 collect 的同名键去重冲突）。resample 文件永不进入 `results/judge/` 正式集合。**指标口径（发布战报引用的"自洽 1.40"）**：= 盲样复评与原判 verdict 之间**五维均值差的绝对值**在全部复评样本上的最大值（历史发布值 1.40，来自 round-1 队列 90 entries 的 9 份存档复评 `verdicts-resample/`；R2/R3 无存档复评）。走 run_judge_api 判定的批次收采时必须传 `--backend glm_api`：`.venv-test/bin/python scripts/collect_verdicts.py --round "$JROUND" --backend glm_api`（或事先导出 `JUDGE_BACKEND=glm_api`；缺省记 agent），否则信封会把云端判定误标成代理判官，污染后续审计。
+抽取数量为 ceil(entries×`RESAMPLE_RATE`=0.1)；第二轮盲评派发沿用 §2 模板（任务行里 verdict_path 已指向 `verdicts-resample/`）。
+
+比对两次 verdict 的**五维均值分**：`abs(mean5(scores_original) − mean5(scores_resample)) > ARBITER_MEAN_DIFF`（=2.0，取自 `scripts/lib/constants.py`，勿手抄数字；**阈值作用于五维均值差，不作用于任何单一维度**）就追加第三次仲裁评审，然后三个结果逐维取中位数作为最终分数，以编辑文件的方式直接修正正式 verdict（保持 JSON 结构与文件路径不变），并在台账追加一条注释事件说明校正原因与本组三份原始分。这一仲裁步骤无脚本承载，属代理手工操作；三次评分的分歧本身记入 `judge_failed` 类注释事件（idem 用 `{entry_id}#resample-arbiter` 形式，避免与 collect 的同名键去重冲突）。resample 文件永不进入 `results/judge/` 正式集合。**历史口径佐证**：round-1 队列（90 entries）的 9 份存档复评（`verdicts-resample/`）最大五维均值差 1.40、台账无任何 `#resample-arbiter` 事件，且档案中存在单维度差值达 3 的样本——若阈值按"任一维度"解读则必然已触发仲裁，与历史事实矛盾；故历史规则即五维均值差（与 `JUDGE-RUN-MANIFEST.json` 一致）。发布战报引用的"自洽 1.40"即该批复评的最大五维均值差；R2/R3 无存档复评。走 run_judge_api 判定的批次收采时必须传 `--backend glm_api`：`.venv-test/bin/python scripts/collect_verdicts.py --round "$JROUND" --backend glm_api`（或事先导出 `JUDGE_BACKEND=glm_api`；缺省记 agent），否则信封会把云端判定误标成代理判官，污染后续审计。
 
 ## 4. 非法输出协议
 

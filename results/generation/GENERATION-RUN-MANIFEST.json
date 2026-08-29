@@ -1,0 +1,65 @@
+{
+  "schema": "generation-run-manifest/1.0",
+  "published_run": true,
+  "role": "Immutable provenance record reconstructed from historical repository artifacts and workspace git state; generated images, ledger and reports are untouched.",
+  "model": {
+    "name": "SenseNova-U1.5-8B-MoT",
+    "revision": "not_recorded",
+    "revision_status": "not_recorded",
+    "weights_checksum": "not_recorded",
+    "weights_checksum_status": "not_recorded"
+  },
+  "runtime": {
+    "torch": "2.12.0+rocm7.14.0",
+    "torch_evidence": "documented pinned requirement (README quick start); inference venv venv-torch212",
+    "rocm": "7.14.0",
+    "hardware_arch": "gfx1100",
+    "hardware_memory_gib": 48
+  },
+  "inference": {
+    "steps": 50,
+    "cfg_scale": 4.0,
+    "cfg_norm": "none",
+    "timestep_shift": 3.0,
+    "vram_mode": "balanced",
+    "attn_backend": "sdpa",
+    "seed_protocol": "stable_seed(case_id, round, k)",
+    "seeds_per_prompt": 2
+  },
+  "repositories": {
+    "eval_repo": {
+      "commit_before_first_generation": "272e8be",
+      "note": "pipeline scripts evolved during the multi-day run (e.g. generate.sh retry/reconcile fix db5d283 at 2026-08-27T05:12:45Z, cumulative-report fix 2c49d18 at 2026-08-27T08:48:24Z); per-batch script shas were not individually recorded"
+    },
+    "rocm_wrapper": {
+      "repo": "AIwork4me/SenseNova-U1.5-ROCm",
+      "commit": "6a5785d16934c7f2f99fe5feb9ba361805c86f1b",
+      "committed_at": "2026-08-26T14:00:41Z",
+      "evidence": "HEAD predates the generation window and the working tree is clean, so the wrapper state at generation time equals this commit"
+    },
+    "upstream_sensenova_u1": {
+      "repo": "OpenSenseNova/SenseNova-U1",
+      "checkout_commit": "76c32c2fb0bb325f0116c6120b518a7df6a93430",
+      "evidence": "nested checkout under the wrapper at third_party/SenseNova-U1; examples/t2i/inference.py is unmodified relative to this commit",
+      "limitation": "two modeling files (src/sensenova_u1/models/neo_unify/modeling_neo_chat.py, modeling_qwen3.py) carried uncommitted local modifications whose exact diffs are not recorded"
+    }
+  },
+  "scripts": {
+    "generate_sh_sha256": "5c1aa98f4ca7804b9b884ee058e26baa02eb81705789e6354fb4fc35c14ddd9e",
+    "run_task_sh_sha256": "bba0c870075e3057fbb75c93b364c6bcaa9a29a18b6f084aefb5be3ad24a810f",
+    "inference_py_sha256": "a4e1548c9e6ceea1497e1b62b45a95c0a4b2f4e0724ec6dde33a86b6b7ad8733",
+    "note": "run-task.sh and inference.py shas equal their historical state (clean wrapper at a pre-window commit; inference.py unmodified in the upstream checkout). generate.sh evolved during the run window (see repositories.eval_repo.note); the recorded sha is the current one."
+  },
+  "selection": {
+    "pilot_lock_commit": "751986b09e0ff5010d6c1f9e7f2e34c495cd7a7f",
+    "pilot_lock_committed_at": "2026-08-27T04:11:05Z",
+    "first_candidate_generated_at": "2026-08-27T04:52:26Z",
+    "selection_preceded_generation": true,
+    "selection_rule": "deterministic category-quota sampling (id-ascending) with a documented edit-case filter; no RNG; cases were not added or removed based on model outputs"
+  },
+  "generation_window": {
+    "first_generated_event": "2026-08-27T04:52:26Z",
+    "last_generated_event": "2026-08-28T16:45:20Z"
+  },
+  "unknown_fields_policy": "Historical fields not supported by archived evidence are recorded as not_recorded or omitted rather than inferred."
+}
