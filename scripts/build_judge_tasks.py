@@ -18,8 +18,13 @@ def neutral_entry_id(image_bytes: bytes) -> str:
     return "entry-" + hashlib.sha256(image_bytes).hexdigest()[:8]
 
 
-def plan_rows(gen_events, case_dirs, baseline_existing, queue_dir: Path, rnd: int, copies=False):
-    """Return shuffled row dicts; with copies=True also materialize the queue dir."""
+def plan_rows(gen_events, case_dirs, baseline_existing, queue_dir: Path, rnd: int, copies=False,
+              manifest_dir: Path | None = None):
+    """Return shuffled row dicts; with copies=True also materialize the queue dir.
+
+    With manifest_dir set (future --isolated runs) the provenance manifest is
+    written outside the judge-visible queue dir; historical default keeps it in
+    queue_dir so frozen artifacts and the operator workflow stay unchanged."""
     q = Path(queue_dir)
     rows = []
     for ev in gen_events:
@@ -72,8 +77,10 @@ def plan_rows(gen_events, case_dirs, baseline_existing, queue_dir: Path, rnd: in
                      "orig_image": r["image_path"],
                      "prompt_text_sha": hashlib.sha256(r["prompt_text"].encode()).hexdigest()}
                     for r in made]
-        (q / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1),
-                                         encoding="utf-8")
+        mdir = Path(manifest_dir) if manifest_dir is not None else q
+        mdir.mkdir(parents=True, exist_ok=True)
+        (mdir / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1),
+                                            encoding="utf-8")
         with (q / "tasks.jsonl").open("w", encoding="utf-8") as f:
             for r in made:
                 f.write(json.dumps({k: r[k] for k in ("entry_id", "image_path", "prompt_path",
@@ -84,6 +91,11 @@ def plan_rows(gen_events, case_dirs, baseline_existing, queue_dir: Path, rnd: in
 def main():
     ap = argparse.ArgumentParser(description="Assemble the blinded judging queue for one round.")
     ap.add_argument("--round", type=int, required=True)
+    ap.add_argument("--isolated", action="store_true",
+                    help="write the provenance manifest to runs/judge-private/round-N/ "
+                         "instead of the judge-visible queue dir (source-isolated "
+                         "judge workspace for future runs; historical frozen "
+                         "artifacts are untouched)")
     args = ap.parse_args()
     gens = [e for e in load_events("ledger/append.jsonl") if e["type"] == "generated"]
     gens_r = [e for e in gens if f"-r{args.round}-" in e["payload"]["tag"]]
@@ -107,8 +119,11 @@ def main():
     baseline = {json.loads(p.read_text(encoding="utf-8"))["case_id"]
                 for p in Path("results/judge/_baseline").glob("*.json")}
     rows = plan_rows(gens_r, case_dirs, baseline,
-                     Path(f"runs/judge-queue/round-{args.round}"), args.round, copies=True)
-    print(f"[judge-queue] round={args.round} entries={len(rows)}")
+                     Path(f"runs/judge-queue/round-{args.round}"), args.round, copies=True,
+                     manifest_dir=(Path(f"runs/judge-private/round-{args.round}")
+                                   if args.isolated else None))
+    print(f"[judge-queue] round={args.round} entries={len(rows)} "
+          f"manifest={'runs/judge-private/round-' + str(args.round) if args.isolated else 'queue dir'}")
 
 
 if __name__ == "__main__":

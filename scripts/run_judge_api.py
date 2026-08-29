@@ -38,6 +38,7 @@ RC_BAD_VERDICT = 4
 
 DEFAULT_API_BASE = "https://api.z.ai/api/paas/v4/chat/completions"
 DEFAULT_VLM_MODEL = "glm-4.6v"
+PUBLISHED_JUDGE_MODEL = "GLM-5.3-Flash"  # agent backend, historical published run
 
 SYSTEM = (Path(__file__).resolve().parent / "judge-prompt.md").read_text(encoding="utf-8")
 
@@ -158,6 +159,14 @@ def main(argv=None) -> int:
     ap.add_argument("--tasks", required=True,
                     help="tasks.jsonl produced by build_judge_tasks.py")
     args = ap.parse_args(argv)
+    model = os.environ.get("GLM_VLM_MODEL") or DEFAULT_VLM_MODEL
+    print(f"[judge-api] judge model          = {model}")
+    print(f"[judge-api] published judge      = {PUBLISHED_JUDGE_MODEL} (agent backend; "
+          "see results/judge/JUDGE-RUN-MANIFEST.json)")
+    if model != PUBLISHED_JUDGE_MODEL:
+        print(f"[judge-api] WARNING: this judge model differs from the published "
+              f"benchmark judge ({PUBLISHED_JUDGE_MODEL}); scores may not be "
+              "directly comparable.")
     rows = [json.loads(line)
             for line in Path(args.tasks).read_text(encoding="utf-8").splitlines()
             if line.strip()]

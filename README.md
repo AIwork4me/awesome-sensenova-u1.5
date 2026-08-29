@@ -6,32 +6,33 @@ A reproducible community evaluation of SenseNova-U1.5-8B-MoT (AMD ROCm 7.14.0, g
 
 ## Results · 结果
 
-**Primary same-prompt result · 主要结果**：On the frozen 30-case pilot, SenseNova-U1.5 achieved **15/30 parity-or-win** (9 win + 6 parity) using the **original community prompts without prompt rewriting** — mean score delta **−0.46 / 10** (best of 2 deterministic seeds per case). This is the primary, closest-to-apples-to-apples number in this repo.
+**Primary original-prompt result · 主要结果**：On the frozen 30-case pilot, SenseNova-U1.5 achieved **15/30 parity-or-win** (9 win + 6 parity), mean score delta **−0.46 / 10**. SenseNova used the frozen original community prompts without rewriting, under a **fixed best-of-2 deterministic-seed protocol** (per-case better seed judged). This is the primary and least-adapted SenseNova condition in this study; the GPT-Image-2 side consists of curated community reference outputs whose original sampling/search budget is unknown.
 
-**Best observed with prompt/seed optimization · 优化后最好观察值**：With up to three rounds of prompt rewriting and/or fresh-seed exploration, the best-observed per-case result rises to **17/30 parity-or-win** (10 win + 7 parity), mean delta **−0.32 / 10**. This is an optimization ceiling reached with the tested prompt/seed strategies — not an equal-budget model-vs-model benchmark.
+**Prompt-adapted best observed · 提示词适配后的最好观察值**：**17/30 parity-or-win** (10 win + 7 parity), mean delta **−0.32 / 10**, using up to three rounds of prompt adaptation and/or fresh-seed exploration. Some adaptations intentionally simplify or relax typography requirements, so this measures **practical usability under the tested workarounds rather than same-task model capability**.
 
-The remaining failures in this pilot **predominantly** cluster around small-text rendering, complex typography/layout, and Chinese glyph fidelity (post-hoc failure analysis). 所有数字出处：frozen [final report](results/comparisons/final/report.json)、append-only [台账](ledger/append.jsonl)、[results/judge](results/judge) 评审信封；116 张图生成 GPU 零失败；146 次 source-blind 盲评判定，判官自洽复评最大均差 1.40（阈值 2.0）。
+The remaining failures in this pilot **predominantly** cluster around small-text rendering, complex typography/layout, and Chinese glyph fidelity (post-hoc failure analysis). 所有数字出处：frozen [final report](results/comparisons/final/report.json)、append-only [台账](ledger/append.jsonl)、[results/judge](results/judge)（判官运行溯源：[JUDGE-RUN-MANIFEST.json](results/judge/JUDGE-RUN-MANIFEST.json)）；116 张图生成 GPU 零失败；146 次 source-blind 盲评判定；盲样复评以五维均值差计，最大 1.40（阈值 2.0，零仲裁）。
 
-## Same-prompt vs optimization study · 同题结果与优化研究
+## Original prompts vs prompt adaptation · 原始提示词与提示词适配
 
 | scope | parity-or-win | mean delta |
 |---|---|---|
 | **R1 · original prompts（primary）** | **15/30** | **−0.46** |
 | R2 · rewritten prompts | 17/30 | −0.45 |
 | R3 · rewritten + fresh seeds | 17/30 | −0.51 |
-| Cross-round best observed（optimization ceiling） | 17/30 | −0.32 |
+| Cross-round best observed（prompt-adapted） | 17/30 | −0.32 |
 
-R1 是主要结果，因为提示词未做任何改写（每案例 2 枚确定性种子取优）。R2/R3/跨轮最优衡量的是在**已测试的提示词/种子策略**下的实践上限，不应解读为同等预算的模型对模型基准。FINAL 取每案例跨轮最优（R19 裁定），因此后一轮的回退不会掩盖前一轮的更好结果——R3 的账面回撤不代表能力退化。
+R1 是主要结果：提示词文本一字未改，每案例 2 枚确定性种子取优。R2/R3/跨轮最优衡量**已测试适配策略下的实践可用性**——部分策略刻意简化/放宽排版要求（见下方策略记分板分类），因此不能解读为同任务模型能力，也非同等预算的模型对模型基准。FINAL 取每案例跨轮最优（R19 裁定），后一轮的回退不会掩盖前一轮的更好结果。
 
 ## Strategy scorecard · 策略记分板
 
-改写策略库（`scripts/rewrite_prompts.py`）按失败检查项给每个 fail 案例派发恰好一条策略，三轮下来：
+改写策略库（`scripts/rewrite_prompts.py`）按失败检查项给每个 fail 案例派发恰好一条策略，三轮下来。**按任务要求是否保留分两类**：
 
-- **S1 drop-microtext** — 消除了全部 8 例乱码硬伤（豁免机制：对无微缩文字需求的案例豁免 small_text 检查项）。/ eliminated all 8 garbled hard-failures via the small-text exemption mechanism.
-- **S2 simplify-display** — 翻盘 2 例（其中 1 例直接转 win）。/ flipped 2 cases, one of them all the way to win.
-- **S4 style-anchor** — 净负收益；自 R18 起同策略重派改为同文换种重试，不再叠加指令。/ net-negative; since R18 a repeated strategy becomes a same-text fresh-seed retry instead of stacking another directive.
+- **A. Requirement-preserving（保留原任务要求，只做加法）**：S3 显式约束、**S4 style-anchor**（requirement-preserving；净负收益，自 R18 起同策略重派改为同文换种子重试）、S5 构图规避、R18 同文换种子。/ additive guidance only.
+- **B. Task-relaxing workarounds（刻意简化/放宽排版要求）**：**S1 drop-microtext** — 消除了全部 8 例乱码硬伤（small_text 豁免机制）；**S2 simplify-display** — 翻盘 2 例（其中 1 例转 win）。/ deliberately reduce typography complexity.
 
-诚实结论：在本项目**已测试的**提示词与种子策略范围内，剩余 13 个 fail 在事后失败分析中主要集中在微缩文字渲染、复杂排版与中文字形质量；提示词改写共追回 2 例（15 → 17），继续改写的收益有限。这是观察到的失败聚集，不构成对模型全部剩余短板的证明。Within the strategies tested here, the 13 residual fails predominantly cluster around micro-text rendering, complex typography, and Chinese glyph fidelity in our post-hoc failure analysis; prompt rewriting recovered only 2 additional parity-or-win cases (15 → 17). This is an observed failure cluster, not proof that these are the model's only remaining limitations.
+Some strategies preserve the requested task while others deliberately reduce typography complexity; the latter are developer workarounds, **not** evidence that the model solved the original task.
+
+诚实结论：在本项目**已测试的**策略范围内，剩余 13 个 fail 在事后失败分析中主要集中在微缩文字渲染、复杂排版与中文字形质量；受测 workaround 使 parity-or-win 从 15 增至 17（其中含 task-relaxing 策略），继续适配的收益有限。这是观察到的失败聚集，不构成对模型全部剩余短板的证明。Within the strategies tested here, the 13 residual fails predominantly cluster around micro-text rendering, complex typography, and Chinese glyph fidelity in our post-hoc failure analysis; the tested workarounds raise the parity-or-win count from 15 to 17. This is an observed failure cluster, not proof that these are the model's only remaining limitations.
 
 ## How it works · 工作原理
 
@@ -43,11 +44,11 @@ fetch → select → generate → source-blind judge → compare → rewrite
 
 - **fetch** 拉取并锁定上游参考仓库 commit；**select** 按 13 类别选出 30 个试点案例并锁定 `configs/pilot.lock.json`；**generate** 是唯一 GPU 触点，按台账增量批单、确定性种子出图；**source-blind judge** 由 GLM 视觉判官按五维量规对来源盲评；**compare** 对照参考基线做五条硬检查的打平判定并产出轮报告；**rewrite** 对 fail 案例按策略库改写提示词进入下一轮。
 - **Receipts philosophy / 凭据哲学**：本 README 的每个数字都可回链审计——评审信封在 [results/judge](results/judge)，逐事件台账在 [ledger/append.jsonl](ledger/append.jsonl)，轮次与终局对比报告在 [runs/comparisons](runs/comparisons)（发布副本 [results/comparisons/final/report.json](results/comparisons/final/report.json)）。没有数字是无凭据的。
-- **Source-blind protocol / 来源盲评协议**：判官被告知候选者身份保密、禁止猜测或推断任何图像出自哪个模型；entry 采用图像内容哈希派生的中性 ID（`entry-xxxxxxxx`），原始文件名与来源元数据不进入判官上下文，队列按轮号确定性乱序（`scripts/build_judge_tasks.py`）；verdict 落盘后经 schema 校验 + 身份泄漏扫描才入库（`judge_failed` 记台账）；约 10% entry 盲样复评做自洽性抽检，超阈值追加仲裁评审取中位数，全程无人工打分。
+- **Source-blind protocol / 来源盲评协议**：判官被告知候选者身份保密、禁止猜测或推断任何图像出自哪个模型；entry 采用图像内容哈希派生的中性 ID（`entry-xxxxxxxx`），原始文件名与来源元数据不进入判官任务上下文，队列按轮号确定性乱序（`scripts/build_judge_tasks.py`）；verdict 落盘后经 schema 校验 + 身份泄漏扫描才入库（`judge_failed` 记台账），全程无人工打分。盲样复评（约 10%，`RESAMPLE_RATE=0.1`）以**五维均值差**衡量：round-1 队列（90 entries 含 30 基线）存档 9 份复评（[verdicts-resample/](runs/judge-queue/round-1/verdicts-resample)），最大五维均值差 **1.40**（阈值 2.0，零仲裁；R2/R3 无存档复评）。**历史局限**：以上是 source-hidden task context——控制器侧 manifest 与台账仍保留 entry→来源映射，历史运行未做文件系统级隔离；未来运行请加 `build_judge_tasks.py --isolated`，manifest 将写入 `runs/judge-private/`（source-isolated judge workspace）。历史判官运行溯源：[JUDGE-RUN-MANIFEST.json](results/judge/JUDGE-RUN-MANIFEST.json)（published judge = GLM-5.3-Flash, agent backend；optional API backend 默认 `glm-4.6v`，协议兼容但分数不必一致）。
 
 ## Gallery · 画廊
 
-- Published comparison gallery（已判分左右对照画廊）：[root README gallery section](https://github.com/AIwork4me/awesome-sensenova-u1.5#readme)（即本页下方 GALLERY 区）
+- Published comparison gallery（已判分左右对照画廊）：[root README gallery section](https://github.com/AIwork4me/awesome-sensenova-u1.5#readme)（即本页下方 GALLERY 区）。**29/30 案例展示**；case3 因真实人物肖像（spec §12）撤出视觉发布，其判分凭据保留并计入全部计分（[configs/publish-exclude-cases.txt](configs/publish-exclude-cases.txt)）
 - Round-1 WIP gallery（首轮生成快照）：[results/gallery/wip-round1/README.md](results/gallery/wip-round1/README.md)
 - Round-3 WIP gallery（第三轮 v3 提示词实况）：[results/gallery/wip-round3/README.md](results/gallery/wip-round3/README.md)
 

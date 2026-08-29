@@ -1,7 +1,7 @@
 # 项目状态与交接文档（Project State & Handoff）
 
 - 更新：2026-08-28 · main `37873fa`
-- 术语与口径更新（2026-08-29）：`双盲` 统一改称 **source-blind**（判官对图像来源盲：中性内容哈希 entry ID、来源元数据不进判官上下文、队列按轮号确定性乱序、落盘前泄漏扫描；单侧盲，非 A/B 成对比较）；结果表述改为两级——primary = R1 原始提示词 **15/30**，optimization ceiling = 跨轮最优 **17/30**。历史文档（spec/plans）保留原始术语，以其日期为准。
+- 术语与口径更新（2026-08-29，第二次收紧）：结果两级表述定名——primary = **original-prompt result**（R1 原始提示词 **15/30**；best-of-2 确定性种子/案例，GPT 侧参考图采样预算未知），secondary = **prompt-adapted best observed**（跨轮最优 **17/30**；含 task-relaxing 排版策略，衡量实践可用性而非同任务能力）；`双盲` 统一改称 **source-blind**（source-hidden task context：中性内容哈希 entry ID、来源元数据不进判官任务上下文、队列按轮号确定性乱序、落盘前泄漏扫描；单侧盲，非 A/B 成对比较；历史运行未做文件系统级隔离——manifest 与台账保留 entry→来源映射，未来运行用 `--isolated`）。判官运行溯源：`results/judge/JUDGE-RUN-MANIFEST.json`（含 1.40 精确定义：盲样复评最大五维均值差；复评存档仅 round-1 队列 9/90）。历史文档（spec/plans）保留原始术语，以其日期为准。
 - 用途：本文件是项目的完整状态快照与交接包。任何新会话/新任务（例如"写项目总结"）只需读通本文，即可在零上下文下准确引用全部数据、结论与凭据位置。文中每个数字都可在所引路径复核。
 
 ## 1. 项目一句话
@@ -10,15 +10,15 @@ awesome-sensenova-u1.5：把 [awesome-gpt-image-2](https://github.com/freestylef
 
 ## 2. 结果（S8，已经两轮独立验核；自 2026-08-29 起按两级口径表述）
 
-**Primary（同题结果）**：R1 原始提示词直出 **15/30**（Δ −0.46；每案例 2 枚确定性种子取优，提示词未做任何改写）——最接近 apples-to-apples 的口径。
-**Secondary（优化研究）**：R2/R3/跨轮最优衡量**已测提示词/种子策略**下的实践上限（optimization ceiling），不应解读为同等预算的模型对模型基准。
+**Primary（original-prompt result）**：R1 原始提示词直出 **15/30**（Δ −0.46；提示词文本未改，每案例 2 枚确定性种子取优）——最少适配的 SenseNova 条件；GPT 侧参考为社区精选输出，原始采样预算未知。
+**Secondary（prompt-adapted best observed）**：R2/R3/跨轮最优衡量**已测适配策略**下的实践可用性——部分策略刻意简化/放宽排版要求，不能解读为同任务模型能力或同等预算基准。
 
 | 轮次 | 达标（win+parity） | 五维总均差 |
 |---|---|---|
-| R1 原题（primary） | 15/30 | −0.46 |
+| R1 原题（primary, original-prompt） | 15/30 | −0.46 |
 | R2 策略改写 | 17/30 | −0.45 |
 | R3 再改写+换种子 | 17/30 | −0.51 |
-| **FINAL 跨轮最优（optimization ceiling）** | **17/30（56.7%）** | **−0.32** |
+| **FINAL 跨轮最优（prompt-adapted best observed）** | **17/30（56.7%）** | **−0.32** |
 
 - 构成（FINAL）：win 10（SenseNova 反超，最高 case78 +2.60）+ parity 7 + fail 13；目标 24/30（80%）未完全达成。
 - fail 梯度：6 例差距 ≤0.6（case130 gap 0.0 仅缺一个文字元素、case17 −0.2）；深坑为 case167（−3.0）、case8（−2.0）、case1/3（−1.2~−1.6）。

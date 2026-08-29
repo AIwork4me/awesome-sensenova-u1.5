@@ -1,0 +1,42 @@
+{
+  "schema": "judge-run-manifest/1.0",
+  "published_run": true,
+  "role": "Immutable provenance record for the historical published judging run. Created 2026-08-29 from repository artifacts only; historical verdict files are untouched.",
+  "judge_model": "GLM-5.3-Flash (vision, via local sub-agent channel; no API key involved)",
+  "backend": "agent",
+  "judge_prompt_path": "scripts/judge-prompt.md",
+  "judge_prompt_sha256": "086c64afb699c148da391de2c14176128298db9bdc95830093ef821a0313d67e",
+  "evaluation_window": {
+    "first_ledger_event": "2026-08-27T03:38:50Z",
+    "last_ledger_event": "2026-08-28T23:39:00Z",
+    "generation_window": ["2026-08-27T04:52:26Z", "2026-08-28T16:45:20Z"]
+  },
+  "verdict_count": 146,
+  "verdict_composition": "116 SenseNova reproductions (R1 60 / R2 30 / R3 26) + 30 reference baselines",
+  "resample_protocol": {
+    "resample_rate_target": 0.1,
+    "arbitration_threshold": 2.0,
+    "threshold_quantity": "absolute five-dimension mean score difference",
+    "arbitration_rule": "if a blind resample differs from the original verdict by more than the threshold in five-dimension mean, a third arbitration review is added and the per-dimension median of the three is written back",
+    "self_consistency": {
+      "metric": "maximum absolute difference in the five-dimension mean score between original and blind-resample verdicts",
+      "observed_max": 1.4,
+      "arbitrations_triggered": 0,
+      "resample_artifacts": "runs/judge-queue/round-1/verdicts-resample/ (9 verdicts; round-1 queue = 90 entries = 60 reproductions + 30 baselines, ceil(90 x 0.1) = 9)",
+      "coverage_note": "archived resamples exist for the round-1 queue only; rounds 2-3 have no archived resample verdicts"
+    }
+  },
+  "source_blinding": {
+    "protocol": "task-context blinding: entries carry neutral content-hash IDs (entry-xxxxxxxx), provenance-bearing filenames/metadata are excluded from the dispatched task context, the judge prompt forbids source inference, queue order is a per-round deterministic shuffle (seed = sha256 of round), and verdicts pass schema validation plus a provenance-leak scan before storage",
+    "historical_limitation": "controller-side artifacts (runs/judge-queue/*/manifest.json and the ledger 'judged' events) retained the entry-to-source mapping in the workspace; the historical agent workflow was source-hidden at the task-context level but was not filesystem-isolated",
+    "future_runs": "build_judge_tasks.py --isolated writes the provenance manifest outside the judge-visible queue dir (runs/judge-private/round-N/); collect_verdicts.py reads the private manifest when present"
+  },
+  "generation": {
+    "model_weights": "SenseNova-U1.5-8B-MoT",
+    "seed_protocol": "deterministic stable_seed(case_id, round, k) with SEEDS_PER_PROMPT = 2; per-round comparison takes the better judged seed per case",
+    "steps": 50,
+    "cfg_scale": 4.0,
+    "hardware": "single AMD gfx1100 (48 GB), ROCm 7.14.0"
+  },
+  "unknown_fields_policy": "fields not recorded by historical artifacts are omitted rather than guessed"
+}

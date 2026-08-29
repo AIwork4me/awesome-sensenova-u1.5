@@ -25,12 +25,17 @@ from lib.ledger import append_event, load_events
 from make_gen_jsonl import latest_prompt_text
 
 STRATEGIES = {
+    # requirement_preserving: True = additive guidance only, the requested task
+    # is kept intact; False = the directive deliberately reduces or relaxes
+    # stated requirements (a task-relaxing developer workaround, documented as
+    # such in the README scorecard — never counted as same-task capability).
     "S1_drop_microtext": {
         "trigger": "small_text_quality == garbled",
         "directive": ("Typography constraint: do NOT render a credits block, billing block "
                       "or any micro-print paragraph. Limit all typography to the main title "
                       "and, if specified, the subtitle and a short date/release line only."),
         "sets_small_text_exempt": True,
+        "requirement_preserving": False,
     },
     "S2_simplify_display_text": {
         "trigger": "display_text_correct == false or text_miss_count > 0",
@@ -38,12 +43,14 @@ STRATEGIES = {
                       "letterforms, high contrast between text and background, and avoid any "
                       "decorative distortion of glyphs. Spell each word exactly as given."),
         "sets_small_text_exempt": False,
+        "requirement_preserving": False,
     },
     "S3_explicit_constraints": {
         "trigger": "unfulfilled mentions count/layout/position words",
         "directive": ("Composition constraints: follow the quantities below literally and place "
                       "objects as stated; prefer explicit enumeration over prose description."),
         "sets_small_text_exempt": False,
+        "requirement_preserving": True,
     },
     "S4_style_anchor": {
         "trigger": "default when others absent (style/aesthetic shortfall)",
@@ -51,6 +58,7 @@ STRATEGIES = {
                       "print / ink painting), name the palette explicitly, and reference the era "
                       "and genre in the first sentence of the prompt."),
         "sets_small_text_exempt": False,
+        "requirement_preserving": True,
     },
     "S5_avoid_anatomy": {
         "trigger": "visual_defects == true or unfulfilled mentions hands/face/limbs",
@@ -58,6 +66,7 @@ STRATEGIES = {
                       "either naturally occupied or out of frame; avoid close-ups of faces with "
                       "complex expressions."),
         "sets_small_text_exempt": False,
+        "requirement_preserving": True,
     },
 }
 KEYWORD_RULES = [(r"\bcount\b|\bquantity\b|number of", "S3_explicit_constraints"),

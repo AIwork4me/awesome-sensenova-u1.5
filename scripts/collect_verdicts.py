@@ -19,10 +19,19 @@ from lib.schemas import model_identity_leak, validate_verdict
 BACKENDS = ("agent", "glm_api")
 
 
+def _manifest_path(q: Path, root: Path) -> Path:
+    """Prefer the source-isolated private manifest (--isolated runs); fall back
+    to the in-queue manifest written by historical default assemblies."""
+    rnd = q.name.split("-", 1)[1]
+    priv = root / f"runs/judge-private/round-{rnd}/manifest.json"
+    return priv if priv.exists() else q / "manifest.json"
+
+
 def _collect_round(rnd: int, ledger: str, root: Path = Path("."),
                    backend: str = "agent") -> int:
     q = root / f"runs/judge-queue/round-{rnd}"
-    man = {m["entry_id"]: m for m in json.loads((q / "manifest.json").read_text())}
+    man_path = _manifest_path(q, root)
+    man = {m["entry_id"]: m for m in json.loads(man_path.read_text())}
     inv = q / "verdicts-invalid"
     n_bad = 0
     for eid, m in man.items():
@@ -60,7 +69,7 @@ def _collect_round(rnd: int, ledger: str, root: Path = Path("."),
                      {"entry_id": eid, "source": m["source"], "case_id": m["case_id"],
                       "results_path": str(outp)}, idem=eid)
     print(f"[collect] round={rnd} persisted={len(man) - n_bad} invalid={n_bad} "
-          f"backend={backend}")
+          f"backend={backend} manifest={man_path}")
     return 0
 
 
