@@ -1,0 +1,5 @@
+# 版权与使用声明（NOTICE）
+
+本目录中的 `case{id}.webp` 为参考基线显示副本（规格化：长边 1200、WebP q88），源自 [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2)（MIT 协议仓库）收录的社区案例效果图，原始创作者见 README 各例的来源链接。这些图片**仅用于本项目的非商业性生成质量评测对比**，著作权归各自创作者所有；如有侵权请联系移除。
+
+`case{id}-winner.webp` 为本仓库管线在 AMD ROCm 7.14.0 上由 SenseNova-U1.5-8B-MoT 生成的复现图显示副本（与参考副本同画布规格化），按确定性种子可复现（seed 见 README 各例复现参数行与台账）。

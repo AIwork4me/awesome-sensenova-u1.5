@@ -1,0 +1,24 @@
+# Zero-GPU CI: the whole pytest suite is stdlib + pytest + pillow (no torch,
+# no ROCm) by design — tests/conftest.py eagerly imports every pipeline script
+# and all of them are import-safe without GPU libraries; the only Pillow users
+# are tests/test_render.py's normalization tests, which importorskip("PIL").
+# Installing pillow (not just pytest) keeps those tests in the run instead of
+# silently skipping them.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test dependencies
+        run: pip install pytest pillow
+      - name: Run test suite (zero-GPU)
+        run: pytest tests/ -q
