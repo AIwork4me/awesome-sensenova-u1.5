@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/AIwork4me/Qwen3-TTS-ROCm/main/docs/hero.jpg" alt="awesome-sensenova-u1.5 hero" width="100%"/>
-</p>
-
 # awesome-sensenova-u1.5
 
 An auditable community evaluation of SenseNova-U1.5-8B-MoT (AMD ROCm 7.14.0, gfx1100) against a **frozen set of curated GPT-Image-2 community reference outputs** — 30 community-derived prompts across 13 categories, judged **source-blind** by a GLM vision judge — with a reproducible evaluation protocol, fully archived published results, and side-by-side galleries.
