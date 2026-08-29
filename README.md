@@ -1,8 +1,8 @@
 # awesome-sensenova-u1.5
 
-A reproducible community evaluation of SenseNova-U1.5-8B-MoT (AMD ROCm 7.14.0, gfx1100) against a **frozen set of curated GPT-Image-2 community reference outputs** — 30 community-derived prompts across 13 categories, judged **source-blind** by a GLM vision judge — with an open prompt library, side-by-side galleries, and every judging receipt.
+An auditable community evaluation of SenseNova-U1.5-8B-MoT (AMD ROCm 7.14.0, gfx1100) against a **frozen set of curated GPT-Image-2 community reference outputs** — 30 community-derived prompts across 13 categories, judged **source-blind** by a GLM vision judge — with a reproducible evaluation protocol, fully archived published results, and side-by-side galleries.
 
-对 SenseNova-U1.5-8B-MoT 的可复现社区评测：以冻结的 30 条社区衍生提示词（覆盖 13 个类别）同题对照**一份精选（curated）GPT-Image-2 社区参考输出集**（非本管线重新调用 GPT-Image-2 生成），AMD ROCm 7.14.0（gfx1100）生成，GLM 视觉判官 **source-blind**（判官对图像来源盲）评分——开源提示词库、左右对照画廊与全部评审凭据。
+一套**可审计**的 SenseNova-U1.5-8B-MoT 社区评测：以冻结的 30 条社区衍生提示词（覆盖 13 个类别）同题对照**一份精选（curated）GPT-Image-2 社区参考输出集**（非本管线重新调用 GPT-Image-2 生成），AMD ROCm 7.14.0（gfx1100）生成，GLM 视觉判官 **source-blind**（判官对图像来源盲）评分——**评测协议可复现，已发布的图片、评分与报告完整归档**；开源提示词库、左右对照画廊与全部评审凭据。
 
 ## Results · 结果
 

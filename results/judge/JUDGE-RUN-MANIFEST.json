@@ -29,7 +29,7 @@
   "source_blinding": {
     "protocol": "task-context blinding: entries carry neutral content-hash IDs (entry-xxxxxxxx), provenance-bearing filenames/metadata are excluded from the dispatched task context, the judge prompt forbids source inference, queue order is a per-round deterministic shuffle (seed = sha256 of round), and verdicts pass schema validation plus a provenance-leak scan before storage",
     "historical_limitation": "controller-side artifacts (runs/judge-queue/*/manifest.json and the ledger 'judged' events) retained the entry-to-source mapping in the workspace; the historical agent workflow was source-hidden at the task-context level but was not filesystem-isolated",
-    "future_runs": "build_judge_tasks.py --isolated writes the provenance manifest outside the judge-visible queue dir (runs/judge-private/round-N/); collect_verdicts.py reads the private manifest when present"
+    "future_runs": "build_judge_tasks.py --isolated creates a provenance-separated judge queue by moving controller-side source mapping outside the judge-visible queue directory (runs/judge-private/round-N/; collect_verdicts.py and the resample tooling resolve the manifest private-first). This is directory-level separation only; filesystem-level access isolation depends on the execution sandbox."
   },
   "generation": {
     "model_weights": "SenseNova-U1.5-8B-MoT",
