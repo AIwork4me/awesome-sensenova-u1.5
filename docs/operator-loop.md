@@ -7,7 +7,7 @@
 一轮（round）是状态机的一次完整推进，六步固定顺序、缺一不可：
 
 1. `bash scripts/generate.sh ROUND` —— 唯一 GPU 触点；内部先跑 `env-check.sh`，再按台账增量组装批单、调基础仓库 run-task 生成、对账落账本，整轮最多 3 次 attempt，无 pending 时短路退出。
-2. `.venv-test/bin/python scripts/build_judge_tasks.py --round ROUND` —— 组装本轮盲评队列到 `runs/judge-queue/round-N/`（entries/prompts/verdicts 三目录加 manifest.json 与 tasks.jsonl），参考图首轮后经 `_baseline` 缓存不再重复入队。
+2. `.venv-test/bin/python scripts/build_judge_tasks.py --round ROUND` —— 组装本轮盲评队列到 `runs/judge-queue/round-N/`（entries/prompts/verdicts 三目录加 manifest.json 与 tasks.jsonl），参考图首轮后经 `_baseline` 缓存不再重复入队。队列按轮号确定性乱序（seed = sha256("queue-ROUND")），entry_id 为图像内容 sha256 前 8 位的中性编号，原始文件名与来源元数据不进入判官上下文——这是 source-blind 协议（判官对图像来源盲）的实现载体。
 3. 判官批阅 —— 按 §2 的派发模板把 tasks.jsonl 分批交给子代理，直至每个 verdict_path 都已落盘。
 4. `.venv-test/bin/python scripts/collect_verdicts.py --round ROUND` —— schema 校验 + 身份泄漏扫描，合格 verdict 加信封写入 `results/judge/{entry_id}.json`，非法文件移入 `verdicts-invalid/` 并记 `judge_failed` 台账事件（走 run_judge_api 判定的批次须按 §3 传 `--backend glm_api`）。
 5. `.venv-test/bin/python scripts/compare_parity.py --round ROUND` —— 对照参考基线做打平判定，产出 `runs/comparisons/round-N/report.json` 与 `compared` / `status_parity` 台账事件（T13 交付；`status_capped` 由第 6 步的 rewrite_prompts 封顶时落账，compare 本身不写）。每份 report 都是累计视图：上轮已判而本轮没有新决策的案例（通常是已被冻结、不再产生批单）会以 `carried_from_round` 字段结转进 per_case 并计入 milestone 分母。

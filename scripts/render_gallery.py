@@ -95,10 +95,10 @@ _CASE_HEAD = "## case-"
 # Column/row labels, zh + en twins of the same comparison structure.
 _LABELS = {
     "zh": {
-        "banner": "> ✅ 已判分：round {rnd} 全量 {total} 案例双盲评审完成 —— "
+        "banner": "> ✅ 已判分：round {rnd} 全量 {total} 案例 source-blind 盲评完成 —— "
                   "parity {p} · win {w} / total {t} · parity 率 {ratio} · "
                   "overall gap {gap}。判分明细：[{link}]({link})",
-        "banner_nolink": "> ✅ 已判分：round {rnd} 全量 {total} 案例双盲评审完成 —— "
+        "banner_nolink": "> ✅ 已判分：round {rnd} 全量 {total} 案例 source-blind 盲评完成 —— "
                          "parity {p} · win {w} / total {t} · parity 率 {ratio} · "
                          "overall gap {gap}",
         "head": "| | 左 · GPT-Image-2（参考基线） "
@@ -121,10 +121,10 @@ _LABELS = {
         "gap_word": "overall gap",
     },
     "en": {
-        "banner": "> ✅ Judged: round {rnd} full blind review of {total} cases "
+        "banner": "> ✅ Judged: round {rnd} full source-blind review of {total} cases "
                   "complete — parity {p} · win {w} / total {t} · parity ratio "
                   "{ratio} · overall gap {gap}. Details: [{link}]({link})",
-        "banner_nolink": "> ✅ Judged: round {rnd} full blind review of {total} "
+        "banner_nolink": "> ✅ Judged: round {rnd} full source-blind review of {total} "
                          "cases complete — parity {p} · win {w} / total {t} · "
                          "parity ratio {ratio} · overall gap {gap}",
         "head": "| | Left · GPT-Image-2 (reference baseline) "

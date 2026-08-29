@@ -28,3 +28,26 @@ def test_plan_rows_unmatched_tag_raises(tmp_path):
         plan_rows(gen_events=[{"payload": {"tag": "case-not-a-tag"}}],
                   case_dirs={}, baseline_existing=set(), queue_dir=tmp_path,
                   rnd=1, copies=False)
+
+
+def test_plan_rows_order_deterministic_and_complete(tmp_path, monkeypatch):
+    # source-blind protocol carrier: the queue order must be a deterministic
+    # permutation seeded by the round, so re-assembly cannot reshuffle history.
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "a.png").write_bytes(b"img-a")
+    (tmp_path / "b.png").write_bytes(b"img-b")
+    (tmp_path / "ref.jpg").write_bytes(b"img-reference-bytes")
+    case_dir = tmp_path / "cases" / "pilot" / "case-7"
+    case_dir.mkdir(parents=True)
+    (case_dir / "base.md").write_text("p", encoding="utf-8")
+    gens = [{"payload": {"tag": f"case7-r1-s{i}", "file": n}}
+            for i, n in enumerate(("a.png", "b.png"))]
+    dirs = {7: {"prompt_text": "p", "upstream_image": "ref.jpg"}}
+    rows1 = plan_rows(gen_events=gens, case_dirs=dirs, baseline_existing=set(),
+                      queue_dir=tmp_path, rnd=1, copies=False)
+    rows2 = plan_rows(gen_events=gens, case_dirs=dirs, baseline_existing=set(),
+                      queue_dir=tmp_path, rnd=1, copies=False)
+    ids1 = [r["entry_id"] for r in rows1]
+    assert ids1 == [r["entry_id"] for r in rows2]
+    assert len(ids1) == len(set(ids1)) == 3
+    assert sorted(r["source"] for r in rows1) == ["reference", "sensenova", "sensenova"]

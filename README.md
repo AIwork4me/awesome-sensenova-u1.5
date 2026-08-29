@@ -1,25 +1,27 @@
 # awesome-sensenova-u1.5
 
-A prompt-evaluation loop that reproduces [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) community cases with SenseNova-U1.5-8B-MoT on AMD ROCm 7.14.0 (gfx1100), blind-judged by a GLM vision judge — open prompt library, side-by-side galleries, and every judging receipt.
+A reproducible community evaluation of SenseNova-U1.5-8B-MoT (AMD ROCm 7.14.0, gfx1100) against a **frozen set of curated GPT-Image-2 community reference outputs** — 30 community-derived prompts across 13 categories, judged **source-blind** by a GLM vision judge — with an open prompt library, side-by-side galleries, and every judging receipt.
 
-把 [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) 的社区案例作为量化基线，用 SenseNova-U1.5-8B-MoT 在 AMD ROCm 7.14.0（gfx1100）上同题复现，由 GLM 视觉判官盲评——开源提示词库、左右对照画廊与全部评审凭据。
+对 SenseNova-U1.5-8B-MoT 的可复现社区评测：以冻结的 30 条社区衍生提示词（覆盖 13 个类别）同题对照**一份精选（curated）GPT-Image-2 社区参考输出集**（非本管线重新调用 GPT-Image-2 生成），AMD ROCm 7.14.0（gfx1100）生成，GLM 视觉判官 **source-blind**（判官对图像来源盲）评分——开源提示词库、左右对照画廊与全部评审凭据。
 
-## Final scoreboard · 终局战报
+## Results · 结果
 
-**30 pilot cases across 13 categories · 17/30 parity-or-win (10 win + 7 parity) · overall gap −0.32 / 10 · 3-round auto-iteration with a strategy library · 116 images generated, zero GPU failures · 146 blind verdicts, judge self-consistency max diff 1.40.** All numbers come from the frozen [final report](results/comparisons/final/report.json), the append-only [ledger](ledger/append.jsonl), and the judging envelopes under [results/judge](results/judge).
+**Primary same-prompt result · 主要结果**：On the frozen 30-case pilot, SenseNova-U1.5 achieved **15/30 parity-or-win** (9 win + 6 parity) using the **original community prompts without prompt rewriting** — mean score delta **−0.46 / 10** (best of 2 deterministic seeds per case). This is the primary, closest-to-apples-to-apples number in this repo.
 
-**终局战报（数字与上述英文一致）**：30 个试点案例覆盖 13 个类别；17/30 打平或反超（10 胜 + 7 平）；overall gap −0.32 / 10（分差按 10 分制计）；策略库驱动 3 轮自动迭代；累计生成 116 张图，GPU 零失败；146 次盲评判定，判官自洽复评最大均差 1.40。所有数字出处：[终局冻结报告](results/comparisons/final/report.json)、append-only [台账](ledger/append.jsonl) 与 [results/judge](results/judge) 评审信封。
+**Best observed with prompt/seed optimization · 优化后最好观察值**：With up to three rounds of prompt rewriting and/or fresh-seed exploration, the best-observed per-case result rises to **17/30 parity-or-win** (10 win + 7 parity), mean delta **−0.32 / 10**. This is an optimization ceiling reached with the tested prompt/seed strategies — not an equal-budget model-vs-model benchmark.
 
-## Three rounds · 三轮迭代
+The remaining failures in this pilot **predominantly** cluster around small-text rendering, complex typography/layout, and Chinese glyph fidelity (post-hoc failure analysis). 所有数字出处：frozen [final report](results/comparisons/final/report.json)、append-only [台账](ledger/append.jsonl)、[results/judge](results/judge) 评审信封；116 张图生成 GPU 零失败；146 次 source-blind 盲评判定，判官自洽复评最大均差 1.40（阈值 2.0）。
 
-| round | parity-or-win | overall gap |
+## Same-prompt vs optimization study · 同题结果与优化研究
+
+| scope | parity-or-win | mean delta |
 |---|---|---|
-| R1 | 15/30 | −0.46 |
-| R2 | 17/30 | −0.45 |
-| R3 | 17/30 | −0.51 |
-| **FINAL (best-of-rounds)** | **17/30** | **−0.32** |
+| **R1 · original prompts（primary）** | **15/30** | **−0.46** |
+| R2 · rewritten prompts | 17/30 | −0.45 |
+| R3 · rewritten + fresh seeds | 17/30 | −0.51 |
+| Cross-round best observed（optimization ceiling） | 17/30 | −0.32 |
 
-最新轮会被方差与回退遮蔽，终局取每案例跨轮最优，因此 FINAL 的 gap 好于任何单轮：R3 的账面回撤并不代表能力退化，逐案例择优后整体差距收敛到 −0.32。
+R1 是主要结果，因为提示词未做任何改写（每案例 2 枚确定性种子取优）。R2/R3/跨轮最优衡量的是在**已测试的提示词/种子策略**下的实践上限，不应解读为同等预算的模型对模型基准。FINAL 取每案例跨轮最优（R19 裁定），因此后一轮的回退不会掩盖前一轮的更好结果——R3 的账面回撤不代表能力退化。
 
 ## Strategy scorecard · 策略记分板
 
@@ -29,28 +31,29 @@ A prompt-evaluation loop that reproduces [awesome-gpt-image-2](https://github.co
 - **S2 simplify-display** — 翻盘 2 例（其中 1 例直接转 win）。/ flipped 2 cases, one of them all the way to win.
 - **S4 style-anchor** — 净负收益；自 R18 起同策略重派改为同文换种重试，不再叠加指令。/ net-negative; since R18 a repeated strategy becomes a same-text fresh-seed retry instead of stacking another directive.
 
-诚实结论：残余 13 fail 的根因是微缩文字/复杂排版能力项，提示词层面已到收益边界。The 13 residual fails trace to microtext / complex-typography model capability, not to prompt engineering — that lever is exhausted.
+诚实结论：在本项目**已测试的**提示词与种子策略范围内，剩余 13 个 fail 在事后失败分析中主要集中在微缩文字渲染、复杂排版与中文字形质量；提示词改写共追回 2 例（15 → 17），继续改写的收益有限。这是观察到的失败聚集，不构成对模型全部剩余短板的证明。Within the strategies tested here, the 13 residual fails predominantly cluster around micro-text rendering, complex typography, and Chinese glyph fidelity in our post-hoc failure analysis; prompt rewriting recovered only 2 additional parity-or-win cases (15 → 17). This is an observed failure cluster, not proof that these are the model's only remaining limitations.
 
 ## How it works · 工作原理
 
 ```
-fetch → select → generate → blind-judge → compare → rewrite
-  ↑                                                    │
-  └────────────────── next round ←─────────────────────┘
+fetch → select → generate → source-blind judge → compare → rewrite
+  ↑                                                           │
+  └─────────────────── next round ←───────────────────────────┘
 ```
 
-- **fetch** 拉取并锁定上游参考仓库 commit；**select** 按 13 类别选出 30 个试点案例并锁定 `configs/pilot.lock.json`；**generate** 是唯一 GPU 触点，按台账增量批单、确定性种子出图；**blind-judge** 由 GLM 视觉判官按五维量规盲评；**compare** 对照参考基线做五条硬检查的打平判定并产出轮报告；**rewrite** 对 fail 案例按策略库改写提示词进入下一轮。
+- **fetch** 拉取并锁定上游参考仓库 commit；**select** 按 13 类别选出 30 个试点案例并锁定 `configs/pilot.lock.json`；**generate** 是唯一 GPU 触点，按台账增量批单、确定性种子出图；**source-blind judge** 由 GLM 视觉判官按五维量规对来源盲评；**compare** 对照参考基线做五条硬检查的打平判定并产出轮报告；**rewrite** 对 fail 案例按策略库改写提示词进入下一轮。
 - **Receipts philosophy / 凭据哲学**：本 README 的每个数字都可回链审计——评审信封在 [results/judge](results/judge)，逐事件台账在 [ledger/append.jsonl](ledger/append.jsonl)，轮次与终局对比报告在 [runs/comparisons](runs/comparisons)（发布副本 [results/comparisons/final/report.json](results/comparisons/final/report.json)）。没有数字是无凭据的。
-- **Blindness protocol / 盲评协议**：判官被告知候选者身份保密、禁止猜测或推断任何图像出自哪个模型；verdict 落盘后经 schema 校验 + 身份泄漏扫描才入库（`judge_failed` 记台账）；约 10% entry 盲样复评做自洽性抽检，超阈值追加仲裁评审取中位数，全程无人工打分。
+- **Source-blind protocol / 来源盲评协议**：判官被告知候选者身份保密、禁止猜测或推断任何图像出自哪个模型；entry 采用图像内容哈希派生的中性 ID（`entry-xxxxxxxx`），原始文件名与来源元数据不进入判官上下文，队列按轮号确定性乱序（`scripts/build_judge_tasks.py`）；verdict 落盘后经 schema 校验 + 身份泄漏扫描才入库（`judge_failed` 记台账）；约 10% entry 盲样复评做自洽性抽检，超阈值追加仲裁评审取中位数，全程无人工打分。
 
 ## Gallery · 画廊
 
 - Published comparison gallery（已判分左右对照画廊）：[root README gallery section](https://github.com/AIwork4me/awesome-sensenova-u1.5#readme)（即本页下方 GALLERY 区）
 - Round-1 WIP gallery（首轮生成快照）：[results/gallery/wip-round1/README.md](results/gallery/wip-round1/README.md)
+- Round-3 WIP gallery（第三轮 v3 提示词实况）：[results/gallery/wip-round3/README.md](results/gallery/wip-round3/README.md)
 
 <!-- GALLERY_EN -->
 
-> ✅ Judged: round final full blind review of 30 cases complete — parity 7 · win 10 / total 30 · parity ratio 0.5667 · overall gap -0.32. Details: [results/comparisons/final/report.json](results/comparisons/final/report.json)
+> ✅ Judged: round final full source-blind review of 30 cases complete — parity 7 · win 10 / total 30 · parity ratio 0.5667 · overall gap -0.32. Details: [results/comparisons/final/report.json](results/comparisons/final/report.json)
 ---
 ## case-1 · 信息图可视化设计 (UI & Interfaces) · upstream: no source link
 
@@ -288,7 +291,7 @@ fetch → select → generate → blind-judge → compare → rewrite
 
 <!-- GALLERY_ZH -->
 
-> ✅ 已判分：round final 全量 30 案例双盲评审完成 —— parity 7 · win 10 / total 30 · parity 率 0.5667 · overall gap -0.32。判分明细：[results/comparisons/final/report.json](results/comparisons/final/report.json)
+> ✅ 已判分：round final 全量 30 案例 source-blind 盲评完成 —— parity 7 · win 10 / total 30 · parity 率 0.5667 · overall gap -0.32。判分明细：[results/comparisons/final/report.json](results/comparisons/final/report.json)
 ---
 ## case-1 · 信息图可视化设计（UI & Interfaces）· 上游案例：未附来源链接
 

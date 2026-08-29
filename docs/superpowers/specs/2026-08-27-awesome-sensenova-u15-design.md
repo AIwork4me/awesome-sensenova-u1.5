@@ -5,6 +5,8 @@
 - 上游依赖：[SenseNova-U1.5-ROCm](https://github.com/AIwork4me/SenseNova-U1.5-ROCm)（推理管线）、[freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2)（案例与参考基线）
 - 相关背景：作者的 SenseNova-U1 上游 PR [OpenSenseNova/SenseNova-U1#260](https://github.com/OpenSenseNova/SenseNova-U1/pull/260) 已合并
 
+> **术语与口径注记（2026-08-29）**：本文为历史设计记录，保留原始措辞。文中的「双盲」此后统一改称 **source-blind**（判官对图像来源盲：中性内容哈希 entry ID、来源元数据不进判官上下文、队列按轮号确定性乱序、落盘前泄漏扫描）——本协议是单侧盲（仅判官盲），非双方互盲，也非 A/B 成对比较（每 entry 独立打分）。结果表述自 2026-08-29 起分两级：primary = R1 原始提示词 15/30；optimization ceiling = 跨轮最优 17/30。
+
 ## 0. 摘要
 
 本项目把 awesome-gpt-image-2 的 535 个社区案例作为量化基线，建立一个**全自动评测闭环**：在单卡 AMD gfx1100（48 GB）上以 ROCm 7.14.0 全栈运行 SenseNova-U1.5-8B-MoT 同题生成图像，由 GLM-5.3-Flash 视觉判官对双方图片做双盲结构化评分，未达标的案例按失败归因自动改写提示词并重生成，直至满足打平标准或到达轮次上限；最终开源经过验证的提示词库、全部效果图和完整评审凭据。首发范围为 Pilot 30 例（覆盖上游全部分类），目标 80% 案例达到 parity。

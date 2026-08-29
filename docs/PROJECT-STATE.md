@@ -1,22 +1,26 @@
 # 项目状态与交接文档（Project State & Handoff）
 
 - 更新：2026-08-28 · main `37873fa`
+- 术语与口径更新（2026-08-29）：`双盲` 统一改称 **source-blind**（判官对图像来源盲：中性内容哈希 entry ID、来源元数据不进判官上下文、队列按轮号确定性乱序、落盘前泄漏扫描；单侧盲，非 A/B 成对比较）；结果表述改为两级——primary = R1 原始提示词 **15/30**，optimization ceiling = 跨轮最优 **17/30**。历史文档（spec/plans）保留原始术语，以其日期为准。
 - 用途：本文件是项目的完整状态快照与交接包。任何新会话/新任务（例如"写项目总结"）只需读通本文，即可在零上下文下准确引用全部数据、结论与凭据位置。文中每个数字都可在所引路径复核。
 
 ## 1. 项目一句话
 
-awesome-sensenova-u1.5：把 [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) 的社区案例作为量化基线，在 AMD gfx1100 + ROCm 7.14.0 上用 SenseNova-U1.5-8B-MoT 同题复现，以 GLM 视觉判官双盲评分，自动迭代提示词三轮，开源提示词库、全部效果图与可溯源评审凭据。
+awesome-sensenova-u1.5：把 [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) 的社区案例冻结为精选参考集（curated GPT-Image-2 community reference outputs），在 AMD gfx1100 + ROCm 7.14.0 上用 SenseNova-U1.5-8B-MoT 同题复现，以 GLM 视觉判官 source-blind（判官对图像来源盲）评分，自动迭代提示词三轮，开源提示词库、全部效果图与可溯源评审凭据。
 
-## 2. 终局结果（S8，跨轮最优口径，已经两轮独立验核）
+## 2. 结果（S8，已经两轮独立验核；自 2026-08-29 起按两级口径表述）
+
+**Primary（同题结果）**：R1 原始提示词直出 **15/30**（Δ −0.46；每案例 2 枚确定性种子取优，提示词未做任何改写）——最接近 apples-to-apples 的口径。
+**Secondary（优化研究）**：R2/R3/跨轮最优衡量**已测提示词/种子策略**下的实践上限（optimization ceiling），不应解读为同等预算的模型对模型基准。
 
 | 轮次 | 达标（win+parity） | 五维总均差 |
 |---|---|---|
-| R1 原题 | 15/30 | −0.46 |
+| R1 原题（primary） | 15/30 | −0.46 |
 | R2 策略改写 | 17/30 | −0.45 |
 | R3 再改写+换种子 | 17/30 | −0.51 |
-| **FINAL 跨轮最优** | **17/30（56.7%）** | **−0.32** |
+| **FINAL 跨轮最优（optimization ceiling）** | **17/30（56.7%）** | **−0.32** |
 
-- 构成：win 10（SenseNova 反超，最高 case78 +2.60）+ parity 7 + fail 13；目标 24/30（80%）未完全达成。
+- 构成（FINAL）：win 10（SenseNova 反超，最高 case78 +2.60）+ parity 7 + fail 13；目标 24/30（80%）未完全达成。
 - fail 梯度：6 例差距 ≤0.6（case130 gap 0.0 仅缺一个文字元素、case17 −0.2）；深坑为 case167（−3.0）、case8（−2.0）、case1/3（−1.2~−1.6）。
 - 数据文件：`results/comparisons/final/report.json`（终局）、`results/comparisons/round-{1,2,3}/report.json`（各轮）。
 
@@ -25,7 +29,7 @@ awesome-sensenova-u1.5：把 [awesome-gpt-image-2](https://github.com/freestylef
 1. **S1 删微缩文字**：8 例乱码硬伤全部消除（small_text_exempt 豁免机制关键），但均分追平有限——治标成功、追分不足。
 2. **S2 简化大字**：最有效——case9 fail→win、case14 fail→parity、case13 在 R2 从 −2.4 收窄到 −1.0。
 3. **S4 风格锚定**：净负效应（case2 −1.2→−2.6、case3、case25 均恶化）→ 催生 R18：同策略重复时不再叠加指令、改为同文本换种子重试。
-4. **换种子方差**：同提示词不同种子有 ±0.4~1.0 波动，是 R3 无净增的主因——提示词层面收益边界已到。
+4. **换种子方差**：同提示词不同种子有 ±0.4~1.0 波动，是 R3 无净增的主因——在已测策略范围内，提示词改写的进一步收益有限（观察性结论，非普遍证明）。
 5. **残余差距根因**：微缩文字渲染与复杂排版是模型能力项，非提示词可解——这是下一代模型或多模态编辑链路的份额。
 
 ## 4. 运行规模与可靠性凭据
